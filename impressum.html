@@ -9,18 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+
 <header class="site-header">
-  <div class="container">
+  <div class="container header-flex">
     <h1 class="logo">WEIDENBORNpraxis</h1>
+    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="ueber-uns.html">Über uns</a>
       <a href="impressum.html">Impressum</a>
     </nav>
-    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰ Menü</button>
   </div>
 </header>
+
 
 <main class="main">
   <div class="container">
@@ -33,11 +35,16 @@
   </div>
 </main>
 
+
+<div class="hero-divider"></div>
+<div style="margin-bottom: 2rem;"></div>
+
 <footer class="site-footer">
   <div class="container">
-    <img src="images/praxislogo-footer.png" alt="Praxislogo klein" class="footer-logo" />
+    <img alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
 </body>
 </html>
