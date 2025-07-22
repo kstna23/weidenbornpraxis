@@ -21,10 +21,12 @@ body {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
   color: #1F4396;
   margin: 0;
   padding: 1rem 0;
+  letter-spacing: 0.5px;
 }
 
 .main-nav {
@@ -39,6 +41,8 @@ body {
   color: #1F4396;
   text-decoration: none;
   font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.5rem;
 }
 
 .hero img {
@@ -56,6 +60,13 @@ body {
 .intro h2 {
   font-size: 2rem;
   color: #1F4396;
+}
+
+.services h2,
+.about-us h2 {
+  color: #1F4396;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .services {
