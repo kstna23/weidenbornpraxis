@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
-  <meta name="author" content="WEIDENBORNpraxis">
-  <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WEIDENBORNpraxis</title>
@@ -13,98 +8,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <button class="mobile-nav-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')">
+    ☰ Menü
+  </button>
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="impressum.html">Impressum</a>
+  </nav>
 
-  
-<header class="site-header">
-  <div class="container header-flex">
-    <h1 class="logo">WEIDENBORNpraxis</h1>
-    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    <nav class="main-nav">
+  <div class="top-banner">
+    <div style="flex: 1 1 100%; text-align: center;">
+      <h1 class="praxis-title">WEIDENBORNpraxis</h1>
+    </div>
+    <nav class="nav-links" style="margin-top: 1rem;">
       <a href="index.html">Home</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="ueber-uns.html">Über uns</a>
       <a href="impressum.html">Impressum</a>
     </nav>
   </div>
-</header>
-
-
-  <div class="hero-divider"></div>
-
-  <section class="hero">
-    <img loading="lazy" alt="Hero Bild" src="images/weidenbornpraxis.jpg"/>
-  </section>
-
-  <section class="intro">
-    <div class="container">
-      <h2>Ihre Gesundheit in besten Händen</h2>
-      <p>Willkommen in der WEIDENBORNpraxis – Ihrer Hausarztpraxis mit Herz, Zeit und Kompetenz.</p>
-    </div>
-  </section>
   
-  <div class="hero-divider"></div>
-
-  <!-- Unsere Leistungen -->
-  <section class="services">
-    <div class="container">
-      <h2>Unsere Leistungen</h2>
-      <div class="service-grid">
-        <a class="service-card" href="allgemeinmedizin.html">
-          <img loading="lazy" alt="Allgemeinmedizin" src="images/allgemeinmedizin.jpg"/>
-          <h3>Allgemeinmedizin</h3>
-        </a>
-        <a class="service-card" href="chronic-care.html">
-          <img loading="lazy" alt="Chronic Care" src="images/cronic.jpg"/>
-          <h3>Chronic Care</h3>
-        </a>
-        <a class="service-card" href="impfungen.html">
-          <img loading="lazy" alt="Impfungen" src="images/impfungen.jpg"/>
-          <h3>Impfungen</h3>
-        </a>
-        <a class="service-card" href="hausbesuche.html">
-          <img loading="lazy" alt="Hausbesuche" src="images/hausbesuch.jpg"/>
-          <h3>Hausbesuche</h3>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <div class="hero-divider"></div>
-
-  <!-- Das sind wir -->
-  <section class="about-us">
-    <div class="container">
-      <h2>Das sind wir</h2>
-      <div class="service-grid">
-        <a class="service-card" href="praxis.html">
-          <img loading="lazy" src="images/praxis.jpg" alt="Praxis" />
-          <h3>Praxis</h3>
-        </a>
-        <a class="service-card" href="team.html">
-          <img loading="lazy" src="images/team.jpg" alt="Team" />
-          <h3>Team</h3>
-        </a>
-        <a class="service-card" href="aerzte.html">
-          <img loading="lazy" src="images/aerzte.jpg" alt="Ärzte" />
-          <h3>Ärzte</h3>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  
-</section>
-
-<!-- 🔽 Trennlinie + Abstand vor dem Footer -->
-<div class="hero-divider"></div>
-<div style="margin-bottom: 2rem;"></div>
-
-<footer class="site-footer">
-  <div class="container">
-    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
-    <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
+  <div class="logo-container">
+    <img src="images/logo-weidenbornpraxis.jpg" alt="Praxislogo" class="logo-image" />
   </div>
-</footer>
+  
+  
 
+  <div class="main">
+  <div class="hero-image">
+    <img src="aquarell_praxis.jpg" alt="Praxis Aquarellbild mit Baum" />
+  </div>
+
+    <h1>Ihre Gesundheit in besten Händen</h1>
+    <p>
+      Unsere Praxis bietet Ihnen eine umfassende hausärztliche Versorgung auf höchstem Niveau. Wir nehmen uns Zeit für Sie, hören zu und begleiten Sie kompetent in allen Gesundheitsfragen.
+    </p>
+
+    <div class="services">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/allgemeinmedizin.jpg" alt="Allgemeinmedizin" />
+            <span>Allgemeinmedizin</span>
+          </div>
+          <div class="flip-card-back">
+            <p><strong>Allgemeinmedizin</strong><br>Vorsorgeuntersuchungen, Diagnostik, Therapie – Ihre erste Anlaufstelle für alle gesundheitlichen Anliegen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/cronic.jpg" alt="Chronic Care" />
+            <span>Chronic Care</span>
+          </div>
+          <div class="flip-card-back">
+            Behandlung chronischer Erkrankungen
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/impfungen.jpg" alt="Impfungen" />
+            <span>Impfungen</span>
+          </div>
+          <div class="flip-card-back">
+            Grippe, COVID-19, Reiseschutzimpfungen
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/hausbesuch.jpg" alt="Hausbesuche" />
+            <span>Hausbesuche</span>
+          </div>
+          <div class="flip-card-back">
+            Nach Vereinbarung bei eingeschränkter Mobilität
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="images/footer.jpg" alt="Praxis Logo" />
+    <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
+  </footer>
 </body>
 </html>
