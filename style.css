@@ -51,7 +51,8 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 700px;
+
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -274,7 +275,11 @@ h2, h3 {
 
   .hero img {
     margin-top: 1rem;
-  }
+  
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
   .intro, .services, .about-us {
     padding: 2rem 1rem;
@@ -314,4 +319,11 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
