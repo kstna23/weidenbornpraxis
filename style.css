@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
-  background-color: #EDE7DC;
+  background-color: #E3E0D9;
   color: #3a2c1e;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .services {
-  background-color: #EDE7DC;
+  background-color: #E3E0D9;
   padding: 2rem 1rem 3rem;
 }
 
@@ -323,4 +323,26 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.logo-block {
+  flex: 1;
+  text-align: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #000 !important; /* schwarz erzwingen */
+  margin: 0;
+  padding: 1rem 0 0.2rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #000;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
 }
