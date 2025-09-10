@@ -27,49 +27,15 @@
       <a href=\"impressum.html\">Impressum</a>
     </nav>
   </div>
-</header>
-<script>
-  (function(){
-    const btn = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function(){
-      const open = document.body.classList.toggle('menu-open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A' && document.body.classList.contains('menu-open')){
-        document.body.classList.remove('menu-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Hauptmenü öffnen');
-      }
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        document.body.classList.remove('menu-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Hauptmenü öffnen');
-        btn.focus();
-      }
-    });
-  })();
-</script>
-<style>
-  .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
-  .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.6rem .8rem;background:#000;color:#fff;border-radius:8px;z-index:1100;}
-</style>
-
-  
-\1
+</header>\1
 <meta name="theme-color" content="#F6F3EC">\n
   <div class="container header-flex">
     <div class="logo-block">
       <h1 class="logo">WEIDENBORNpraxis</h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
-    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    <nav class="main-nav">
+    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+    <nav class="main-nav" id="hauptnav" aria-label="Hauptnavigation">
       <a href="index.html">Home</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -79,7 +45,7 @@
 </header>
 
 
-  <main id=\"hauptinhalt\" class="container">
+  <main id="hauptinhalt" id=\"hauptinhalt\" class="container">
     <h2>Unsere Praxis</h2>
     <img loading="lazy" src="images/praxis-innen.jpg" alt="Innenansicht der Praxis" style="width:100%; max-width:600px;">
     <p>Unsere modernen Praxisräume sind hell, freundlich und barrierefrei gestaltet. Wir legen großen Wert auf eine angenehme Atmosphäre, in der Sie sich wohl und gut betreut fühlen.</p>
