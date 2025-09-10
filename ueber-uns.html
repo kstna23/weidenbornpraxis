@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="de">
-<head>
+\1
+<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n
   <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
   <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
   <meta name="author" content="WEIDENBORNpraxis">
@@ -13,10 +13,58 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+\1\n<a class=\"skip-link\" href=\"#hauptinhalt\">Zum Inhalt springen</a>
+<header class=\"site-header\" role=\"banner\">
+  <div class=\"container header-flex\">
+    <div class=\"logo-block\">
+      <h1 class=\"logo\">WEIDENBORNpraxis</h1>
+      <p class=\"subtitle\">Dr. Meissner &amp; Dr. Weck</p>
+    </div>
+    <button class=\"menu-toggle\" aria-controls=\"hauptnav\" aria-expanded=\"false\" aria-label=\"Hauptmenü öffnen\">☰</button>
+    <nav id=\"hauptnav\" class=\"main-nav\" aria-label=\"Hauptnavigation\">
+      <a href=\"index.html\">Home</a>
+      <a href=\"kontakt.html\">Kontakt</a>
+      <a href=\"ueber-uns.html\">Über uns</a>
+      <a href=\"impressum.html\">Impressum</a>
+    </nav>
+  </div>
+</header>
+<script>
+  (function(){
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      const open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && document.body.classList.contains('menu-open')){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Hauptmenü öffnen');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Hauptmenü öffnen');
+        btn.focus();
+      }
+    });
+  })();
+</script>
+<style>
+  .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+  .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.6rem .8rem;background:#000;color:#fff;border-radius:8px;z-index:1100;}
+</style>
 
 
-<header class="site-header">
+
+\1
+<meta name="theme-color" content="#F6F3EC">\n
   <div class="container header-flex">
     <div class="logo-block">
       <h1 class="logo">WEIDENBORNpraxis</h1>
@@ -34,7 +82,7 @@
 
 
 
-<main class="main">
+<main id=\"hauptinhalt\" class="main">
   <div class="container">
     <h2>Über uns</h2>
     <p>Die WEIDENBORNpraxis steht für ganzheitliche, patientenzentrierte Medizin. Unser Team begleitet Sie mit Empathie, Erfahrung und Fachwissen in allen Gesundheitsfragen.</p>
