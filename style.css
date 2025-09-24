@@ -47,12 +47,16 @@ img { max-width: 100%; height: auto; display: block; }
 
 .header-flex {  display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: var(--header-pad-y) 0;
-  justify-content: space-between;}
+  justify-content: space-between;
+  position: relative;}
 
 .logo-block {  flex: 0 0 auto;
-  text-align: left;}
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;}
 
 .logo {
   font-size: clamp(1.75rem, 4.2vw, 3rem);
@@ -77,13 +81,14 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   padding: 0 0 0.3rem;
   font-size: 0.95rem;
-  margin-left: auto;}
+  margin-left: auto !important;}
 
 .main-nav a {  color: var(--brand);
   text-decoration: none;
   font-weight: 400;
   padding: 0.5rem 0.6rem;
-  border-radius: 6px;}
+  border-radius: 6px;
+  white-space: nowrap;}
 .main-nav a:hover { text-decoration: underline; }
 
 .menu-toggle {
@@ -266,4 +271,33 @@ label { font-weight: 500; color: var(--ink); display: block; }
     display: block;
     margin: 0.5rem 0;
   }
+}
+
+
+.logo-block .subtitle {
+  align-self: center;
+  text-align: center;
+  margin-top: 0.15rem;
+}
+
+
+
+/* --- Header Desktop-Fix: echte Rechtsbündigkeit + zentrierte Unterzeile --- */
+@media (min-width: 992px) {
+  .header-flex { position: relative; }
+  /* Navigation absolut am rechten Containerrand ausrichten */
+  .main-nav {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0 !important; /* Absicherung */
+  }
+  /* Logo-Block: Unterzeile exakt mittig unter dem Logo */
+  .logo-block {
+    display: inline-block;     /* Breite = Inhalt (Logo) */
+    text-align: center;        /* zentriert Logo + Unterzeile zueinander */
+  }
+  .logo-block .logo { display: block; }
+  .logo-block .subtitle { display: block; text-align: center; }
 }
