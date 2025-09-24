@@ -280,5 +280,32 @@ label { font-weight: 500; color: var(--ink); display: block; }
     margin-left: 1.25rem;
   }
   /* Platz für die Sidebar schaffen */
-  main .container { padding-right: 320px; }
+  
+}
+
+
+
+/* Zwei-Spalten-Layout für Seiten mit linkem TOC */
+@media (min-width: 1200px) {
+  main .container.has-toc-left {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .page-toc.page-toc--left {
+    position: sticky;
+    top: 110px;
+    max-height: calc(100vh - 140px);
+    overflow: auto;
+  }
+  /* Alle anderen Elemente (außer TOC) in Spalte 2 */
+  .container.has-toc-left > :not(.page-toc) {
+    grid-column: 2;
+  }
+}
+/* Mobile/Tablet: TOC normal im Fluss über dem Inhalt */
+@media (max-width: 1199px) {
+  .page-toc.page-toc--left { position: static; max-height: none; overflow: visible; }
+  main .container.has-toc-left { display: block; }
 }
