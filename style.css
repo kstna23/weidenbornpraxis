@@ -45,18 +45,14 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 1000;
 }
 
-.header-flex {  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: var(--header-pad-y) 0;
-  justify-content: space-between;
-  position: relative;}
-
-.logo-block {  flex: 0 0 auto;
-  text-align: left;
+.header-flex {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;}
+  align-items: center;
+  gap: 1rem;
+  padding: var(--header-pad-y) 0;
+}
+
+.logo-block { flex: 1; text-align: center; }
 
 .logo {
   font-size: clamp(1.75rem, 4.2vw, 3rem);
@@ -71,24 +67,26 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0.15rem 0 0;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
 }
 
 /* Primary nav (desktop default) */
-.main-nav {  display: flex;
-  gap: 1.5rem;
+.main-nav {
+  display: flex;
+  gap: 0.75rem;
   justify-content: flex-end;
   align-items: center;
   padding: 0 0 0.3rem;
   font-size: 0.95rem;
-  margin-left: auto !important;}
+}
 
-.main-nav a {  color: var(--brand);
+.main-nav a {
+  color: var(--brand);
   text-decoration: none;
   font-weight: 400;
   padding: 0.5rem 0.6rem;
   border-radius: 6px;
-  white-space: nowrap;}
+}
 .main-nav a:hover { text-decoration: underline; }
 
 .menu-toggle {
@@ -229,75 +227,58 @@ label { font-weight: 500; color: var(--ink); display: block; }
 }
 
 
-/* Teaser unter Leistungskacheln */
-.service-card .card-teaser{
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.35;
-  color: var(--ink, #3A2C1E);
-  opacity: .9;
-}
-/* Für bessere Lesbarkeit, wenn Karten als Link gestylt sind */
-.service-card { text-align: left; }
-.service-card h3 { margin-bottom: 0.15rem; }
+
+/* Hausärztliche Versorgung – Layout-Ergänzungen */
+.lead { font-size: 1.125rem; line-height: 1.6; margin: 0 0 1rem; }
+.section { margin: 1.25rem 0 1.75rem; }
+.feature-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; }
+.feature { background: var(--paper, #F6F3EC); padding: 1rem; border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.callout { background: #fff; border: 1px solid rgba(0,0,0,.08); padding: 1rem; border-radius: 14px; display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.callout .button { padding: .55rem 1rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.1); text-decoration: none; font-weight: 600; }
+.callout .muted { opacity: .8; }
+.checklist { padding-left: 1.2rem; }
+.checklist li { margin: .35rem 0; }
+.faq details { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: .75rem 1rem; margin: .5rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+
+
+.numbered { counter-reset: it; padding-left: 1.2rem; }
+.numbered > li { margin:.35rem 0; }
 
 
 
-/* Desktop-Navigation ab 992px */
-@media (min-width: 992px) {
-  .main-nav {
-    display: flex !important;
+/* Inhaltsverzeichnis für Hausarzt-Seite */
+.page-toc { background: #fff; border:1px solid rgba(0,0,0,.08); padding:1rem; border-radius:12px; margin:1rem 0 2rem; }
+.page-toc strong { display:block; margin-bottom: .5rem; }
+.page-toc ul { list-style: none; margin:0; padding:0; display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:.25rem .75rem; }
+.page-toc li { margin:0; }
+.page-toc a { text-decoration:none; color: var(--brand, #1F4396); font-size:.95rem; }
+.page-toc a:hover { text-decoration:underline; }
+
+.page-toc a.active { font-weight: 700; color: var(--ink,#3A2C1E); }
+
+
+
+.back-to-top { margin: .5rem 0 1.25rem; font-size: .9rem; }
+.back-to-top a { text-decoration: none; opacity: .8; }
+.back-to-top a:hover { text-decoration: underline; opacity: 1; }
+
+
+
+
+
+/* Sticky-TOC am Desktop-Rand */
+@media (min-width: 1200px) {
+  .page-toc.page-toc--sticky {
+    position: sticky;
+    top: 110px;
+    float: right;
+    width: 280px;
+    z-index: 10;
+    max-height: calc(100vh - 140px);
+    overflow: auto;
+    margin-left: 1.25rem;
   }
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* Mobile-Navigation bis 991px */
-@media (max-width: 991px) {
-  .main-nav {
-    display: none; /* nur über Burger sichtbar */
-  }
-  body.menu-open .main-nav {
-    display: block;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--paper, #fff);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
-  }
-  .main-nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-}
-
-
-.logo-block .subtitle {
-  align-self: center;
-  text-align: center;
-  margin-top: 0.15rem;
-}
-
-
-
-/* --- Header Desktop-Fix: echte Rechtsbündigkeit + zentrierte Unterzeile --- */
-@media (min-width: 992px) {
-  .header-flex { position: relative; }
-  /* Navigation absolut am rechten Containerrand ausrichten */
-  .main-nav {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 0 !important; /* Absicherung */
-  }
-  /* Logo-Block: Unterzeile exakt mittig unter dem Logo */
-  .logo-block {
-    display: inline-block;     /* Breite = Inhalt (Logo) */
-    text-align: center;        /* zentriert Logo + Unterzeile zueinander */
-  }
-  .logo-block .logo { display: block; }
-  .logo-block .subtitle { display: block; text-align: center; }
+  /* Platz für die Sidebar schaffen */
+  main .container { padding-right: 320px; }
 }
