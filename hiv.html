@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>HIV-Beratung &amp; Test – WEIDENBORNpraxis</title>
+  <meta name="description" content="Diskrete HIV-Beratung, Testung und Begleitung. Kompetente Versorgung und enge Zusammenarbeit mit Schwerpunktpraxen in Frankfurt.">
+  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="author" content="WEIDENBORNpraxis">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo-block">
+      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    </div>
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="terminbuchung.html">Online-Termin</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</header>
+<main class="main" id="hauptinhalt">
+  <div class="container">
+    <h2>HIV-Beratung, Test & Behandlung</h2>
+    <p>Diskrete und kompetente HIV-Versorgung: Wir beraten zu Prävention, führen Tests durch und begleiten
+die antiretrovirale Therapie (ART) in enger Abstimmung mit Schwerpunktpraxen.</p>
+<ul>
+  <li>HIV-Labortest &amp; Schnelltest je nach Fragestellung</li>
+  <li>Beratung zu Schutz durch Therapie (U=U)</li>
+  <li>Impf- und Vorsorgecheck für Menschen mit HIV</li>
+</ul>
+  </div>
+</main>
+<div class="hero-divider"></div>
+<div style="margin-bottom: 2rem;"></div>
+<footer class="site-footer">
+  <div class="container">
+    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
+    <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
+  </div>
+</footer>
+<script>
+  (function(){{
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+    function setState(open){{
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    }}
+    btn.addEventListener('click', function(){{
+      setState(!document.body.classList.contains('menu-open'));
+    }});
+    document.addEventListener('keydown', function(e){{
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){{
+        setState(false); btn.focus();
+      }}
+    }});
+    nav.addEventListener('click', function(e){{
+      if (e.target.tagName === 'A'){{ setState(false); }}
+    }});
+  }})();
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>STI / PrEP / PEP – WEIDENBORNpraxis</title>
+  <meta name="description" content="Beratung, Diagnostik und Behandlung sexuell übertragbarer Infektionen. PrEP-Begleitung und zeitkritische PEP-Versorgung.">
+  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="author" content="WEIDENBORNpraxis">
+  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-flex">
+    <div class="logo-block">
+      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    </div>
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="terminbuchung.html">Online-Termin</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</header>
+<main class="main" id="hauptinhalt">
+  <div class="container">
+    <h2>STI / PrEP / PEP</h2>
+    <p>Wir bieten umfassende Beratung und Diagnostik zu sexuell übertragbaren Infektionen (STI)
+sowie Verschreibung und Begleitung von PrEP. Nach möglichem HIV‑Risiko prüfen wir, ob eine PEP
+indiziert ist und leiten diese unverzüglich ein.</p>
+<ul>
+  <li>STI-Screening (u. a. Chlamydien, Gonokokken, Syphilis, Hepatitis)</li>
+  <li>PrEP: Eignungscheck, Verordnung, Verlaufskontrollen</li>
+  <li>PEP: zeitkritische Erstversorgung nach Exposition</li>
+</ul>
+  </div>
+</main>
+<div class="hero-divider"></div>
+<div style="margin-bottom: 2rem;"></div>
+<footer class="site-footer">
+  <div class="container">
+    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
+    <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
+  </div>
+</footer>
+<script>
+  (function(){{
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+    function setState(open){{
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    }}
+    btn.addEventListener('click', function(){{
+      setState(!document.body.classList.contains('menu-open'));
+    }});
+    document.addEventListener('keydown', function(e){{
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){{
+        setState(false); btn.focus();
+      }}
+    }});
+    nav.addEventListener('click', function(e){{
+      if (e.target.tagName === 'A'){{ setState(false); }}
+    }});
+  }})();
+</script>
+</body>
+</html>
