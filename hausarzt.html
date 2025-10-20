@@ -13,32 +13,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* Bildbereich */
-    .feature-figure {
-      margin: 1.2rem auto 1.8rem;
-      max-width: 70%;
+    /* zentrierte Überschrift */
+    h2 {
       text-align: center;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      margin-bottom: 1.6rem;
     }
-    .feature-figure img {
+
+    /* Bild mit Textumfluss */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .intro-section figure {
+      flex: 0 0 40%;
+      max-width: 360px;
+      margin: 0;
+    }
+    .intro-section img {
       width: 100%;
       height: auto;
-      border-radius: 18px;
+      border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .feature-figure img:hover {
-      transform: scale(1.015);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    .intro-section img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
     }
-    .feature-figure figcaption {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 0.4rem;
+    .intro-text {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     /* Info-Kästchen */
     .info-box {
-      background-color: #E6DECD; /* leicht dunkler als #F2E5DC */
+      background-color: #E7D8CF;
       border-radius: var(--radius);
       padding: 1.25rem;
       box-shadow: var(--shadow-sm);
@@ -58,9 +74,18 @@
     .info-section h3 { margin-top: 0; }
     .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
     .info-section p { margin-top: 0.4rem; }
+
     @media (min-width: 840px) {
       .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .feature-figure { max-width: 60%; }
+    }
+
+    @media (max-width: 720px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .intro-section figure {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -88,12 +113,15 @@
 
     <h2>Hausärztliche Versorgung</h2>
 
-    <!-- sanft eingebettetes Feature-Foto -->
-    <figure class="feature-figure">
-      <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
-    </figure>
-
-    <p>Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen oder die kontinuierliche Betreuung bei chronischen Erkrankungen – wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine individuelle Beratung und eine vertrauensvolle Arzt-Patienten-Beziehung.</p>
+    <!-- Einleitung mit Bild links und Text rechts -->
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <p>Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen oder die kontinuierliche Betreuung bei chronischen Erkrankungen – wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine individuelle Beratung und eine vertrauensvolle Arzt-Patienten-Beziehung.</p>
+      </div>
+    </section>
 
     <!-- Info-Kästchen -->
     <div class="info-box" aria-label="Leistungsschwerpunkte der hausärztlichen Versorgung">
