@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <title>Hausärztliche Versorgung – WEIDENBORNpraxis</title>
-  <meta name="description" content="Hausärztliche Versorgung in Frankfurt: Vorsorge, Impfungen, DMP, Diagnostik und Prävention – individuell und verlässlich.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Hausärztliche Versorgung in der WEIDENBORNpraxis: Vorsorge, Impfungen, Labor, Herz-Kreislauf, Lungenfunktion & Präventionsberatung.">
+  <meta name="keywords" content="Hausarzt, Hausärztliche Versorgung, Check-up, Impfungen, Labor, EKG, Lungenfunktion, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
 
@@ -12,7 +12,50 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
+  <style>
+    .feature-figure {
+      margin: 1rem 0 1.5rem;
+    }
+    .feature-figure img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .feature-figure figcaption {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 0.35rem;
+    }
+
+    /* Info-Kästchen */
+    .info-box {
+      background-color: #E7D8CF; /* etwas dunkler als #F2E5DC */
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 1.25rem;
+    }
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    .info-section {
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-section h3 { margin-top: 0; }
+    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
+    .info-section p { margin-top: 0.4rem; }
+    @media (min-width: 840px) {
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
+
 <body>
 <header class="site-header">
   <div class="container header-flex">
@@ -32,158 +75,97 @@
 </header>
 
 <main class="main" id="hauptinhalt">
-  <div class="container" has-toc-left><h2>Hausärztliche Versorgung</h2>
+  <div class="container">
 
-    <nav class="page-toc page-toc--left">
-      <strong>Inhalt:</strong>
-      <ul>
-        <li><a href="#vorsorge">Vorsorgeuntersuchungen</a></li>
-        <li><a href="#impfungen">Impfungen</a></li>
-        <li><a href="#dmp">Disease-Management-Programme (DMP)</a></li>
-        <li><a href="#labor">Laboruntersuchungen</a></li>
-        <li><a href="#herz">Herz-Kreislauf-Untersuchungen</a></li>
-        <li><a href="#lungen">Lungenfunktionsprüfung</a></li>
-        <li><a href="#praevention">Prävention &amp; Lebensstil</a></li>
-      </ul>
-    </nav>
+    <h2>Hausärztliche Versorgung</h2>
 
-<section class="section intro">
-  <p class="lead">
-    Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen
-    oder die kontinuierliche Betreuung bei chronischen Erkrankungen im Rahmen von Disease‑Management‑Programmen (DMP) –
-    wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine <strong>individuelle Beratung</strong>
-    und eine <strong>vertrauensvolle Arzt‑Patienten‑Beziehung</strong>.
-  </p>
-</section><section class="section">
-  <h3 id="vorsorge">Vorsorgeuntersuchungen (Check‑up &amp; IGeL‑Leistungen)</h3>
-  <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und Risiken rechtzeitig zu behandeln.
-  Die gesetzlichen Krankenkassen übernehmen diese Vorsorgeuntersuchungen:</p>
-  <ul class="checklist">
-    <li><strong>Ab 35 Jahren:</strong> alle drei Jahre ein umfassender Gesundheits‑Check („Check‑up 35“), inklusive Untersuchung von Herz‑Kreislauf‑Risiken, Blut‑ und Urinwerten.</li>
-    <li><strong>18–35 Jahre:</strong> ein Check‑up einmalig möglich.</li>
-  </ul>
-  <p>Darüber hinaus bieten wir <strong>Individuelle Gesundheitsleistungen (IGeL)</strong> an, die über die gesetzliche Vorsorge hinausgehen, z.&nbsp;B.
-  spezielle Labor‑ oder Ultraschalluntersuchungen. Wir beraten Sie, welche Leistungen für Sie sinnvoll sind.</p>
-</section><section class="section">
-  <h3 id="impfungen">Impfungen</h3>
-  <p>Wir bieten umfassende Impfberatung und ‑durchführung für Erwachsene – zur Vorsorge, für Reisen oder bei besonderen gesundheitlichen Risiken.
-  Bitte zum Impftermin immer den <strong>Impfpass</strong> mitbringen!</p>
+    <!-- Feature-Foto -->
+    <figure class="feature-figure">
+      <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
+    </figure>
 
-  <h4>Zielgruppen und Empfehlungen</h4>
-  <ul class="checklist">
-    <li><strong>Erwachsene:</strong> Auffrischungen (Tetanus, Diphtherie, Pertussis) alle 10 Jahre, Influenza jährlich.</li>
-    <li><strong>Senior:innen &amp; Risikogruppen:</strong> Pneumokokken, Influenza, Herpes Zoster, RSV – abhängig von Alter/Vorerkrankungen.</li>
-    <li><strong>Besonders gefährdete Gruppen:</strong> chronisch Kranke, Schwangere, medizinisches Personal, Reisende in Risikogebiete.</li>
-  </ul>
+    <p>Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen oder die kontinuierliche Betreuung bei chronischen Erkrankungen – wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine individuelle Beratung und eine vertrauensvolle Arzt-Patienten-Beziehung.</p>
 
-  <h4>Leistungsumfang</h4>
-  <ul class="checklist">
-    <li><strong>Standardimpfungen:</strong> gemäß STIKO‑Empfehlungen für Erwachsene.</li>
-    <li><strong>Reiseimpfungen:</strong> angepasst an das Reiseziel (z.&nbsp;B. Gelbfieber, Hepatitis&nbsp;A/B, Typhus, Tollwut).</li>
-    <li><strong>Sonderimpfungen:</strong> nach ärztlicher Empfehlung bei Risiko oder besonderer Exposition.</li>
-    <li><strong>Beratung &amp; Aufklärung:</strong> Intervalle, Schutzdauer, Nebenwirkungen, Auffrischungen.</li>
-    <li><strong>Impfpasskontrolle:</strong> Prüfung, Ergänzung und Aktualisierung Ihres Impfstatus.</li>
-  </ul>
+    <div class="info-box" aria-label="Leistungsschwerpunkte der hausärztlichen Versorgung">
+      <div class="info-grid">
 
-  <h4>Ziel der Impfungen</h4>
-  <ul class="checklist">
-    <li>Schutz vor Infektionskrankheiten für Einzelpersonen und Gemeinschaft,</li>
-    <li>Prävention schwerer Verläufe, Hospitalisierungen und Komplikationen,</li>
-    <li>Sicherstellung eines vollständigen, aktuellen Impfschutzes.</li>
-  </ul>
-  <p>Mehr Infos auch auf unserer Seite <a href="impfungen.html">Impfungen</a>.</p>
-</section><section class="section">
-  <h3 id="dmp">Disease‑Management‑Programme (DMP)</h3>
-  <p>Für Patient:innen mit chronischen Erkrankungen (z.&nbsp;B. Diabetes mellitus, Asthma, COPD, koronare Herzkrankheit)
-  bieten wir strukturierte Programme zur regelmäßigen Kontrolle, Beratung und Therapie an – mit dem Ziel, Komplikationen zu vermeiden und Lebensqualität zu erhalten.</p>
+        <section class="info-section" id="vorsorge">
+          <h3>Vorsorgeuntersuchungen (Check-up &amp; IGeL-Leistungen)</h3>
+          <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und dadurch Risiken rechtzeitig zu verringern. Die gesetzlichen Krankenkassen übernehmen:</p>
+          <ul>
+            <li><strong>Einmaliger Check-up</strong> zwischen 18 und 35 Jahren</li>
+            <li><strong>Ab 35 Jahren:</strong> alle drei Jahre ein umfassender Gesundheits-Check („Check-up 35“) inkl. Herz-Kreislauf-Risiken sowie Blut- und Urinwerten</li>
+          </ul>
+          <p>Zusätzlich bieten wir <em>Individuelle Gesundheitsleistungen</em> (GOÄ) an – z. B. spezielle Laboruntersuchungen, Ultraschall oder weitere sinnvolle Tests nach Ihrem Profil. Wir beraten, welche Leistungen für Sie empfehlenswert sind.</p>
+        </section>
 
-  <h4>Für wen geeignet?</h4>
-  <ul class="checklist">
-    <li>Diabetes mellitus Typ&nbsp;2</li>
-    <li>Asthma bronchiale</li>
-    <li>Chronisch obstruktive Lungenerkrankung (COPD)</li>
-    <li>Koronare Herzkrankheit (KHK)</li>
-    <li>Osteoporose</li>
-  </ul>
+        <section class="info-section" id="impfungen">
+          <h3>Impfungen</h3>
+          <p>Wir beraten und impfen umfassend – zur Vorsorge, für Reisen oder bei besonderen Risiken. Bitte bringen Sie zum Termin Ihren Impfpass mit.</p>
+          <p><strong>Zielgruppen &amp; Empfehlungen:</strong></p>
+          <ul>
+            <li><strong>Erwachsene:</strong> Auffrischungen (Tetanus, Diphtherie, Pertussis) alle 10 Jahre; Influenza jährlich</li>
+            <li><strong>Senior:innen &amp; Risikogruppen:</strong> Pneumokokken, Influenza, Herpes Zoster, RSV je nach Alter/Vorerkrankungen</li>
+            <li><strong>Besonders gefährdete Gruppen:</strong> chronisch Kranke, Schwangere, medizinisches Personal, Reisende</li>
+          </ul>
+          <p><strong>Leistungsumfang:</strong> Standardimpfungen (STIKO), Reise- &amp; Sonderimpfungen, Aufklärung (Intervalle, Schutzdauer, Nebenwirkungen), Impfpasskontrolle.</p>
+          <p><strong>Ziel:</strong> Schutz vor Infektionen, Vermeidung schwerer Verläufe und vollständiger, aktueller Impfschutz.</p>
+        </section>
 
-  <h4>Ablauf</h4>
-  <ol class="numbered">
-    <li><strong>Aufnahme &amp; Beratung:</strong> Eignungsprüfung, Ablaufklärung, offene Fragen.</li>
-    <li><strong>Individuelle Zielsetzung:</strong> z.&nbsp;B. Blutdruck, Blutzucker, Lungenfunktion.</li>
-    <li><strong>Regelmäßige Kontrollen:</strong> je nach Erkrankung Blut‑, Urin‑, Funktionsuntersuchungen, EKG oder Lungenfunktion.</li>
-    <li><strong>Therapieanpassung &amp; Lebensstil:</strong> Ernährung, Bewegung, Medikamententraining.</li>
-    <li><strong>Dokumentation &amp; Kommunikation:</strong> Befunde und Infos werden koordiniert weitergegeben.</li>
-  </ol>
+        <section class="info-section" id="labor">
+          <h3>Laboruntersuchungen</h3>
+          <p>Wir führen alle wichtigen Blut- und Urinuntersuchungen durch, um Veränderungen früh zu erkennen und gezielt zu behandeln.</p>
+          <p><strong>Beispiele (inkl. IGeL):</strong></p>
+          <ul>
+            <li>Blutzucker, HbA1c</li>
+            <li>Lipide: Gesamt-, LDL-, HDL-Cholesterin; Triglyzeride</li>
+            <li>Leber- und Nierenwerte; Blutbild, Elektrolyte, Entzündungswerte</li>
+            <li>Schilddrüse: TSH, fT3, fT4</li>
+            <li>Urinstix, ggf. Sediment und Kultur</li>
+          </ul>
+          <p><strong>Erweiterte IGeL nach Wunsch:</strong> Vitamine/Mineralstoffe (z. B. Vitamin D, B12, Eisen/Ferritin, Folsäure, Magnesium, Calcium), kardiometabolische Marker (CRP, Lipoprotein(a), NT-proBNP, ggf. weitere), Rheumafaktoren, BSG, PSA.</p>
+          <p>Wir beraten, was in Ihrer Situation sinnvoll ist, und führen Untersuchungen zuverlässig und zeitnah durch.</p>
+        </section>
 
-  <div class="callout">
-    <strong>Ihr Nutzen:</strong>
-    <ul class="checklist">
-      <li>Bessere Kontrolle der chronischen Erkrankung</li>
-      <li>Frühzeitige Erkennung von Komplikationen</li>
-      <li>Strukturierte, kontinuierliche Betreuung</li>
-      <li>Verbesserte Lebensqualität</li>
-    </ul>
+        <section class="info-section" id="herz-kreislauf">
+          <h3>Herz-Kreislauf-Untersuchungen</h3>
+          <p>Regelmäßige Kontrollen helfen, Erkrankungen früh zu erkennen und Komplikationen zu vermeiden.</p>
+          <ul>
+            <li><strong>Blutdruckkontrollen</strong></li>
+            <li><strong>EKG</strong> zur Erkennung von Rhythmusstörungen u. a.</li>
+            <li><strong>Langzeit-EKG</strong> (24 h)</li>
+            <li><strong>Langzeit-Blutdruckmessung</strong> (24 h)</li>
+            <li><strong>NT-proBNP</strong> zur Einschätzung von Herzschwäche/Risiko</li>
+          </ul>
+          <p>Plus Beratung zu Bewegung, Ernährung, Stressmanagement und Rauchstopp.</p>
+        </section>
+
+        <section class="info-section" id="lunge">
+          <h3>Lungenfunktionsprüfung</h3>
+          <p>Sinnvoll u. a. bei Asthma, COPD, chronischem Husten oder Luftnot.</p>
+          <ul>
+            <li><strong>Spirometrie:</strong> Lungenvolumina &amp; Flüsse</li>
+            <li><strong>Peak-Flow:</strong> Verlaufskontrolle, z. B. bei Asthma</li>
+          </ul>
+          <p>Wir erklären die Ergebnisse verständlich und leiten bei Bedarf Therapie oder weitere Diagnostik ein – für rechtzeitige Behandlung und stabile Lebensqualität.</p>
+        </section>
+
+        <section class="info-section" id="praevention">
+          <h3>Beratung zu Prävention &amp; Lebensstil</h3>
+          <ul>
+            <li><strong>Ernährung:</strong> ausgewogen, Gewichtsmanagement, Stoffwechselprävention</li>
+            <li><strong>Bewegung:</strong> individuelles, alltagstaugliches Programm</li>
+            <li><strong>Stressmanagement:</strong> Strategien für mehr Wohlbefinden</li>
+            <li><strong>Rauchentwöhnung:</strong> Beratung, Motivation, ggf. Begleittherapie</li>
+          </ul>
+          <p>Ziel ist es, Ihre Lebensqualität zu erhöhen, Risiken früh zu erkennen und Sie zu einem gesunden, aktiven Leben zu befähigen.</p>
+        </section>
+
+      </div>
+    </div>
   </div>
-</section><section class="section">
-  <h3 id="labor">Laboruntersuchungen</h3>
-  <p>Wir führen alle wichtigen Blut‑ und Urinuntersuchungen durch, um Veränderungen früh zu erkennen und gezielt zu behandeln.</p>
-
-  <h4>Labor (inkl. IGeL‑Leistungen)</h4>
-  <p>Je nach Indikation untersuchen wir u.&nbsp;a.:</p>
-  <ul class="checklist">
-    <li>Blutzucker und HbA1c</li>
-    <li>Cholesterin (Gesamt, LDL, HDL) und Triglyzeride</li>
-    <li>Leber‑ und Nierenwerte</li>
-    <li>Blutbild, Elektrolyte und Entzündungswerte</li>
-    <li>Schilddrüsenwerte: TSH, fT3, fT4</li>
-    <li>Urinstix, ggf. ‑Sediment und ‑Kultur</li>
-  </ul>
-  <p>Zusätzlich als IGeL (nicht Kassenleistung), z.&nbsp;B.:</p>
-  <ul class="checklist">
-    <li>Schilddrüsenwerte: TSH, fT3, fT4</li>
-    <li>Vitamin‑/Mineralstoffanalysen: Vitamin&nbsp;D, Vitamin&nbsp;B12, Eisen, Ferritin, Folsäure, Magnesium, Calcium</li>
-    <li>Spezielle Entzündungs‑/Herz‑Kreislauf‑Marker: CRP, Lipoprotein(a), NT‑proBNP, ggf. weitere Marker, Rheumafaktoren, BSG</li>
-    <li>PSA (Prostata‑spezifisches Antigen) zur Früherkennung von Prostataveränderungen</li>
-  </ul>
-  <p>Wir beraten Sie, welche Untersuchungen für Sie individuell sinnvoll sind, und führen diese zuverlässig und zeitnah durch.</p>
-</section><section class="section">
-  <h3 id="herz">Herz‑Kreislauf‑Untersuchungen</h3>
-  <p>Regelmäßige Messungen und Funktionsdiagnostik helfen, Herz‑Kreislauf‑Erkrankungen früh zu erkennen und Komplikationen zu vermeiden.</p>
-  <ul class="checklist">
-    <li><strong>Blutdruckkontrollen:</strong> regelmäßige Messungen für optimale Einstellung.</li>
-    <li><strong>EKG:</strong> Erfassung der elektrischen Herzaktivität.</li>
-    <li><strong>Langzeit‑EKG (24h):</strong> Erkennung von Herzrhythmusstörungen.</li>
-    <li><strong>Langzeit‑Blutdruckmessung (24h):</strong> zuverlässige Bewertung von Blutdruckschwankungen.</li>
-    <li><strong>NT‑proBNP:</strong> Marker zur Erkennung von Herzschwäche (Herzinsuffizienz) oder erhöhtem Risiko.</li>
-  </ul>
-  <p>Zusätzlich beraten wir zu Lebensstilmaßnahmen: Bewegung, Ernährung, Stressmanagement, Rauchstopp.</p>
-</section><section class="section">
-  <h3 id="lungen">Lungenfunktionsprüfung</h3>
-  <p>Mit der Spirometrie überprüfen wir die Lungenfunktion, erkennen Erkrankungen frühzeitig und überwachen Verläufe – z.&nbsp;B. bei Asthma, COPD, chronischem Husten oder Luftnot.</p>
-  <ul class="checklist">
-    <li><strong>Spirometrie:</strong> Messung von Lungenvolumina und Atemfluss.</li>
-    <li><strong>Peak‑Flow‑Messung:</strong> Verlaufskontrolle bei Asthma.</li>
-    <li><strong>Beratung &amp; Auswertung:</strong> verständliche Erklärung, frühzeitiges Handeln, gezielte Therapie.</li>
-  </ul>
-</section><section class="section">
-  <h3 id="praevention">Prävention &amp; Lebensstil</h3>
-  <p>Wir unterstützen Sie dabei, gesund zu bleiben und Erkrankungen vorzubeugen – abgestimmt auf Ihre Lebenssituation.</p>
-  <ul class="checklist">
-    <li><strong>Ernährungsberatung:</strong> ausgewogene Ernährung, Gewichtsmanagement, Prävention von Stoffwechselerkrankungen.</li>
-    <li><strong>Bewegung &amp; Sport:</strong> individuelle Empfehlungen für ein regelmäßiges Programm.</li>
-    <li><strong>Stressmanagement:</strong> Strategien zur Entlastung und Erholung.</li>
-    <li><strong>Rauchentwöhnung:</strong> Unterstützung inkl. Beratung, Motivation und ggf. Begleittherapie.</li>
-    <li><strong>Individuelle Vorsorgeempfehlungen:</strong> passende Untersuchungen, Impfungen und Maßnahmen.</li>
-  </ul>
-  <p>Ziel ist es, Risiken früh zu erkennen, Komplikationen zu verhindern und Ihre Lebensqualität zu erhöhen.</p>
-</section><section class="section highlight">
-  <div class="callout">
-    <strong>Termin vereinbaren:</strong>
-    <a class="button" href="terminbuchung.html">Online‑Termin</a>
-    <span class="muted">oder telefonisch über den Empfang.</span>
-  </div>
-</section></div>
 </main>
+
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
 
@@ -193,6 +175,7 @@
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
 <script>
   (function(){
     var btn = document.querySelector('.menu-toggle');
@@ -216,23 +199,5 @@
     });
   })();
 </script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const sections = document.querySelectorAll('#vorsorge, #impfungen, #dmp, #labor, #herz, #lungen, #praevention');
-  const navLinks = document.querySelectorAll('.page-toc a');
-
-  function activateLink(){
-    let index = sections.length;
-    while(--index && window.scrollY + 120 < sections[index].offsetTop) {}
-    navLinks.forEach((link) => link.classList.remove('active'));
-    if (navLinks[index]) navLinks[index].classList.add('active');
-  }
-
-  activateLink();
-  window.addEventListener('scroll', activateLink);
-});
-</script>
-
 </body>
 </html>
