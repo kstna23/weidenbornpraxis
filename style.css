@@ -5,9 +5,9 @@
 /* --- CSS Custom Properties (Theme) --- */
 :root {
   --bg: #F7F1DE;
-  --paper: #B07C63;
-  --header-bg: #FCF6E3;     /* Header */
-  --footer-bg: #FCF6E3;     /* Footer */
+  --paper: #FCF6E3; 
+  --header-bg: #B07C63;     /* Header */
+  --footer-bg: #B07C63;     /* Footer */
   --ink: #3a2c1e;
   --brand: #1F4396;
   --brand-dark: #16306b;
