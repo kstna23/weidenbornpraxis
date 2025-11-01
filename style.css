@@ -62,6 +62,14 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0;
   letter-spacing: 0.5px;
+
+  .logo-bold {
+  font-weight: 600;   /* Semi Bold */
+}
+
+  .logo-light {
+  font-weight: 300;   /* Light */
+}
 }
 
 .subtitle {
