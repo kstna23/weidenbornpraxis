@@ -119,18 +119,17 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
 }
 
-/* --- Hero Image Box --- */
+/* --- Hero Image (zentriert, 70% Breite) --- */
 .hero img {
-  margin-top: 2rem;
-  width: 100%;
+  margin: 2rem auto;         /* zentriert das Bild */
+  width: 70%;                /* Begrenzung der Breite */
+  max-width: 1000px;         /* optional, verhindert zu große Darstellung auf großen Bildschirmen */
   height: auto;
   display: block;
-  border: 4px solid var(--brand);
-  border-radius: 0px;
-  background-color: var(--paper);
-  box-shadow: var(--shadow);
-  padding: 0.5rem; /* optional, erzeugt den "Box"-Look mit Innenabstand */
+  border: none;
+  box-shadow: none;
 }
+
 
 /* --- Sections --- */
 .intro, .services, .about-us { padding: 3rem 1rem 2.5rem; }
