@@ -96,6 +96,19 @@ img {
   text-align: center;
 }
 
+/* Logo-Link (zur Startseite) */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.logo-link:hover,
+.logo-link:focus-visible {
+  text-decoration: none;
+  opacity: 0.9; /* leichtes Feedback beim Hover */
+}
+
 /* Burger-Button: immer sichtbar, absolut am rechten Seitenrand des Headers */
 .menu-toggle {
   position: absolute;
