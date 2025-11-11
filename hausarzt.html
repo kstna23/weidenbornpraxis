@@ -30,17 +30,16 @@
       margin-bottom: 1.8rem;
     }
     .intro-section figure {
-      flex: 0 0 40%;
-      max-width: 360px;
-      margin: 0;
-    }
-    .intro-section img {
-      width: 100%;
-      height: auto;
-      border-radius: 0px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  flex: 0 0 40%;
+  max-width: 360px;
+  margin: 0;
+  align-self: flex-start; /* sorgt für Ausrichtung oben */
+}
+
+.intro-section img {
+  margin-top: 0; /* entfernt möglichen oberen Abstand */
+  display: block;
+}
     .intro-section img:hover {
       transform: scale(1.02);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
