@@ -438,3 +438,11 @@ label {
     max-width: 100%;
   }
 }
+/* --- Hausarzt & Leistungsseiten: Bildgröße optimieren --- */
+.page-service .intro-section figure img {
+  max-width: 480px;    /* maximale Bildbreite auf großen Bildschirmen */
+  width: 100%;         /* skaliert trotzdem responsiv */
+  height: auto;
+  margin-inline: auto; /* zentriert das Bild innerhalb der Spalte */
+  display: block;
+}
