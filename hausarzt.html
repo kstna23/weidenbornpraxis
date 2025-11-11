@@ -11,104 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <style>
-    /* zentrierte Überschrift */
-    h2 {
-      text-align: center;
-      font-weight: 600;
-      margin-top: 1.2rem;
-      margin-bottom: 1.6rem;
-    }
-
-    /* Bild mit Textumfluss */
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 1.8rem;
-    }
-    .intro-section figure {
-      flex: 0 0 40%;
-      max-width: 360px;
-      margin: 0;
-    }
-    .intro-section img {
-      width: 100%;
-      height: auto;
-      border-radius: 0px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .intro-section img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-    }
-    .intro-text {
-      flex: 1;
-      min-width: 260px;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    /* Info-Kästchen */
-    .info-box {
-      background-color: #E0C4AF;
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      margin-top: 1.25rem;
-    }
-    .info-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-    .info-section {
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 1rem 1rem 0.75rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .info-section h3 { margin-top: 0; }
-    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
-    .info-section p { margin-top: 0.4rem; }
-
-    @media (min-width: 840px) {
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 720px) {
-      .intro-section {
-        flex-direction: column;
-      }
-      .intro-section figure {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
 <header class="site-header">
   <div class="container header-flex">
-    <!-- Logo + Subtitle sind jetzt klickbarer Link -->
-    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
-      <div class="logo-block">
-        <h1 class="logo">
-          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
-        </h1>
-        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-      </div>
-    </a>
+    <div class="logo-block">
+      <h1 class="logo">
+        <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
+      </h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    </div>
 
-    <!-- Burger Menü -->
-    <button class="menu-toggle"
-            aria-controls="hauptnav"
-            aria-expanded="false"
-            aria-label="Hauptmenü öffnen">☰</button>
-
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
@@ -117,7 +32,6 @@
     </nav>
   </div>
 </header>
-
 
 <main class="main" id="hauptinhalt">
   <div class="container">
