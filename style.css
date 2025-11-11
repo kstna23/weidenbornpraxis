@@ -15,7 +15,7 @@
   --radius: 0px;
   --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
   --shadow: 0 4px 8px rgba(0,0,0,0.08);
-  --container-max: 1200px;
+  --container-max: 1000px;
   --header-pad-y: 0.75rem;
 }
 
