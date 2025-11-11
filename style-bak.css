@@ -4,13 +4,15 @@
 
 /* --- CSS Custom Properties (Theme) --- */
 :root {
-  --bg: #DED9D3;
-  --paper: #EBE5DF;
-  --ink: #3a2c1e;
-  --brand: #1F4396;
-  --brand-dark: #16306b;
+  --bg: #F2E2D5;
+  --paper: #F2E2D5; 
+  --header-bg: #E0C4AF;     /* Header */
+  --footer-bg: #F2E2D5;     /* Footer */
+  --ink: #8A322E;
+  --brand: #70201E; 
+  --brand-dark: #70201E;
   --muted: #777;
-  --radius: 2px;
+  --radius: 0px;
   --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
   --shadow: 0 4px 8px rgba(0,0,0,0.08);
   --container-max: 1200px;
@@ -38,7 +40,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- Header / Navigation --- */
 .site-header {
-  background-color: var(--paper);
+  background-color: var(--header-bg);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
@@ -60,6 +62,14 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0;
   letter-spacing: 0.5px;
+
+  .logo-bold {
+  font-weight: 600;   /* Semi Bold */
+}
+
+  .logo-light {
+  font-weight: 300;   /* Light */
+}
 }
 
 .subtitle {
@@ -101,9 +111,25 @@ img { max-width: 100%; height: auto; display: block; }
   margin-left: auto;
 }
 
-/* --- Hero --- */
-.hero { max-width: var(--container-max); margin: 0 auto; padding: 0 1rem; }
-.hero img { margin-top: 2rem; width: 100%; height: auto; display: block; }
+/* --- Hero (volle Bildschirmbreite) --- */
+.hero {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* --- Hero Image (zentriert, 70% Breite) --- */
+.hero img {
+  margin: 2rem auto;         /* zentriert das Bild */
+  width: 70%;                /* Begrenzung der Breite */
+  max-width: 1000px;         /* optional, verhindert zu große Darstellung auf großen Bildschirmen */
+  height: auto;
+  display: block;
+  border: none;
+  box-shadow: none;
+}
+
 
 /* --- Sections --- */
 .intro, .services, .about-us { padding: 3rem 1rem 2.5rem; }
@@ -132,7 +158,7 @@ h2, h3 { color: var(--brand); }
 
 /* --- Footer --- */
 .site-footer {
-  background-color: var(--paper);
+  background-color: var(--footer-bg);
   text-align: center;
   padding: 2rem 1rem;
   color: var(--muted);
