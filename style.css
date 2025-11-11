@@ -50,7 +50,6 @@ img { max-width: 100%; height: auto; display: block; }
 .header-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
   padding: var(--header-pad-y) 0;
 }
@@ -70,7 +69,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* für geteiltes Logo WEIDENBORN + praxis */
 .logo-weidenborn {
-  font-weight: 600;   /* Semi Bold */
+  font-weight: 700;   /* jetzt wirklich BOLD */
 }
 
 .logo-praxis {
@@ -84,42 +83,9 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 400;
 }
 
-/* Primary nav (desktop) */
-.main-nav {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.95rem;
-}
-
-.main-nav a {
-  position: relative;
-  color: var(--brand);
-  text-decoration: none;
-  font-weight: 400;
-  padding: 0.2rem 0;
-}
-
-/* dezente Unterstreichung beim Hover/Fokus */
-.main-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.1rem;
-  width: 0;
-  height: 2px;
-  background-color: var(--brand);
-  transition: width 0.2s ease-out;
-}
-
-.main-nav a:hover::after,
-.main-nav a:focus-visible::after {
-  width: 100%;
-}
-
+/* Burger-Button: immer sichtbar, rechts im Header */
 .menu-toggle {
-  display: none;
+  display: block;
   background: none;
   border: none;
   font-size: 1.8rem;
@@ -127,7 +93,49 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--brand);
   cursor: pointer;
   padding: 0.5rem 0.6rem;
-  margin-left: auto;
+  margin-left: auto;       /* schiebt ihn ganz nach rechts */
+}
+
+/* Side-Drawer Navigation (alle Viewports) */
+.main-nav {
+  position: fixed;
+  right: 0;
+  top: calc(var(--header-pad-y) * 2 + 52px);
+  background-color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  padding: 0.75rem 0.75rem 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  border-bottom-left-radius: 14px;
+  width: min(70vw, 320px);
+  transform: translateX(100%);   /* außerhalb des Screens, rechts */
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 999;
+}
+
+/* wenn .menu-open am Body hängt (per JS), slidet das Menü rein */
+body.menu-open .main-nav {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main-nav a {
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0.8rem 0.9rem;
+  border-radius: 8px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background-color: rgba(0,0,0,0.03);
+  text-decoration: none;   /* keine Unterstreichung mehr */
 }
 
 /* --- Hero (volle Bildschirmbreite) --- */
@@ -140,15 +148,14 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- Hero Image (zentriert, 70% Breite) --- */
 .hero img {
-  margin: 2rem auto;         /* zentriert das Bild */
-  width: 70%;                /* Begrenzung der Breite */
-  max-width: 1000px;         /* verhindert zu große Darstellung auf großen Bildschirmen */
+  margin: 2rem auto;         
+  width: 70%;                
+  max-width: 1000px;         
   height: auto;
   display: block;
   border: none;
   box-shadow: none;
 }
-
 
 /* --- Sections --- */
 .intro, .services, .about-us { padding: 3rem 1rem 2.5rem; }
@@ -240,29 +247,6 @@ label { font-weight: 500; color: var(--ink); display: block; }
   .hero img { margin-top: 0.5rem; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card img { height: auto; }
-
-  .menu-toggle { display: block; }
-
-  .main-nav {
-    position: fixed;
-    left: 0; right: 0;
-    top: calc(var(--header-pad-y) * 2 + 52px);
-    background-color: var(--paper);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.25rem;
-    padding: 0.75rem 0.75rem 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-    transform-origin: top center;
-    transform: translateY(-10px);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-  }
-  body.menu-open .main-nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .main-nav a { padding: 0.8rem 0.9rem; border-radius: 8px; }
 }
 
 @media (max-width: 480px) {
@@ -272,8 +256,6 @@ label { font-weight: 500; color: var(--ink); display: block; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
-
-
 
 /* Hausärztliche Versorgung – Layout-Ergänzungen */
 .lead { font-size: 1.125rem; line-height: 1.6; margin: 0 0 1rem; }
