@@ -350,3 +350,65 @@ label {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 260px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Info-Kästchen (z. B. Leistungen / Inhalte) */
+.info-box {
+  background-color: #E0C4AF;
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 1.25rem;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.info-section {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 0.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-section h3 {
+  margin-top: 0;
+}
+
+.info-section ul {
+  margin: 0.25rem 0 0.25rem 1.1rem;
+}
+
+.info-section p {
+  margin-top: 0.4rem;
+}
+
+/* Responsives Verhalten */
+@media (min-width: 840px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .intro-section {
+    flex-direction: column;
+  }
+  .intro-section figure {
+    max-width: 100%;
+  }
+}
