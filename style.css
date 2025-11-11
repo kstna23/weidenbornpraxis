@@ -96,17 +96,38 @@ img {
   text-align: center;
 }
 
-/* Logo-Link (zur Startseite) */
+/* ===================================================
+   Klickbarer Logo-Link (zentriert, ohne Hover-Stil)
+   =================================================== */
+
+/* Logo-Link soll sich wie Block verhalten, zentriert bleiben */
 .logo-link {
+  display: inline-block;
   text-decoration: none;
   color: inherit;
-  display: inline-block;
+  margin: 0 auto;
 }
 
+/* zentriert innerhalb des Flex-Headers */
+.logo-block {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Keine optischen Effekte beim Hover oder Fokus */
 .logo-link:hover,
+.logo-link:focus,
 .logo-link:focus-visible {
-  text-decoration: none;
-  opacity: 0.9; /* leichtes Feedback beim Hover */
+  text-decoration: none !important;
+  color: inherit !important;
+  opacity: 1;
+}
+
+/* Sicherheitshalber Unterstreichung und Effekt auch für .logo entfernen */
+.logo:hover,
+.logo:focus {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 /* Burger-Button: immer sichtbar, absolut am rechten Seitenrand des Headers */
