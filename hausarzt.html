@@ -13,92 +13,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* zentrierte Überschrift */
-    h2 {
-      text-align: center;
-      font-weight: 600;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Bild mit Textumfluss */
+    /* Intro-Bereich mit Überschrift + Bild nebeneinander */
     .intro-section {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
-      gap: 1.5rem;
-      margin-top: 0;
-      margin-bottom: 1.8rem;
+      gap: 1.8rem;
+      margin-top: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .intro-copy {
+      flex: 1 1 280px;
+      min-width: 260px;
+    }
+
+    .intro-copy h2 {
+      color: var(--brand);
+      font-weight: 600;
+      margin: 0 0 1rem 0; /* kein Abstand nach oben, nur nach unten */
+      text-align: left;
+    }
+
+    .intro-copy p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .intro-section figure {
-      flex: 0 0 40%;
-      max-width: 360px;
+      flex: 0 0 38%;
+      max-width: 380px;
       margin: 0;
-      padding: 0;
-      align-self: flex-start;
     }
 
     .intro-section img {
       width: 100%;
       height: auto;
-      margin-top: 0;
       display: block;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .intro-section img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-    }
-
-    .intro-text {
-      flex: 1;
-      min-width: 260px;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      align-self: flex-start;
-      margin-top: 0;
+      border-radius: 0;       /* keine abgerundeten Ecken */
+      box-shadow: var(--shadow-sm);
     }
 
     /* Info-Kästchen */
     .info-box {
       background-color: #E6DECD;
       border-radius: var(--radius);
-      padding: 1.25rem;
+      padding: 1.5rem;
       box-shadow: var(--shadow-sm);
-      margin-top: 1.25rem;
+      margin-top: 0.5rem;
     }
+
+    .info-box h3 {
+      margin-top: 0;
+    }
+
     .info-grid {
       display: grid;
       gap: 1rem;
       grid-template-columns: 1fr;
     }
+
     .info-section {
       background: var(--paper);
       border-radius: var(--radius);
-      padding: 1rem 1rem 0.75rem;
+      padding: 1rem 1rem 0.9rem;
       box-shadow: var(--shadow-sm);
     }
-    .info-section h3 { margin-top: 0; }
-    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
-    .info-section p { margin-top: 0.4rem; }
+
+    .info-section ul {
+      margin: 0.25rem 0 0.25rem 1.1rem;
+      padding-left: 0;
+    }
+
+    .info-section p {
+      margin-top: 0.4rem;
+    }
 
     @media (min-width: 840px) {
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 720px) {
       .intro-section {
         flex-direction: column;
       }
+      .intro-copy h2 {
+        text-align: center;
+      }
       .intro-section figure {
         max-width: 100%;
-      }
-      .intro-section img {
-        margin: 0 auto;
+        margin-inline: auto;
       }
     }
   </style>
@@ -125,24 +132,139 @@
 <main class="main" id="hauptinhalt">
   <div class="container">
 
-    <h2>Hausärztliche Versorgung</h2>
-
-    <!-- Einleitung mit Bild links und Text rechts -->
+    <!-- Überschrift + Einleitung + Bild in einer Zeile -->
     <section class="intro-section">
-      <figure>
-        <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
-      </figure>
-      <div class="intro-text">
-        <p>Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen oder die kontinuierliche Betreuung bei chronischen Erkrankungen – wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine individuelle Beratung und eine vertrauensvolle Arzt-Patienten-Beziehung.</p>
+      <div class="intro-copy">
+        <h2>Hausärztliche Versorgung</h2>
+        <p>
+          Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen – von akuten Beschwerden
+          über Vorsorgeuntersuchungen und Impfungen bis hin zur langfristigen Betreuung bei
+          chronischen Erkrankungen. Uns ist wichtig, Sie persönlich zu kennen, Veränderungen
+          frühzeitig zu erkennen und gemeinsam passende Behandlungsschritte zu planen.
+        </p>
       </div>
+
+      <figure>
+        <img loading="lazy"
+             src="images/hausarzt.jpeg"
+             alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
+      </figure>
     </section>
 
     <!-- Info-Kästchen -->
     <div class="info-box" aria-label="Leistungsschwerpunkte der hausärztlichen Versorgung">
       <div class="info-grid">
-        <!-- (restlicher Inhalt bleibt unverändert) -->
+
+        <section class="info-section" id="vorsorge">
+          <h3>Vorsorgeuntersuchungen (Check-up &amp; IGeL-Leistungen)</h3>
+          <p>
+            Vorsorge hilft, Erkrankungen frühzeitig zu erkennen und Risiken rechtzeitig
+            zu reduzieren. Die gesetzlichen Krankenkassen übernehmen u. a.:
+          </p>
+          <ul>
+            <li><strong>Einmaliger Check-up</strong> zwischen 18 und 35 Jahren</li>
+            <li><strong>Ab 35 Jahren:</strong> alle drei Jahre ein Check-up („Check-up 35“) mit Anamnese, Untersuchung sowie Blut- und Urinwerten</li>
+          </ul>
+          <p>
+            Ergänzend bieten wir <em>Individuelle Gesundheitsleistungen (IGeL)</em> an, z. B. erweiterte
+            Laboruntersuchungen, Sonographie oder zusätzliche Vorsorgechecks – abgestimmt auf Ihr persönliches Risiko.
+          </p>
+        </section>
+
+        <section class="info-section" id="impfungen">
+          <h3>Impfungen</h3>
+          <p>
+            Wir prüfen Ihren Impfstatus, beraten zu empfohlenen Impfungen und führen
+            Standard-, Auffrischungs- und Reiseimpfungen durch. Bitte bringen Sie zu jedem
+            Impftermin Ihren Impfpass mit.
+          </p>
+          <p><strong>Beispiele:</strong></p>
+          <ul>
+            <li>Auffrischungen von Tetanus, Diphtherie, Pertussis</li>
+            <li>Grippeschutz-Impfung (Influenza)</li>
+            <li>Impfungen für Senior:innen und Risikogruppen (z. B. Pneumokokken, Herpes Zoster, RSV)</li>
+            <li>Reiseimpfungen je nach Zielgebiet</li>
+          </ul>
+          <p>
+            Ziel ist ein vollständiger, aktueller Impfschutz – individuell auf Ihre Lebenssituation abgestimmt.
+          </p>
+        </section>
+
+        <section class="info-section" id="labor">
+          <h3>Laboruntersuchungen</h3>
+          <p>
+            Laborwerte geben wichtige Hinweise auf Stoffwechsel, Organfunktionen und Entzündungen.
+            Wir führen sowohl Routine- als auch erweiterte Laboruntersuchungen durch.
+          </p>
+          <p><strong>Typische Parameter:</strong></p>
+          <ul>
+            <li>Blutzucker, HbA1c</li>
+            <li>Cholesterin und weitere Blutfette</li>
+            <li>Leber- und Nierenwerte, Elektrolyte</li>
+            <li>Blutbild und Entzündungswerte</li>
+            <li>Schilddrüsenwerte (z. B. TSH)</li>
+          </ul>
+          <p>
+            Bei Bedarf ergänzen wir das Spektrum z. B. um Vitamin-, Spurenelement- oder
+            kardiovaskuläre Risikomarker und beraten Sie zu Bedeutung und Konsequenzen der Ergebnisse.
+          </p>
+        </section>
+
+        <section class="info-section" id="herz-kreislauf">
+          <h3>Herz-Kreislauf-Diagnostik</h3>
+          <p>
+            Herz- und Kreislauferkrankungen sind häufig – gleichzeitig lässt sich mit frühen
+            Kontrollen vieles verhindern.
+          </p>
+          <ul>
+            <li>Regelmäßige <strong>Blutdruckkontrollen</strong></li>
+            <li><strong>Ruhe-EKG</strong> zur Beurteilung von Rhythmus und Belastung</li>
+            <li><strong>Langzeit-EKG</strong> (24 h) bei Verdacht auf Rhythmusstörungen</li>
+            <li><strong>Langzeit-Blutdruckmessung</strong> zur Therapieanpassung</li>
+          </ul>
+          <p>
+            Dazu beraten wir zu Bewegung, Ernährung, Stressreduktion und weiteren
+            Lebensstilfaktoren, um Ihr persönliches Risiko zu senken.
+          </p>
+        </section>
+
+        <section class="info-section" id="lunge">
+          <h3>Lungenfunktionsprüfung</h3>
+          <p>
+            Bei Atemnot, Husten oder bekannten Lungenerkrankungen prüfen wir Ihre
+            Lungenfunktion, um Beschwerden besser einordnen und behandeln zu können.
+          </p>
+          <ul>
+            <li><strong>Spirometrie:</strong> Messung von Lungenvolumen und Atemfluss</li>
+            <li><strong>Peak-Flow-Messungen:</strong> Verlaufsbeurteilung z. B. bei Asthma</li>
+          </ul>
+          <p>
+            Die Ergebnisse besprechen wir ausführlich und leiten – wenn nötig – weitere
+            Diagnostik oder Therapie ein.
+          </p>
+        </section>
+
+        <section class="info-section" id="praevention">
+          <h3>Prävention &amp; Lebensstilberatung</h3>
+          <p>
+            Medizin ist mehr als die Behandlung von Erkrankungen. Ein wichtiger Schwerpunkt
+            unserer hausärztlichen Tätigkeit ist die Prävention.
+          </p>
+          <ul>
+            <li><strong>Ernährungsberatung</strong> bei Übergewicht, Stoffwechselstörungen oder speziellen Fragestellungen</li>
+            <li><strong>Bewegungsempfehlungen</strong> passend zu Alltag und gesundheitlicher Situation</li>
+            <li><strong>Beratung zu Stress, Schlaf &amp; psychischer Balance</strong></li>
+            <li><strong>Unterstützung beim Rauchstopp</strong></li>
+          </ul>
+          <p>
+            Gemeinsam entwickeln wir realistische Schritte, die sich gut in Ihren Alltag integrieren lassen
+            – für mehr Lebensqualität auf lange Sicht.
+          </p>
+        </section>
+
       </div>
     </div>
+
   </div>
 </main>
 
