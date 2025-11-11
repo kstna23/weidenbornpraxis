@@ -412,3 +412,29 @@ label {
     max-width: 100%;
   }
 }
+
+/* --- Leistungsseiten: Intro-Layout bündig skalieren --- */
+.page-service .container {
+  padding: 0 1rem; /* gleiche Innenabstände wie Startseite */
+}
+
+.page-service .intro-section {
+  margin-top: 1rem;       /* Luft unter der Überschrift */
+  align-items: center;    /* Bild und Text vertikal zentrieren */
+}
+
+.page-service .intro-section figure,
+.page-service .intro-section .intro-text {
+  flex: 1 1 50%;          /* harmonisch nebeneinander */
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .page-service .intro-section {
+    flex-direction: column;
+  }
+  .page-service .intro-section figure,
+  .page-service .intro-section .intro-text {
+    max-width: 100%;
+  }
+}
