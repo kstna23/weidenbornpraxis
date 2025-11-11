@@ -187,22 +187,16 @@ body.menu-open .main-nav {
   text-decoration: none;
 }
 
-/* --- Hero (Breite) --- */
+/* Hero-Bild bündig mit Text & Kacheln */
 .hero {
-  margin: 0;              /* kein zusätzlicher Rand nötig */
-}
-
-.hero .container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 1rem;        /* exakt wie deine anderen Container */
+  margin: 0;              /* kein zusätzlicher Außenabstand */
 }
 
 .hero img {
   display: block;
-  width: 100%;
+  width: 100%;            /* füllt die Breite des .container aus */
   height: auto;
-  margin-top: 2rem;
+  margin-top: 2rem;       /* Abstand zum Header */
 }
 
 /* --- Sections --- */
