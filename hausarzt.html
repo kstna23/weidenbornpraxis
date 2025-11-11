@@ -13,7 +13,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* --- Intro-Bereich --- */
+    /* Logo-Feintuning: WEIDENBORN bold, praxis light */
+    .logo {
+      font-weight: 300;
+    }
+    .logo-weidenborn {
+      font-weight: 600;
+    }
+    .logo-praxis {
+      font-weight: 300;
+    }
+
+    /* --- Intro-Bereich: Bild links, Überschrift+Text rechts, gleiche Höhe --- */
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -97,16 +108,27 @@
       }
     }
 
+    /* --- Mobile-Optimierung --- */
     @media (max-width: 720px) {
       .intro-section {
         flex-direction: column;
+        gap: 1.2rem;          /* weniger Abstand zwischen Bild & Text */
+        margin-top: 1.5rem;   /* etwas näher an den Header ran */
+        margin-bottom: 0.75rem; /* Lücke nach unten deutlich kleiner */
       }
+
       .intro-copy h2 {
         text-align: center;
       }
+
       .intro-section figure {
         max-width: 100%;
         margin-inline: auto;
+      }
+
+      .info-box {
+        margin-top: 0.25rem;       /* kleiner Abstand zu Text */
+        padding: 1.1rem 1rem;      /* etwas kompakter */
       }
     }
   </style>
@@ -116,7 +138,9 @@
 <header class="site-header">
   <div class="container header-flex">
     <div class="logo-block">
-      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <h1 class="logo">
+        <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
+      </h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
@@ -133,7 +157,7 @@
 <main class="main" id="hauptinhalt">
   <div class="container">
 
-    <!-- Bild links, Text rechts -->
+    <!-- Bild links, Überschrift & Text rechts -->
     <section class="intro-section">
       <figure>
         <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
