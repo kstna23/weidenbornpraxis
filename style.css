@@ -198,7 +198,7 @@ body.menu-open .main-nav {
 /* Hero-Bild zentriert, auf 70 % der Breite begrenzt */
 .hero img {
   margin: 2rem auto;
-  width: 80%;
+  width: 70%;
   max-width: 1000px;
   height: auto;
   display: block;
