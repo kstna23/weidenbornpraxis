@@ -189,16 +189,20 @@ body.menu-open .main-nav {
 
 /* --- Hero (Breite) --- */
 .hero {
+  margin: 0;              /* kein zusätzlicher Rand nötig */
+}
+
+.hero .container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1rem;   /* gleiche Innenabstände wie der Text (.container) */
+  padding: 0 1rem;        /* exakt wie deine anderen Container */
 }
 
 .hero img {
-  margin-top: 2rem;
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  margin-top: 2rem;
 }
 
 /* --- Sections --- */
