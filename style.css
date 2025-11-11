@@ -99,7 +99,7 @@ img {
 /* Burger-Button: immer sichtbar, absolut am rechten Seitenrand des Headers */
 .menu-toggle {
   position: absolute;
-  right: 3;          /* jetzt wirklich an der rechten Kante */
+  right: 2.5rem;          /* jetzt wirklich an der rechten Kante */
   top: 50%;
   transform: translateY(-50%);
   background: none;
