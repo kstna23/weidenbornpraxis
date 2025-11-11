@@ -446,3 +446,24 @@ label {
   margin-inline: auto; /* zentriert das Bild innerhalb der Spalte */
   display: block;
 }
+
+/* --- Leistungsseiten: Überschrift + Bild + Text nebeneinander --- */
+.page-service .intro-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.page-service .intro-section figure {
+  flex: 0 0 40%;
+  max-width: 400px;
+}
+
+.page-service .intro-section .intro-text {
+  flex: 1;
+}
+
+.page-service .intro-section h2 {
+  text-align: left;
+  margin-top: 0;
+}
