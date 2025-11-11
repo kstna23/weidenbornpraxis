@@ -1,287 +1,248 @@
-/* ============================================
-   WEIDENBORNpraxis — Mobile-optimized style.css
-   ============================================ */
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>Hausärztliche Versorgung – WEIDENBORNpraxis</title>
+  <meta name="description" content="Hausärztliche Versorgung in der WEIDENBORNpraxis: Vorsorge, Impfungen, Labor, Herz-Kreislauf, Lungenfunktion & Präventionsberatung.">
+  <meta name="keywords" content="Hausarzt, Hausärztliche Versorgung, Check-up, Impfungen, Labor, EKG, Lungenfunktion, Frankfurt">
+  <meta name="author" content="WEIDENBORNpraxis">
+  <meta name="robots" content="index, follow">
 
-/* --- CSS Custom Properties (Theme) --- */
-:root {
-  --bg: #F2E5DC;
-  --paper: #F6F3EC;
-  --ink: #3a2c1e;
-  --brand: #1F4396;
-  --brand-dark: #16306b;
-  --muted: #777;
-  --radius: 10px;
-  --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
-  --shadow: 0 4px 8px rgba(0,0,0,0.08);
-  --container-max: 1200px;
-  --header-pad-y: 0.75rem;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
-/* --- Base / Reset --- */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--ink);
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.6;
-}
+  <style>
+    /* zentrierte Überschrift */
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
 
-img { max-width: 100%; height: auto; display: block; }
+    /* Bild mit Textumfluss */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .intro-section figure {
+      flex: 0 0 40%;
+      max-width: 360px;
+      margin: 0;
+    }
+    .intro-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .intro-section img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+    .intro-text {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
 
-.container {
-  width: min(90%, var(--container-max));
-  margin-inline: auto;
-}
+    /* Info-Kästchen */
+    .info-box {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+      background-color: #B3A69C;
+=======
+      background-color: #E0C4AF;
+>>>>>>> Stashed changes
+=======
+      background-color: #E0C4AF;
+>>>>>>> Stashed changes
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 1.25rem;
+    }
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    .info-section {
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-section h3 { margin-top: 0; }
+    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
+    .info-section p { margin-top: 0.4rem; }
 
-/* --- Header / Navigation --- */
-.site-header {
-  background-color: var(--paper);
-  box-shadow: var(--shadow-sm);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    @media (min-width: 840px) {
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-/* Header-Container über die volle Seitenbreite,
-   damit der Burger wirklich am rechten Seitenrand sitzt */
-.site-header .container {
-  width: 100%;
-  margin-inline: 0;
-}
+    @media (max-width: 720px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .intro-section figure {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
 
-.header-flex {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: var(--header-pad-y) 0;
-}
+<body>
+<header class="site-header">
+  <div class="container header-flex">
+   <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
+ <h1 class="logo">
+  <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+ </h1>
+  <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+</a>
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="kontakt.html">Kontakt</a>
+      <a href="terminbuchung.html">Online-Termin</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</header>
 
-.logo-block { flex: 0 0 auto; text-align: left; margin-left: 1.5rem; }
+<main class="main" id="hauptinhalt">
+  <div class="container">
 
-.logo {
-  font-size: clamp(1.75rem, 4.2vw, 3rem);
-  font-weight: 300;
-  color: #000;
-  margin: 0;
-  letter-spacing: 0.5px;
-}
+    <h2>Hausärztliche Versorgung</h2>
 
-/* geteiltes Logo */
-.logo-weidenborn {
-  font-weight: 600; /* semibold */
-}
-.logo-praxis {
-  font-weight: 300; /* light */
-}
+    <!-- Einleitung mit Bild links und Text rechts -->
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/hausarzt.jpeg" alt="Hausärztliche Versorgung in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <p>Wir sind Ihre erste Anlaufstelle in allen Gesundheitsfragen. Ob Vorsorgeuntersuchungen, Impfungen oder die kontinuierliche Betreuung bei chronischen Erkrankungen – wir begleiten Sie verlässlich und langfristig. Dabei legen wir großen Wert auf eine individuelle Beratung und eine vertrauensvolle Arzt-Patienten-Beziehung.</p>
+      </div>
+    </section>
 
-.subtitle {
-  font-size: 0.95rem;
-  color: #000;
-  margin: 0.15rem 0 0;
-  font-weight: 400;
-  text-align: left;
-}
+    <!-- Info-Kästchen -->
+    <div class="info-box" aria-label="Leistungsschwerpunkte der hausärztlichen Versorgung">
+      <div class="info-grid">
+        <section class="info-section" id="vorsorge">
+          <h3>Vorsorgeuntersuchungen (Check-up &amp; IGeL-Leistungen)</h3>
+          <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und dadurch Risiken rechtzeitig zu verringern. Die gesetzlichen Krankenkassen übernehmen:</p>
+          <ul>
+            <li><strong>Einmaliger Check-up</strong> zwischen 18 und 35 Jahren</li>
+            <li><strong>Ab 35 Jahren:</strong> alle drei Jahre ein umfassender Gesundheits-Check („Check-up 35“) inkl. Herz-Kreislauf-Risiken sowie Blut- und Urinwerten</li>
+          </ul>
+          <p>Zusätzlich bieten wir <em>Individuelle Gesundheitsleistungen</em> (GOÄ) an – z. B. spezielle Laboruntersuchungen, Ultraschall oder weitere sinnvolle Tests nach Ihrem Profil. Wir beraten, welche Leistungen für Sie empfehlenswert sind.</p>
+        </section>
 
-/* Burger-Button: immer sichtbar, ganz rechts am Seitenrand */
-.menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  line-height: 1;
-  color: var(--brand);
-  cursor: pointer;
-  padding: 0.5rem 0;   /* nur vertikal, kein Abstand zum Rand */
-  margin-left: auto;
-  margin-right: 0.5rem;
-}
+        <section class="info-section" id="impfungen">
+          <h3>Impfungen</h3>
+          <p>Wir beraten und impfen umfassend – zur Vorsorge, für Reisen oder bei besonderen Risiken. Bitte bringen Sie zum Termin Ihren Impfpass mit.</p>
+          <p><strong>Zielgruppen &amp; Empfehlungen:</strong></p>
+          <ul>
+            <li><strong>Erwachsene:</strong> Auffrischungen (Tetanus, Diphtherie, Pertussis) alle 10 Jahre; Influenza jährlich</li>
+            <li><strong>Senior:innen &amp; Risikogruppen:</strong> Pneumokokken, Influenza, Herpes Zoster, RSV je nach Alter/Vorerkrankungen</li>
+            <li><strong>Besonders gefährdete Gruppen:</strong> chronisch Kranke, Schwangere, medizinisches Personal, Reisende</li>
+          </ul>
+          <p><strong>Leistungsumfang:</strong> Standardimpfungen (STIKO), Reise- &amp; Sonderimpfungen, Aufklärung (Intervalle, Schutzdauer, Nebenwirkungen), Impfpasskontrolle.</p>
+          <p><strong>Ziel:</strong> Schutz vor Infektionen, Vermeidung schwerer Verläufe und vollständiger, aktueller Impfschutz.</p>
+        </section>
 
-/* Side-Drawer Navigation (alle Viewports) */
-.main-nav {
-  position: fixed;
-  right: 0;
-  top: calc(var(--header-pad-y) * 2 + 52px);
-  background-color: var(--paper);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.25rem;
-  padding: 0.75rem 0.75rem 1rem;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.12);
-  border-bottom-left-radius: 14px;
-  width: min(70vw, 320px);
-  transform: translateX(100%);  /* rechts außerhalb */
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  z-index: 999;
-}
+        <section class="info-section" id="labor">
+          <h3>Laboruntersuchungen</h3>
+          <p>Wir führen alle wichtigen Blut- und Urinuntersuchungen durch, um Veränderungen früh zu erkennen und gezielt zu behandeln.</p>
+          <p><strong>Beispiele (inkl. IGeL):</strong></p>
+          <ul>
+            <li>Blutzucker, HbA1c</li>
+            <li>Lipide: Gesamt-, LDL-, HDL-Cholesterin; Triglyzeride</li>
+            <li>Leber- und Nierenwerte; Blutbild, Elektrolyte, Entzündungswerte</li>
+            <li>Schilddrüse: TSH, fT3, fT4</li>
+            <li>Urinstix, ggf. Sediment und Kultur</li>
+          </ul>
+          <p><strong>Erweiterte IGeL nach Wunsch:</strong> Vitamine/Mineralstoffe (z. B. Vitamin D, B12, Eisen/Ferritin, Folsäure, Magnesium, Calcium), kardiometabolische Marker (CRP, Lipoprotein(a), NT-proBNP, ggf. weitere), Rheumafaktoren, BSG, PSA.</p>
+          <p>Wir beraten, was in Ihrer Situation sinnvoll ist, und führen Untersuchungen zuverlässig und zeitnah durch.</p>
+        </section>
 
-/* geöffnetes Menü */
-body.menu-open .main-nav {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
+        <section class="info-section" id="herz-kreislauf">
+          <h3>Herz-Kreislauf-Untersuchungen</h3>
+          <p>Regelmäßige Kontrollen helfen, Erkrankungen früh zu erkennen und Komplikationen zu vermeiden.</p>
+          <ul>
+            <li><strong>Blutdruckkontrollen</strong></li>
+            <li><strong>EKG</strong> zur Erkennung von Rhythmusstörungen u. a.</li>
+            <li><strong>Langzeit-EKG</strong> (24 h)</li>
+            <li><strong>Langzeit-Blutdruckmessung</strong> (24 h)</li>
+            <li><strong>NT-proBNP</strong> zur Einschätzung von Herzschwäche/Risiko</li>
+          </ul>
+          <p>Plus Beratung zu Bewegung, Ernährung, Stressmanagement und Rauchstopp.</p>
+        </section>
 
-.main-nav a {
-  color: var(--brand);
-  text-decoration: none;
-  font-weight: 400;
-  padding: 0.8rem 0.9rem;
-  border-radius: 8px;
-}
+        <section class="info-section" id="lunge">
+          <h3>Lungenfunktionsprüfung</h3>
+          <p>Sinnvoll u. a. bei Asthma, COPD, chronischem Husten oder Luftnot.</p>
+          <ul>
+            <li><strong>Spirometrie:</strong> Lungenvolumina &amp; Flüsse</li>
+            <li><strong>Peak-Flow:</strong> Verlaufskontrolle, z. B. bei Asthma</li>
+          </ul>
+          <p>Wir erklären die Ergebnisse verständlich und leiten bei Bedarf Therapie oder weitere Diagnostik ein – für rechtzeitige Behandlung und stabile Lebensqualität.</p>
+        </section>
 
-.main-nav a:hover,
-.main-nav a:focus-visible {
-  background-color: rgba(0,0,0,0.04);
-  text-decoration: none;
-}
+        <section class="info-section" id="praevention">
+          <h3>Beratung zu Prävention &amp; Lebensstil</h3>
+          <ul>
+            <li><strong>Ernährung:</strong> ausgewogen, Gewichtsmanagement, Stoffwechselprävention</li>
+            <li><strong>Bewegung:</strong> individuelles, alltagstaugliches Programm</li>
+            <li><strong>Stressmanagement:</strong> Strategien für mehr Wohlbefinden</li>
+            <li><strong>Rauchentwöhnung:</strong> Beratung, Motivation, ggf. Begleittherapie</li>
+          </ul>
+          <p>Ziel ist es, Ihre Lebensqualität zu erhöhen, Risiken früh zu erkennen und Sie zu einem gesunden, aktiven Leben zu befähigen.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
 
-/* --- Hero --- */
-.hero {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
+<div class="hero-divider"></div>
+<div style="margin-bottom: 2rem;"></div>
 
-/* Hero-Bild zentriert, 70% Breite */
-.hero img {
-  margin: 2rem auto;
-  width: 70%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-}
+<footer class="site-footer">
+  <div class="container">
+    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
+    <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
+  </div>
+</footer>
 
-/* --- Sections --- */
-.intro, .services, .about-us { padding: 3rem 1rem 2.5rem; }
-.intro h2, .services h2, .about-us h2 {
-  color: var(--brand);
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  text-align: center;
-}
-h2, h3 { color: var(--brand); }
-
-/* --- Cards / Grids --- */
-.services { background-color: var(--bg); }
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.service-card {
-  background-color: var(--paper);
-  border-radius: var(--radius);
-  overflow: hidden;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.service-card:hover { transform: translateY(-4px); }
-
-.service-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  margin: 1rem 0;
-  font-weight: 400;
-  color: var(--brand);
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-/* --- Footer --- */
-.site-footer {
-  background-color: var(--paper);
-  text-align: center;
-  padding: 2rem 1rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.footer-logo { height: 40px; margin-bottom: 0.75rem; }
-
-/* --- Global links & buttons --- */
-button {
-  background-color: var(--brand);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.25s ease;
-}
-button:hover { background-color: var(--brand-dark); }
-
-a { color: var(--brand); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* --- Divider --- */
-.hero-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #ccc, transparent);
-  margin: 2rem auto;
-  width: 80%;
-}
-
-/* --- Forms --- */
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-  background-color: #fff;
-}
-label {
-  font-weight: 500;
-  color: var(--ink);
-  display: block;
-}
-
-/* --- Accessibility: focus styles --- */
-:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--brand) 55%, white);
-  outline-offset: 2px;
-  border-radius: 6px;
-}
-
-/* --- Responsive Enhancements --- */
-@media (max-width: 1024px) {
-  .container { width: 94%; }
-}
-
-@media (max-width: 768px) {
-  body { font-size: clamp(15px, 4.2vw, 17px); }
-  .intro, .services, .about-us { padding: 2rem 1rem; }
-  h2 { font-size: clamp(1.35rem, 4.5vw, 1.6rem); }
-  h3 { font-size: clamp(1.1rem, 4vw, 1.25rem); }
-  .hero img { margin-top: 0.5rem; }
-  .service-grid { grid-template-columns: 1fr; }
-  .service-card img { height: auto; }
-}
-
-@media (max-width: 480px) {
-  p { font-size: 0.95rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
+<script>
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+    function setState(open){
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    }
+    btn.addEventListener('click', function(){
+      setState(!document.body.classList.contains('menu-open'));
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
+        setState(false); btn.focus();
+      }
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ setState(false); }
+    });
+  })();
+</script>
+</body>
+</html>
