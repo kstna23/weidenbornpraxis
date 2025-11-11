@@ -1,120 +1,193 @@
-/* --- Grundlayout --- */
+/* ============================================
+   WEIDENBORNpraxis — Style
+   ============================================ */
+
+/* --- CSS Custom Properties (Theme) --- */
 :root {
-  --paper: #f8f7f5;
-  --ink: #222;
-  --accent: #3b6b7c;
-  --accent-light: #5e8c9b;
-  --container-max: 1100px;
-  --radius: 12px;
-  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --bg: #F2E2D5;
+  --paper: #F2E2D5;
+  --header-bg: #F4D5BE;
+  --footer-bg: #F2E2D5;
+  --ink: #8A322E;
+  --brand: #70201E;
+  --brand-dark: #70201E;
+  --muted: #777;
+  --radius: 0px;
+  --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
+  --shadow: 0 4px 8px rgba(0,0,0,0.08);
+  --container-max: 1200px;
+  --header-pad-y: 0.75rem;
 }
 
+/* --- Base / Reset --- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: "Montserrat", sans-serif;
-  color: var(--ink);
-  background-color: var(--paper);
   margin: 0;
-  padding: 0;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.6;
 }
 
-/* --- Container --- */
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 1rem;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* --- Header --- */
+.container {
+  width: min(90%, var(--container-max));
+  margin-inline: auto;
+}
+
+/* --- Header / Navigation --- */
 .site-header {
-  background: var(--paper);
+  background-color: var(--header-bg);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+}
+
+/* Container im Header: über die gesamte Seitenbreite */
+.site-header .container {
+  width: 100%;
+  margin-inline: 0;
 }
 
 .header-flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1rem;
+  gap: 1rem;
+  padding: var(--header-pad-y) 0;
+  position: relative; /* Referenz für den Burger-Button */
 }
 
-/* --- Logo --- */
 .logo-block {
-  text-align: left;
-  cursor: pointer;
-  text-decoration: none;
+  flex: 1;
+  text-align: center; /* Logo + Unterzeile wieder mittig */
 }
 
 .logo {
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+  font-weight: 300; /* Basis: light */
+  color: #000;
   margin: 0;
-  font-size: 1.6rem;
   letter-spacing: 0.5px;
 }
 
+/* Teil-Logo: WEIDENBORN bold, praxis light */
 .logo-weidenborn {
-  font-weight: 600; /* semi-bold */
+  font-weight: 600; /* semibold */
 }
 
 .logo-praxis {
-  font-weight: 300;
+  font-weight: 300; /* light */
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  margin-top: -0.3rem;
+  font-size: 0.95rem;
+  color: #000;
+  margin: 0.15rem 0 0;
+  font-weight: 400;
+  text-align: center;
 }
 
-/* --- Navigation --- */
+/* ===================================================
+   Klickbarer Logo-Link (zentriert, ohne Hover-Stil)
+   =================================================== */
+
+/* Logo-Link soll sich wie Block verhalten, zentriert bleiben */
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 auto;
+}
+
+/* zentriert innerhalb des Flex-Headers */
+.logo-block {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Keine optischen Effekte beim Hover oder Fokus */
+.logo-link:hover,
+.logo-link:focus,
+.logo-link:focus-visible {
+  text-decoration: none !important;
+  color: inherit !important;
+  opacity: 1;
+}
+
+/* Sicherheitshalber Unterstreichung und Effekt auch für .logo entfernen */
+.logo:hover,
+.logo:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Burger-Button: immer sichtbar, absolut am rechten Seitenrand des Headers */
+.menu-toggle {
+  position: absolute;
+  right: 2.5rem;          /* jetzt wirklich an der rechten Kante */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--brand);
+  cursor: pointer;
+  padding: 0;        /* kein extra Innenabstand */
+}
+
+/* Side-Drawer Navigation: immer Burger-Menü, slidet von rechts herein */
 .main-nav {
+  position: fixed;
+  right: 0;
+  top: calc(var(--header-pad-y) * 2 + 52px); /* direkt unter dem Header */
+  background-color: var(--paper);
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  padding: 0.75rem 0.75rem 1rem;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+  border-bottom-left-radius: 14px;
+  width: min(70vw, 320px);
+  transform: translateX(100%);  /* zunächst rechts außerhalb */
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 999;
+}
+
+/* geöffnetes Menü */
+body.menu-open .main-nav {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .main-nav a {
+  color: var(--brand);
   text-decoration: none;
-  color: var(--ink);
   font-weight: 400;
-  transition: color 0.2s ease;
+  padding: 0.8rem 0.9rem;
+  border-radius: 8px;
 }
 
-.main-nav a:hover {
-  color: var(--accent);
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background-color: rgba(0,0,0,0.05);
   text-decoration: none;
 }
 
-.menu-toggle {
-  display: none;
-}
-
-/* Menü rechtsbündig für mobile */
-@media (max-width: 800px) {
-  .main-nav {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-  }
-  body.menu-open .main-nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 1rem;
-    top: 60px;
-    background: var(--paper);
-    padding: 1rem;
-    box-shadow: var(--shadow-md);
-  }
-}
-
-/* --- Hero-Bereich (Startbild) --- */
-/* --- Hero --- */
+/* --- Hero (Breite) --- */
 .hero {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -128,80 +201,154 @@ body {
   display: block;
 }
 
-
-/* --- Intro & Text --- */
-.intro {
-  padding: 2rem 0;
+/* --- Sections --- */
+.intro, .services, .about-us {
+  padding: 3rem 1rem 2.5rem;
 }
 
-.intro h2 {
-  font-weight: 600;
-  color: var(--accent);
+.intro h2,
+.services h2,
+.about-us h2 {
+  color: var(--brand);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  text-align: center;
 }
 
-.intro p {
-  font-size: 1.05rem;
-  margin-top: 1rem;
+h2, h3 {
+  color: var(--brand);
 }
 
-/* --- Leistungen (Kacheln) --- */
+/* --- Cards / Grids --- */
+.services { background-color: var(--bg); }
+
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .service-card {
-  background: var(--paper);
+  background-color: var(--paper);
   border-radius: var(--radius);
+  overflow: hidden;
   text-align: center;
-  text-decoration: none;
-  color: var(--ink);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
 }
 
 .service-card img {
   width: 100%;
-  height: auto;
-  border-radius: var(--radius) var(--radius) 0 0;
+  height: 180px;
+  object-fit: cover;
 }
 
 .service-card h3 {
-  margin: 0.75rem 0 1rem;
-  font-weight: 600;
-}
-
-/* --- Hero-Divider --- */
-.hero-divider {
-  height: 1px;
-  background: rgba(0, 0, 0, 0.08);
-  margin: 2.5rem auto;
-  max-width: var(--container-max);
+  margin: 1rem 0;
+  font-weight: 400;
+  color: var(--brand);
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* --- Footer --- */
 .site-footer {
-  background: var(--paper);
+  background-color: var(--footer-bg);
   text-align: center;
   padding: 2rem 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .footer-logo {
-  max-width: 120px;
-  height: auto;
-  margin-bottom: 0.5rem;
+  height: 40px;
+  margin-bottom: 0.75rem;
 }
 
-.site-footer p {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 0;
+/* --- Global links & buttons --- */
+button {
+  background-color: var(--brand);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+button:hover {
+  background-color: var(--brand-dark);
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Divider --- */
+.hero-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin: 2rem auto;
+  width: 80%;
+}
+
+/* --- Forms --- */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+label {
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+}
+
+/* --- Accessibility: focus styles --- */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 55%, white);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* --- Responsive Enhancements --- */
+@media (max-width: 1024px) {
+  .container { width: 94%; }
+}
+
+@media (max-width: 768px) {
+  body { font-size: clamp(15px, 4.2vw, 17px); }
+  .intro, .services, .about-us { padding: 2rem 1rem; }
+  h2 { font-size: clamp(1.35rem, 4.5vw, 1.6rem); }
+  h3 { font-size: clamp(1.1rem, 4vw, 1.25rem); }
+  .hero img { margin-top: 0.5rem; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card img { height: auto; }
+}
+
+@media (max-width: 480px) {
+  p { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
