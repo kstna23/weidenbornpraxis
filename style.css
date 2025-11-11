@@ -50,11 +50,15 @@ img { max-width: 100%; height: auto; display: block; }
 .header-flex {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 1.5rem;
   padding: var(--header-pad-y) 0;
 }
 
-.logo-block { flex: 1; text-align: center; }
+.logo-block {
+  flex: 0 0 auto;
+  text-align: left;
+}
 
 .logo {
   font-size: clamp(1.75rem, 4.2vw, 3rem);
@@ -62,14 +66,15 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0;
   letter-spacing: 0.5px;
+}
 
-  .logo-bold {
+/* für geteiltes Logo WEIDENBORN + praxis */
+.logo-weidenborn {
   font-weight: 600;   /* Semi Bold */
 }
 
-  .logo-light {
+.logo-praxis {
   font-weight: 300;   /* Light */
-}
 }
 
 .subtitle {
@@ -77,27 +82,41 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0.15rem 0 0;
   font-weight: 400;
-  text-align: center;
 }
 
-/* Primary nav (desktop default) */
+/* Primary nav (desktop) */
 .main-nav {
   display: flex;
-  gap: 0.75rem;
+  gap: 1.5rem;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 0 0.3rem;
   font-size: 0.95rem;
 }
 
 .main-nav a {
+  position: relative;
   color: var(--brand);
   text-decoration: none;
   font-weight: 400;
-  padding: 0.5rem 0.6rem;
-  border-radius: 6px;
+  padding: 0.2rem 0;
 }
-.main-nav a:hover { text-decoration: underline; }
+
+/* dezente Unterstreichung beim Hover/Fokus */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.1rem;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand);
+  transition: width 0.2s ease-out;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+  width: 100%;
+}
 
 .menu-toggle {
   display: none;
@@ -123,7 +142,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero img {
   margin: 2rem auto;         /* zentriert das Bild */
   width: 70%;                /* Begrenzung der Breite */
-  max-width: 1000px;         /* optional, verhindert zu große Darstellung auf großen Bildschirmen */
+  max-width: 1000px;         /* verhindert zu große Darstellung auf großen Bildschirmen */
   height: auto;
   display: block;
   border: none;
@@ -221,7 +240,9 @@ label { font-weight: 500; color: var(--ink); display: block; }
   .hero img { margin-top: 0.5rem; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card img { height: auto; }
+
   .menu-toggle { display: block; }
+
   .main-nav {
     position: fixed;
     left: 0; right: 0;
@@ -267,11 +288,8 @@ label { font-weight: 500; color: var(--ink); display: block; }
 .faq details { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: .75rem 1rem; margin: .5rem 0; }
 .faq summary { cursor: pointer; font-weight: 600; }
 
-
 .numbered { counter-reset: it; padding-left: 1.2rem; }
 .numbered > li { margin:.35rem 0; }
-
-
 
 /* Inhaltsverzeichnis für Hausarzt-Seite */
 .page-toc { background: #fff; border:1px solid rgba(0,0,0,.08); padding:1rem; border-radius:12px; margin:1rem 0 2rem; }
@@ -283,15 +301,9 @@ label { font-weight: 500; color: var(--ink); display: block; }
 
 .page-toc a.active { font-weight: 700; color: var(--ink,#3A2C1E); }
 
-
-
 .back-to-top { margin: .5rem 0 1.25rem; font-size: .9rem; }
 .back-to-top a { text-decoration: none; opacity: .8; }
 .back-to-top a:hover { text-decoration: underline; opacity: 1; }
-
-
-
-
 
 /* Sticky-TOC am Desktop-Rand */
 @media (min-width: 1200px) {
@@ -305,11 +317,7 @@ label { font-weight: 500; color: var(--ink); display: block; }
     overflow: auto;
     margin-left: 1.25rem;
   }
-  /* Platz für die Sidebar schaffen */
-  
 }
-
-
 
 /* Zwei-Spalten-Layout für Seiten mit linkem TOC */
 @media (min-width: 1200px) {
@@ -330,6 +338,7 @@ label { font-weight: 500; color: var(--ink); display: block; }
     grid-column: 2;
   }
 }
+
 /* Mobile/Tablet: TOC normal im Fluss über dem Inhalt */
 @media (max-width: 1199px) {
   .page-toc.page-toc--left { position: static; max-height: none; overflow: visible; }
