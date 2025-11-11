@@ -10,20 +10,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 </head>
 <body>
 <header class="site-header">
   <div class="container header-flex">
-  <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
-  <h1 class="logo">
-  <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
-  </h1>
-  <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-</a>
-    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+    <div class="logo-block">
+      <h1 class="logo">
+        <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
+      </h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    </div>
+
+    <button class="menu-toggle"
+            aria-controls="hauptnav"
+            aria-expanded="false"
+            aria-label="Hauptmenü öffnen">☰</button>
+
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
