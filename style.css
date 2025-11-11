@@ -4,15 +4,13 @@
 
 /* --- CSS Custom Properties (Theme) --- */
 :root {
-  --bg: #F2E2D5;
-  --paper: #F2E2D5; 
-  --header-bg: #E0C4AF;     /* Header */
-  --footer-bg: #F2E2D5;     /* Footer */
-  --ink: #8A322E;
-  --brand: #70201E; 
-  --brand-dark: #70201E;
+  --bg: #F2E5DC;
+  --paper: #F6F3EC;
+  --ink: #3a2c1e;
+  --brand: #1F4396;
+  --brand-dark: #16306b;
   --muted: #777;
-  --radius: 0px;
+  --radius: 10px;
   --shadow-sm: 0 2px 5px rgba(0,0,0,0.05);
   --shadow: 0 4px 8px rgba(0,0,0,0.08);
   --container-max: 1200px;
@@ -40,24 +38,28 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- Header / Navigation --- */
 .site-header {
-  background-color: var(--header-bg);
+  background-color: var(--paper);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+/* Header-Container über die volle Seitenbreite,
+   damit der Burger wirklich am rechten Seitenrand sitzt */
+.site-header .container {
+  width: 100%;
+  margin-inline: 0;
+}
+
 .header-flex {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: var(--header-pad-y) 0;
 }
 
-.logo-block {
-  flex: 0 0 auto;
-  text-align: left;
-}
+.logo-block { flex: 0 0 auto; text-align: left; margin-left: 1.5rem; }
 
 .logo {
   font-size: clamp(1.75rem, 4.2vw, 3rem);
@@ -67,13 +69,12 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.5px;
 }
 
-/* für geteiltes Logo WEIDENBORN + praxis */
+/* geteiltes Logo */
 .logo-weidenborn {
-  font-weight: 700;   /* jetzt wirklich BOLD */
+  font-weight: 600; /* semibold */
 }
-
 .logo-praxis {
-  font-weight: 300;   /* Light */
+  font-weight: 300; /* light */
 }
 
 .subtitle {
@@ -81,9 +82,10 @@ img { max-width: 100%; height: auto; display: block; }
   color: #000;
   margin: 0.15rem 0 0;
   font-weight: 400;
+  text-align: left;
 }
 
-/* Burger-Button: immer sichtbar, rechts im Header */
+/* Burger-Button: immer sichtbar, ganz rechts am Seitenrand */
 .menu-toggle {
   display: block;
   background: none;
@@ -92,8 +94,9 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1;
   color: var(--brand);
   cursor: pointer;
-  padding: 0.5rem 0.6rem;
-  margin-left: auto;       /* schiebt ihn ganz nach rechts */
+  padding: 0.5rem 0;   /* nur vertikal, kein Abstand zum Rand */
+  margin-left: auto;
+  margin-right: 0.5rem;
 }
 
 /* Side-Drawer Navigation (alle Viewports) */
@@ -107,17 +110,17 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: stretch;
   gap: 0.25rem;
   padding: 0.75rem 0.75rem 1rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.12);
   border-bottom-left-radius: 14px;
   width: min(70vw, 320px);
-  transform: translateX(100%);   /* außerhalb des Screens, rechts */
+  transform: translateX(100%);  /* rechts außerhalb */
   opacity: 0;
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
   z-index: 999;
 }
 
-/* wenn .menu-open am Body hängt (per JS), slidet das Menü rein */
+/* geöffnetes Menü */
 body.menu-open .main-nav {
   transform: translateX(0);
   opacity: 1;
@@ -134,11 +137,11 @@ body.menu-open .main-nav {
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
-  background-color: rgba(0,0,0,0.03);
-  text-decoration: none;   /* keine Unterstreichung mehr */
+  background-color: rgba(0,0,0,0.04);
+  text-decoration: none;
 }
 
-/* --- Hero (volle Bildschirmbreite) --- */
+/* --- Hero --- */
 .hero {
   width: 100vw;
   margin: 0;
@@ -146,30 +149,34 @@ body.menu-open .main-nav {
   overflow: hidden;
 }
 
-/* --- Hero Image (zentriert, 70% Breite) --- */
+/* Hero-Bild zentriert, 70% Breite */
 .hero img {
-  margin: 2rem auto;         
-  width: 70%;                
-  max-width: 1000px;         
+  margin: 2rem auto;
+  width: 70%;
+  max-width: 1000px;
   height: auto;
   display: block;
-  border: none;
-  box-shadow: none;
 }
 
 /* --- Sections --- */
 .intro, .services, .about-us { padding: 3rem 1rem 2.5rem; }
-.intro h2, .services h2, .about-us h2 { color: var(--brand); font-size: clamp(1.5rem, 3.5vw, 2rem); text-align: center; }
+.intro h2, .services h2, .about-us h2 {
+  color: var(--brand);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  text-align: center;
+}
 h2, h3 { color: var(--brand); }
 
 /* --- Cards / Grids --- */
 .services { background-color: var(--bg); }
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
+
 .service-card {
   background-color: var(--paper);
   border-radius: var(--radius);
@@ -178,13 +185,26 @@ h2, h3 { color: var(--brand); }
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .service-card:hover { transform: translateY(-4px); }
-.service-card img { width: 100%; height: 180px; object-fit: cover; }
-.service-card h3 { margin: 1rem 0; font-weight: 400; color: var(--brand); font-size: 1.2rem; text-align: center; }
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  margin: 1rem 0;
+  font-weight: 400;
+  color: var(--brand);
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 /* --- Footer --- */
 .site-footer {
-  background-color: var(--footer-bg);
+  background-color: var(--paper);
   text-align: center;
   padding: 2rem 1rem;
   color: var(--muted);
@@ -204,6 +224,7 @@ button {
   transition: background 0.25s ease;
 }
 button:hover { background-color: var(--brand-dark); }
+
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -216,7 +237,9 @@ a:hover { text-decoration: underline; }
 }
 
 /* --- Forms --- */
-input[type="text"], input[type="email"], textarea {
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
   padding: 0.8rem;
   margin-top: 0.25rem;
@@ -227,7 +250,11 @@ input[type="text"], input[type="email"], textarea {
   font-size: 1rem;
   background-color: #fff;
 }
-label { font-weight: 500; color: var(--ink); display: block; }
+label {
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+}
 
 /* --- Accessibility: focus styles --- */
 :focus-visible {
@@ -237,7 +264,9 @@ label { font-weight: 500; color: var(--ink); display: block; }
 }
 
 /* --- Responsive Enhancements --- */
-@media (max-width: 1024px) { .container { width: 94%; } }
+@media (max-width: 1024px) {
+  .container { width: 94%; }
+}
 
 @media (max-width: 768px) {
   body { font-size: clamp(15px, 4.2vw, 17px); }
@@ -255,74 +284,4 @@ label { font-weight: 500; color: var(--ink); display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
-}
-
-/* Hausärztliche Versorgung – Layout-Ergänzungen */
-.lead { font-size: 1.125rem; line-height: 1.6; margin: 0 0 1rem; }
-.section { margin: 1.25rem 0 1.75rem; }
-.feature-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; }
-.feature { background: var(--paper, #F6F3EC); padding: 1rem; border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-.callout { background: #fff; border: 1px solid rgba(0,0,0,.08); padding: 1rem; border-radius: 14px; display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
-.callout .button { padding: .55rem 1rem; border-radius: 999px; border: 1px solid rgba(0,0,0,.1); text-decoration: none; font-weight: 600; }
-.callout .muted { opacity: .8; }
-.checklist { padding-left: 1.2rem; }
-.checklist li { margin: .35rem 0; }
-.faq details { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: .75rem 1rem; margin: .5rem 0; }
-.faq summary { cursor: pointer; font-weight: 600; }
-
-.numbered { counter-reset: it; padding-left: 1.2rem; }
-.numbered > li { margin:.35rem 0; }
-
-/* Inhaltsverzeichnis für Hausarzt-Seite */
-.page-toc { background: #fff; border:1px solid rgba(0,0,0,.08); padding:1rem; border-radius:12px; margin:1rem 0 2rem; }
-.page-toc strong { display:block; margin-bottom: .5rem; }
-.page-toc ul { list-style: none; margin:0; padding:0; display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:.25rem .75rem; }
-.page-toc li { margin:0; }
-.page-toc a { text-decoration:none; color: var(--brand, #1F4396); font-size:.95rem; }
-.page-toc a:hover { text-decoration:underline; }
-
-.page-toc a.active { font-weight: 700; color: var(--ink,#3A2C1E); }
-
-.back-to-top { margin: .5rem 0 1.25rem; font-size: .9rem; }
-.back-to-top a { text-decoration: none; opacity: .8; }
-.back-to-top a:hover { text-decoration: underline; opacity: 1; }
-
-/* Sticky-TOC am Desktop-Rand */
-@media (min-width: 1200px) {
-  .page-toc.page-toc--sticky {
-    position: sticky;
-    top: 110px;
-    float: right;
-    width: 280px;
-    z-index: 10;
-    max-height: calc(100vh - 140px);
-    overflow: auto;
-    margin-left: 1.25rem;
-  }
-}
-
-/* Zwei-Spalten-Layout für Seiten mit linkem TOC */
-@media (min-width: 1200px) {
-  main .container.has-toc-left {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  .page-toc.page-toc--left {
-    position: sticky;
-    top: 110px;
-    max-height: calc(100vh - 140px);
-    overflow: auto;
-  }
-  /* Alle anderen Elemente (außer TOC) in Spalte 2 */
-  .container.has-toc-left > :not(.page-toc) {
-    grid-column: 2;
-  }
-}
-
-/* Mobile/Tablet: TOC normal im Fluss über dem Inhalt */
-@media (max-width: 1199px) {
-  .page-toc.page-toc--left { position: static; max-height: none; overflow: visible; }
-  main .container.has-toc-left { display: block; }
 }
