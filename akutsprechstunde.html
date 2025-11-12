@@ -2,20 +2,20 @@
 <html lang="de">
 <head>
   <title>Akutsprechstunde – WEIDENBORNpraxis</title>
-  <meta name="description" content="Schnelle medizinische Hilfe bei akuten Beschwerden. Ihre Hausarztpraxis in Frankfurt mit täglicher Akutsprechstunde.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Akutsprechstunde in der WEIDENBORNpraxis.">
+  <meta name="keywords" content="Akutsprechstunde, Hausarzt, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="page-service">
 <header class="site-header">
   <div class="container header-flex">
     <div class="logo-block">
-      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
@@ -30,15 +30,17 @@
 </header>
 <main class="main" id="hauptinhalt">
   <div class="container">
-    <h2>Akutsprechstunde</h2>
-    <p>Für akute Beschwerden wie Infekte, Schmerzen oder Verletzungen bieten wir tägliche
-Akuttermine an. Bitte bringen Sie Ihre Versicherungskarte mit und kommen Sie nach Möglichkeit
-vorab telefonisch oder online angemeldet, damit wir Wartezeiten kurz halten können.</p>
-<ul>
-  <li>Typische Anliegen: Fieber, Halsschmerzen, Husten, akute Rücken‑ oder Bauchschmerzen</li>
-  <li>Wann? Bitte tagesaktuell die Hinweise am Empfang beachten</li>
-  <li>Hinweis: Bei lebensbedrohlichen Beschwerden wählen Sie den Notruf 112.</li>
-</ul>
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/akutsprechstunde.jpeg" alt="Akutsprechstunde in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <h2>Akutsprechstunde</h2>
+      </div>
+    </section>
+    <div class="info-box" aria-label="Inhalte">
+      <div class="info-grid"></div>
+    </div>
   </div>
 </main>
 <div class="hero-divider"></div>
@@ -50,27 +52,15 @@ vorab telefonisch oder online angemeldet, damit wir Wartezeiten kurz halten kön
   </div>
 </footer>
 <script>
-  (function(){{
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){{
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }}
-    btn.addEventListener('click', function(){{
-      setState(!document.body.classList.contains('menu-open'));
-    }});
-    document.addEventListener('keydown', function(e){{
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){{
-        setState(false); btn.focus();
-      }}
-    }});
-    nav.addEventListener('click', function(e){{
-      if (e.target.tagName === 'A'){{ setState(false); }}
-    }});
-  }})();
+/* gleicher Menü-Script wie oben */
+(function(){
+  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
+  if(!btn||!nav)return;
+  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
+  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
+})();
 </script>
 </body>
 </html>
