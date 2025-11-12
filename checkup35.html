@@ -2,22 +2,20 @@
 <html lang="de">
 <head>
   <title>Check Up 35 – WEIDENBORNpraxis</title>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Check Up 35 in der WEIDENBORNpraxis.">
+  <meta name="keywords" content="Check Up 35, Vorsorge, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="page-service">
 <header class="site-header">
   <div class="container header-flex">
     <div class="logo-block">
-      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
@@ -30,27 +28,23 @@
     </nav>
   </div>
 </header>
-
 <main class="main" id="hauptinhalt">
-  <div class="container" has-toc-left><h2>Check Up 35</h2>
-    <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und
-Risiken rechtzeitig zu behandeln. Die gesetzlichen Krankenkassen übernehmen diese
-Vorsorgeuntersuchungen:
- Ab 35 Jahren: alle drei Jahre ein umfassender Gesundheits-Check („Check-up 35“),
-inklusive Untersuchung von Herz-Kreislauf-Risiken, Blut- und Urinwerten.
- Zusätzlich: zwischen 18 und 35 Jahren ist ein Check-up einmalig möglich.
-
-Darüber hinaus bieten wir Individuelle Gesundheitsleistungen (IGeL) an, die über die
-gesetzliche Vorsorge hinausgehen. Dazu zählen beispielsweise spezielle
-Laboruntersuchungen, Ultraschalluntersuchungen oder andere Tests, die individuell nach
-Ihrem Gesundheitsprofil sinnvoll sein können. Wir beraten Sie ausführlich, welche
-Leistungen für Sie empfehlenswert sind.</p>
-
+  <div class="container">
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/checkup35.jpeg" alt="Check Up 35 in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <h2>Check Up 35</h2>
+      </div>
+    </section>
+    <div class="info-box" aria-label="Inhalte">
+      <div class="info-grid"></div>
+    </div>
   </div>
 </main>
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
-
 <footer class="site-footer">
   <div class="container">
     <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
@@ -58,27 +52,14 @@ Leistungen für Sie empfehlenswert sind.</p>
   </div>
 </footer>
 <script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
+(function(){
+  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
+  if(!btn||!nav)return;
+  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
+  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
+})();
 </script>
 </body>
 </html>
