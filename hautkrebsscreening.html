@@ -2,22 +2,20 @@
 <html lang="de">
 <head>
   <title>Hautkrebsscreening – WEIDENBORNpraxis</title>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Hautkrebsscreening in der WEIDENBORNpraxis.">
+  <meta name="keywords" content="Hautkrebsscreening, Vorsorge, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="page-service">
 <header class="site-header">
   <div class="container header-flex">
     <div class="logo-block">
-      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
@@ -30,67 +28,23 @@
     </nav>
   </div>
 </header>
-
 <main class="main" id="hauptinhalt">
   <div class="container">
-    
-    <h2>Hautkrebsscreening</h2>
-    <p>Die Früherkennung von Hautkrebs kann Leben retten. Im Rahmen des Hautkrebsscreenings
-
-untersuchen wir Ihre Haut gründlich, um verdächtige Veränderungen frühzeitig zu entdecken
-und – falls nötig – schnell weitere Schritte einzuleiten.</p><br><br><br>
-<p>Die Früherkennung von Hautkrebs ist entscheidend für eine erfolgreiche Behandlung. Unser
-Hautkrebsscreening umfasst:
-Untersuchung:
- Gründliche visuelle Kontrolle der gesamten Haut, einschließlich schwer zugänglicher
-Bereiche
- Dokumentation von Muttermalen, Leberflecken oder auffälligen Hautveränderungen
- Beurteilung von Form, Farbe, Größe und Symmetrie der Hautveränderungen
-Beratung:
- Aufklärung über Risikofaktoren wie Sonnenexposition, familiäre Vorbelastung oder
-Hauttyp
- Anleitung zur Selbstkontrolle der Haut zu Hause
- Empfehlungen zu Sonnenschutz, Hautpflege und Präventionsmaßnahmen
-Weiterführende Diagnostik:
- Bei Auffälligkeiten Überweisung an Dermatolog:innen oder weiterführende
-Untersuchungen
- Ziel ist die frühzeitige Erkennung von Hautkrebs, um Behandlungschancen zu
-optimieren
-Zielgruppe &amp; Kosten:
- Gesetzlich empfohlen für alle ab 35 Jahren
- Von der gesetzlichen Krankenkasse übernommen: alle zwei Jahre
- Besonders sinnvoll bei erhöhter familiärer Belastung oder vielen Muttermalen
-
-Sonographie (Ultraschall)
-Die Ultraschalldiagnostik ermöglicht eine schonende, schmerzfreie und zuverlässige
-Untersuchung innerer Organe wie Bauch, Schilddrüse oder Gefäße. So lassen sich viele
-Erkrankungen frühzeitig erkennen oder sicher ausschließen.
-Sonographie (Ultraschall)
-Die Sonographie ist eine schonende, schmerzfreie und strahlungsfreie
-Untersuchungsmethode, mit der wir Ihre inneren Organe beurteilen können.
-Leistungsumfang:
- Abdomen: Untersuchung von Leber, Galle, Bauchspeicheldrüse, Milz und Nieren
- Schilddrüse: Kontrolle auf Knoten, Strukturveränderungen oder Funktionsstörungen
-
- Gefäße:
-o Kompressionssonographie zum Ausschluss von Thrombosen
-o Bauchaortenaneurysma-Früherkennung zur Feststellung von
-Erweiterungen der Hauptschlagader, einmalig für Männer ab 65 Jahren, von
-der gesetzlichen Krankenkasse übernommen
-
-Vorteile der Sonographie:
- Frühzeitige Erkennung von Erkrankungen
- Verlaufskontrollen bei bekannten gesundheitlichen Veränderungen
- Schmerzfrei, sicher und ohne Strahlenbelastung
-Zielgruppe:
- Patient:innen mit akuten Beschwerden, unklaren Symptomen oder zur Vorsorge
- Besonders sinnvoll bei Risikofaktoren für Organ- oder Gefäßerkrankungen</p>
-
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/hautkrebsscreening.jpeg" alt="Hautkrebsscreening in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <h2>Hautkrebsscreening</h2>
+      </div>
+    </section>
+    <div class="info-box" aria-label="Inhalte">
+      <div class="info-grid"></div>
+    </div>
   </div>
 </main>
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
-
 <footer class="site-footer">
   <div class="container">
     <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
@@ -98,27 +52,14 @@ Zielgruppe:
   </div>
 </footer>
 <script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
+(function(){
+  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
+  if(!btn||!nav)return;
+  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
+  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
+})();
 </script>
 </body>
 </html>
