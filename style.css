@@ -365,7 +365,7 @@ label {
 
 /* Info-Kästchen (z. B. Leistungen / Inhalte) */
 .info-box {
-  background-color: #E0C4AF;
+  background-color: #91504E;
   border-radius: var(--radius);
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
