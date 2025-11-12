@@ -4,10 +4,10 @@
 
 /* --- CSS Custom Properties (Theme) --- */
 :root {
-  --bg: #F2E2D5;
-  --paper: #F2E2D5;
-  --header-bg: #F4D5BE;
-  --footer-bg: #F2E2D5;
+  --bg: #F9D8C9;
+  --paper: #F9D8C9;
+  --header-bg: #91504E;
+  --footer-bg: #F9D8C9;
   --ink: #8A322E;
   --brand: #70201E;
   --brand-dark: #70201E;
