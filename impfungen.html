@@ -2,22 +2,20 @@
 <html lang="de">
 <head>
   <title>Impfungen – WEIDENBORNpraxis</title>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Impfungen in der WEIDENBORNpraxis.">
+  <meta name="keywords" content="Impfungen, Hausarzt, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="page-service">
 <header class="site-header">
   <div class="container header-flex">
     <div class="logo-block">
-      <h1 class="logo">WEIDENBORNpraxis</h1>
+      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </div>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
@@ -30,39 +28,26 @@
     </nav>
   </div>
 </header>
-
 <main class="main" id="hauptinhalt">
-  <div class="container" has-toc-left><h2>Impfungen</h2>
-    <p>Wir bieten umfassende Impfberatung und -durchführung für Erwachsene, zur Vorsorge, für
-Reisen oder bei besonderen gesundheitlichen Risiken.
-Bitte zum Impftermin immer den Impfpass mitbringen!
-Zielgruppen und Empfehlungen:
- Erwachsene: Auffrischungen von Grundimmunisierungen (Tetanus, Diphtherie,
-Pertussis) alle 10 Jahre, Influenza-Impfung jährlich
- Senior:innen und Risikogruppen: Impfungen gegen Pneumokokken, Influenza,
-Herpes Zoster und RSV, abhängig von Alter und Vorerkrankungen
- Besonders gefährdete Gruppen: chronisch Kranke, Schwangere, medizinisches
-Personal, Reisende in Risikogebiete
-Leistungsumfang:
- Standardimpfungen: gemäß STIKO-Empfehlungen für Erwachsene
- Reiseimpfungen: angepasst an das Reiseziel (z. B. Gelbfieber, Hepatitis A/B, Typhus,
-Tollwut)
- Sonderimpfungen: nach ärztlicher Empfehlung für Risikogruppen oder besondere
-Exposition
- Beratung und Aufklärung: Informationen zu Impfintervallen, Schutzdauer,
-Nebenwirkungen und notwendigen Auffrischungen
- Impfpasskontrolle: Überprüfung vorhandener Impfungen, Ergänzung und
-Aktualisierung
-Ziel:
- Schutz vor Infektionskrankheiten für Einzelpersonen und die Gemeinschaft
- Prävention von schweren Erkrankungen, Hospitalisierungen und Komplikationen
- Sicherstellung eines vollständigen, aktuellen Impfschutzes</p>
-
+  <div class="container">
+    <section class="intro-section">
+      <figure>
+        <img loading="lazy" src="images/impfungen.jpeg" alt="Impfungen in der WEIDENBORNpraxis">
+      </figure>
+      <div class="intro-text">
+        <h2>Impfungen</h2>
+        <!-- Einleitungstext optional -->
+      </div>
+    </section>
+    <div class="info-box" aria-label="Inhalte">
+      <div class="info-grid">
+        <!-- info-section Blöcke können hier ergänzt werden -->
+      </div>
+    </div>
   </div>
 </main>
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
-
 <footer class="site-footer">
   <div class="container">
     <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
@@ -70,27 +55,14 @@ Ziel:
   </div>
 </footer>
 <script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
+(function(){
+  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
+  if(!btn||!nav)return;
+  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
+  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
+})();
 </script>
 </body>
 </html>
