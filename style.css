@@ -341,7 +341,7 @@ label {
   .hero img { margin-top: 0.5rem; }
   .service-grid { grid-template-columns: repeat(2, 1fr);
                   gap: 1rem; }
-  .service-card img { height: auto; }
+  .service-card img { height: 150px; }
 }
 
 @media (max-width: 480px) {
