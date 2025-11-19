@@ -19,7 +19,6 @@
       margin-top: 1.2rem;
       margin-bottom: 1.6rem;
     }
-
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -35,13 +34,13 @@
     .intro-section img {
       width: 100%;
       height: auto;
-      border-radius: 0px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .intro-section img:hover {
       transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     }
     .intro-text {
       flex: 1;
@@ -50,11 +49,31 @@
       line-height: 1.6;
     }
 
-    ul {
-      margin-left: 1.2rem;
-      margin-bottom: 1rem;
+    .info-box {
+      background-color: #E0C4AF;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 1.25rem;
     }
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    .info-section {
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-section h3 { margin-top: 0; }
+    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
+    .info-section p  { margin-top: 0.4rem; }
 
+    @media (min-width: 840px) {
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 720px) {
       .intro-section {
         flex-direction: column;
@@ -87,7 +106,6 @@
 
 <main class="main" id="hauptinhalt">
   <div class="container">
-
     <h2>Hautkrebsscreening</h2>
 
     <section class="intro-section">
@@ -96,35 +114,47 @@
       </figure>
       <div class="intro-text">
         <p>Die Früherkennung von Hautkrebs kann Leben retten. Im Rahmen des Hautkrebsscreenings untersuchen wir Ihre Haut gründlich, um verdächtige Veränderungen frühzeitig zu entdecken und – falls nötig – schnell weitere Schritte einzuleiten.</p>
-
-        <h3>Untersuchung:</h3>
-        <ul>
-          <li>Gründliche visuelle Kontrolle der gesamten Haut, einschließlich schwer zugänglicher Bereiche</li>
-          <li>Dokumentation von Muttermalen, Leberflecken oder auffälligen Hautveränderungen</li>
-          <li>Beurteilung von Form, Farbe, Größe und Symmetrie der Hautveränderungen</li>
-        </ul>
-
-        <h3>Beratung:</h3>
-        <ul>
-          <li>Aufklärung über Risikofaktoren wie Sonnenexposition, familiäre Vorbelastung oder Hauttyp</li>
-          <li>Anleitung zur Selbstkontrolle der Haut zu Hause</li>
-          <li>Empfehlungen zu Sonnenschutz, Hautpflege und Präventionsmaßnahmen</li>
-        </ul>
-
-        <h3>Weiterführende Diagnostik:</h3>
-        <ul>
-          <li>Bei Auffälligkeiten Überweisung an Dermatolog:innen oder weiterführende Untersuchungen</li>
-          <li>Ziel ist die frühzeitige Erkennung von Hautkrebs, um Behandlungschancen zu optimieren</li>
-        </ul>
-
-        <h3>Zielgruppe &amp; Kosten:</h3>
-        <ul>
-          <li>Gesetzlich empfohlen für alle ab 35 Jahren</li>
-          <li>Von der gesetzlichen Krankenkasse übernommen: alle zwei Jahre</li>
-          <li>Besonders sinnvoll bei erhöhter familiärer Belastung oder vielen Muttermalen</li>
-        </ul>
       </div>
     </section>
+
+    <div class="info-box" aria-label="Leistungen im Rahmen des Hautkrebsscreenings">
+      <div class="info-grid">
+        <section class="info-section">
+          <h3>Untersuchung</h3>
+          <ul>
+            <li>Gründliche visuelle Kontrolle der gesamten Haut, einschließlich schwer zugänglicher Bereiche</li>
+            <li>Dokumentation von Muttermalen, Leberflecken oder auffälligen Hautveränderungen</li>
+            <li>Beurteilung von Form, Farbe, Größe und Symmetrie der Hautveränderungen</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Beratung</h3>
+          <ul>
+            <li>Aufklärung über Risikofaktoren wie Sonnenexposition, familiäre Vorbelastung oder Hauttyp</li>
+            <li>Anleitung zur Selbstkontrolle der Haut zu Hause</li>
+            <li>Empfehlungen zu Sonnenschutz, Hautpflege und Präventionsmaßnahmen</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Weiterführende Diagnostik</h3>
+          <ul>
+            <li>Bei Auffälligkeiten Überweisung an Dermatolog:innen oder weiterführende Untersuchungen</li>
+            <li>Ziel ist die frühzeitige Erkennung von Hautkrebs, um Behandlungschancen zu optimieren</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Zielgruppe &amp; Kosten</h3>
+          <ul>
+            <li>Gesetzlich empfohlen für alle ab 35 Jahren</li>
+            <li>Von der gesetzlichen Krankenkasse übernommen: alle zwei Jahre</li>
+            <li>Besonders sinnvoll bei erhöhter familiärer Belastung oder vielen Muttermalen</li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
   </div>
 </main>
@@ -144,28 +174,23 @@
     var btn = document.querySelector('.menu-toggle');
     var nav = document.getElementById('hauptnav');
     if (!btn || !nav) return;
-
     function setState(open){
       document.body.classList.toggle('menu-open', open);
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
     }
-
     btn.addEventListener('click', function(){
       setState(!document.body.classList.contains('menu-open'));
     });
-
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
         setState(false); btn.focus();
       }
     });
-
     nav.addEventListener('click', function(e){
       if (e.target.tagName === 'A'){ setState(false); }
     });
   })();
 </script>
-
 </body>
 </html>

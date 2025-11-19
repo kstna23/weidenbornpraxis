@@ -2,14 +2,13 @@
 <html lang="de">
 <head>
   <title>Sonographie / Ultraschall – WEIDENBORNpraxis</title>
-  <meta name="description" content="Schonende und strahlenfreie Ultraschalldiagnostik: Abdomen, Schilddrüse und Gefäße in der WEIDENBORNpraxis.">
+  <meta name="description" content="Schonende und strahlenfreie Ultraschalldiagnostik von Bauchorganen, Schilddrüse und Gefäßen in der WEIDENBORNpraxis.">
   <meta name="keywords" content="Ultraschall, Sonographie, Abdomen, Schilddrüse, Gefäße, Thrombose, Bauchaortenaneurysma, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
@@ -20,7 +19,6 @@
       margin-top: 1.2rem;
       margin-bottom: 1.6rem;
     }
-
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -28,13 +26,11 @@
       gap: 1.5rem;
       margin-bottom: 1.8rem;
     }
-
     .intro-section figure {
       flex: 0 0 40%;
       max-width: 360px;
       margin: 0;
     }
-
     .intro-section img {
       width: 100%;
       height: auto;
@@ -42,34 +38,48 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .intro-section img:hover {
       transform: scale(1.02);
       box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     }
-
     .intro-text {
       flex: 1;
       min-width: 260px;
       font-size: 1.05rem;
       line-height: 1.6;
     }
-
-    h3 {
-      margin-top: 1.2rem;
-      font-size: 1.15rem;
-      font-weight: 600;
+    .info-box {
+      background-color: #E0C4AF;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      margin-top: 1.25rem;
     }
-
-    ul {
-      margin-left: 1.2rem;
-      margin-bottom: 1rem;
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    .info-section {
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 1rem 1rem 0.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-section h3 { margin-top: 0; }
+    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
+    .info-section p  { margin-top: 0.4rem; }
+    @media (min-width: 840px) {
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .intro-section { flex-direction: column; }
+      .intro-section figure { max-width: 100%; }
     }
   </style>
 </head>
 
 <body>
-
 <header class="site-header">
   <div class="container header-flex">
     <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
@@ -78,9 +88,7 @@
       </h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </a>
-
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
-
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
@@ -92,47 +100,63 @@
 
 <main class="main" id="hauptinhalt">
   <div class="container">
-
     <h2>Sonographie / Ultraschall</h2>
 
     <section class="intro-section">
-
       <figure>
         <img loading="lazy" src="images/sonographie.jpeg" alt="Ultraschalldiagnostik in der WEIDENBORNpraxis">
       </figure>
-
       <div class="intro-text">
-
         <p>Die Ultraschalldiagnostik ermöglicht eine schonende, schmerzfreie und zuverlässige Untersuchung innerer Organe wie Bauch, Schilddrüse oder Gefäße. So lassen sich viele Erkrankungen frühzeitig erkennen oder sicher ausschließen.</p>
-
-        <h3>Leistungsumfang:</h3>
-        <ul>
-          <li><strong>Abdomen:</strong> Untersuchung von Leber, Galle, Bauchspeicheldrüse, Milz und Nieren</li>
-          <li><strong>Schilddrüse:</strong> Kontrolle auf Knoten, Strukturveränderungen oder Funktionsstörungen</li>
-        </ul>
-
-        <h3>Gefäße:</h3>
-        <ul>
-          <li>Kompressionssonographie zum Ausschluss von Thrombosen</li>
-          <li>Bauchaortenaneurysma-Früherkennung zur Feststellung von Erweiterungen der Hauptschlagader<br>
-              → einmalig für Männer ab 65 Jahren, von der gesetzlichen Krankenkasse übernommen</li>
-        </ul>
-
-        <h3>Vorteile der Sonographie:</h3>
-        <ul>
-          <li>Frühzeitige Erkennung von Erkrankungen</li>
-          <li>Verlaufskontrollen bei bekannten gesundheitlichen Veränderungen</li>
-          <li>Schmerzfrei, sicher und ohne Strahlenbelastung</li>
-        </ul>
-
-        <h3>Zielgruppe:</h3>
-        <ul>
-          <li>Patient:innen mit akuten Beschwerden, unklaren Symptomen oder zur Vorsorge</li>
-          <li>Besonders sinnvoll bei Risikofaktoren für Organ- oder Gefäßerkrankungen</li>
-        </ul>
-
       </div>
     </section>
+
+    <div class="info-box" aria-label="Leistungsumfang der Sonographie">
+      <div class="info-grid">
+        <section class="info-section">
+          <h3>Abdomen</h3>
+          <ul>
+            <li>Untersuchung von Leber, Galle, Bauchspeicheldrüse, Milz und Nieren</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Schilddrüse</h3>
+          <ul>
+            <li>Kontrolle auf Knoten</li>
+            <li>Erkennung von Strukturveränderungen</li>
+            <li>Hinweise auf mögliche Funktionsstörungen</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Gefäße</h3>
+          <ul>
+            <li>Kompressionssonographie zum Ausschluss von Thrombosen</li>
+            <li>Bauchaortenaneurysma-Früherkennung zur Feststellung von Erweiterungen der Hauptschlagader</li>
+            <li>Einmalig für Männer ab 65 Jahren von der gesetzlichen Krankenkasse übernommen</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Vorteile der Sonographie</h3>
+          <ul>
+            <li>Frühzeitige Erkennung von Erkrankungen</li>
+            <li>Verlaufskontrollen bei bekannten gesundheitlichen Veränderungen</li>
+            <li>Schmerzfrei, sicher und ohne Strahlenbelastung</li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Zielgruppe</h3>
+          <ul>
+            <li>Patient:innen mit akuten Beschwerden oder unklaren Symptomen</li>
+            <li>Einsatz in der Vorsorge</li>
+            <li>Besonders sinnvoll bei Risikofaktoren für Organ- oder Gefäßerkrankungen</li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
   </div>
 </main>
@@ -149,32 +173,26 @@
 
 <script>
   (function(){
-    const btn = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('hauptnav');
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
     if (!btn || !nav) return;
-
     function setState(open){
       document.body.classList.toggle('menu-open', open);
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
     }
-
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', function(){
       setState(!document.body.classList.contains('menu-open'));
     });
-
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false);
-        btn.focus();
+        setState(false); btn.focus();
       }
     });
-
-    nav.addEventListener('click', (e) => {
+    nav.addEventListener('click', function(e){
       if (e.target.tagName === 'A'){ setState(false); }
     });
   })();
 </script>
-
 </body>
 </html>
