@@ -2,25 +2,78 @@
 <html lang="de">
 <head>
   <title>Akutsprechstunde – WEIDENBORNpraxis</title>
-  <meta name="description" content="Akutsprechstunde in der WEIDENBORNpraxis.">
-  <meta name="keywords" content="Akutsprechstunde, Hausarzt, Frankfurt">
+  <meta name="description" content="Akutsprechstunde in der WEIDENBORNpraxis: zeitnahe medizinische Hilfe bei akuten Beschwerden – unkompliziert und verlässlich.">
+  <meta name="keywords" content="Hausarzt, Akutsprechstunde, akute Beschwerden, Infekt, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* zentrierte Überschrift */
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    /* Bild mit Textumfluss */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .intro-section figure {
+      flex: 0 0 40%;
+      max-width: 360px;
+      margin: 0;
+    }
+    .intro-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .intro-section img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+    .intro-text {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 720px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .intro-section figure {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
-<body class="page-service">
+
+<body>
 <header class="site-header">
   <div class="container header-flex">
-    <div class="logo-block">
-      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
+    <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
+      <h1 class="logo">
+        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+      </h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-    </div>
+    </a>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
-      <a href="index.html">Startseite</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -28,39 +81,61 @@
     </nav>
   </div>
 </header>
+
 <main class="main" id="hauptinhalt">
   <div class="container">
+
+    <h2>Akutsprechstunde</h2>
+
     <section class="intro-section">
       <figure>
         <img loading="lazy" src="images/akutsprechstunde.jpeg" alt="Akutsprechstunde in der WEIDENBORNpraxis">
       </figure>
       <div class="intro-text">
-        <h2>Akutsprechstunde</h2>
+        <p>Plötzlich krank geworden oder akute Beschwerden? In unserer Akutsprechstunde erhalten Sie zeitnah medizinische Hilfe – unkompliziert und verlässlich. So können wir akute Probleme direkt abklären und behandeln.</p>
+        <p>Ohne Terminvereinbarung zu folgenden Sprechzeiten:</p>
+        <ul>
+          <li>Montag bis Freitag: 11:00 – 12:00 Uhr</li>
+          <li>Montag und Donnerstag: 15:00 – 16:00 Uhr</li>
+        </ul>
       </div>
     </section>
-    <div class="info-box" aria-label="Inhalte">
-      <div class="info-grid"></div>
-    </div>
+
   </div>
 </main>
+
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
+
 <footer class="site-footer">
   <div class="container">
     <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
 <script>
-/* gleicher Menü-Script wie oben */
-(function(){
-  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
-  if(!btn||!nav)return;
-  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
-  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
-  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
-})();
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+    function setState(open){
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    }
+    btn.addEventListener('click', function(){
+      setState(!document.body.classList.contains('menu-open'));
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
+        setState(false); btn.focus();
+      }
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ setState(false); }
+    });
+  })();
 </script>
 </body>
 </html>

@@ -2,16 +2,13 @@
 <html lang="de">
 <head>
   <title>Impressum – WEIDENBORNpraxis</title>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <meta name="description" content="Impressum der WEIDENBORNpraxis – rechtliche Angaben gemäß TMG, Heilberufsgesetz und MStV.">
+  <meta name="keywords" content="Impressum, Hausarzt, Frankfurt, WEIDENBORNpraxis">
   <meta name="author" content="WEIDENBORNpraxis">
-  <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-
 </head>
 <body>
 <header class="site-header">
@@ -33,16 +30,61 @@
 
 <main class="main" id="hauptinhalt">
   <div class="container">
-    
     <h2>Impressum</h2>
-    <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-    <p>WEIDENBORNpraxis<br>Im Prüfling 61<br>60389 Frankfurt am Main</p>
-    <p><strong>Vertreten durch:</strong> Dr. Max Mustermann</p>
-    <p><strong>Kontakt:</strong><br>Telefon: 01234 / 567890<br>E-Mail: praxis@mustermann.de</p>
-    <p><strong>Haftungsausschluss:</strong> Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+
+    <p><strong>WEIDENBORNpraxis</strong><br>
+    Gemeinschaftspraxis / Berufsausübungsgemeinschaft<br>
+    Dr. Daniela Meissner &amp; Dr. Stefanie Weck</p>
+
+    <p><strong>Adresse:</strong><br>
+    Im Prüfling 61<br>
+    60389 Frankfurt am Main</p>
+
+    <p><strong>Kontakt:</strong><br>
+    Telefon: 069 / 45 13 59<br>
+    Fax: 069 / 46 99 00 45<br>
+    E-Mail: info@weidenbornpraxis.de</p>
+
+    <h3>Berufsbezeichnungen / Berufsrecht</h3>
+    <p>
+      Dr. Daniela Meissner: Fachärztin für Innere Medizin und Allgemeinmedizin<br>
+      Dr. Stefanie Weck: Fachärztin für Innere Medizin<br>
+      Die Berufsbezeichnungen wurden in Deutschland verliehen.
+    </p>
+
+    <p><strong>Zuständige Ärztekammer:</strong><br>
+      Ärztekammer Hessen<br>
+      Hanauer Landstraße 152<br>
+      60314 Frankfurt am Main<br>
+      https://www.aerztekammer-hessen.de
+    </p>
+
+    <p><strong>Berufsrechtliche Regelungen:</strong><br>
+      Berufsordnung für Ärztinnen und Ärzte in Hessen<br>
+      https://www.laekh.de/aerztekammer/berufsordnung<br>
+      Hessisches Heilberufsgesetz (HeilBG)
+    </p>
+
+    <h3>Zuständige Aufsichtsbehörde</h3>
+    <p>
+      Kassenärztliche Vereinigung Hessen<br>
+      Europa-Allee 90<br>
+      60325 Frankfurt am Main<br>
+      https://www.kvhessen.de
+    </p>
+
+    <h3>Umsatzsteuer</h3>
+    <p>Ärztliche Leistungen sind gemäß § 4 Nr. 14 UStG von der Umsatzsteuer befreit. Eine Umsatzsteuer-ID ist daher nicht erforderlich.</p>
+
+    <h3>Verantwortlich nach § 18 Abs. 2 MStV</h3>
+    <p>Dr. Stefanie Weck<br>Im Prüfling 61<br>60389 Frankfurt am Main</p>
+
+    <h3>Haftungshinweis</h3>
+    <p>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für externe Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
 
   </div>
 </main>
+
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
 
@@ -52,6 +94,7 @@
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
 <script>
   (function(){
     var btn = document.querySelector('.menu-toggle');
@@ -62,17 +105,9 @@
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
     }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
+    btn.addEventListener('click', function(){ setState(!document.body.classList.contains('menu-open')); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && document.body.classList.contains('menu-open')){ setState(false); btn.focus(); }});
+    nav.addEventListener('click', function(e){ if (e.target.tagName === 'A'){ setState(false); }});
   })();
 </script>
 </body>

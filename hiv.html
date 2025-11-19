@@ -1,26 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>HIV – WEIDENBORNpraxis</title>
-  <meta name="description" content="HIV-Beratung & Test in der WEIDENBORNpraxis.">
-  <meta name="keywords" content="HIV, Test, Beratung, Frankfurt">
+  <title>HIV-Schwerpunkt – WEIDENBORNpraxis</title>
+  <meta name="description" content="HIV-Schwerpunktversorgung in der WEIDENBORNpraxis: Beratung, Diagnostik, Therapie und ganzheitliche Begleitung.">
+  <meta name="keywords" content="HIV, HIV-Schwerpunkt, HIV Therapie, HIV Test, antiretroviral, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .intro-section figure {
+      flex: 0 0 40%;
+      max-width: 360px;
+      margin: 0;
+    }
+
+    .intro-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .intro-section img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .intro-text {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    h3 {
+      margin-top: 1.2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 720px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .intro-section figure {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
-<body class="page-service">
+
+<body>
 <header class="site-header">
   <div class="container header-flex">
-    <div class="logo-block">
-      <h1 class="logo"><span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span></h1>
+    <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
+      <h1 class="logo">
+        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+      </h1>
       <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-    </div>
+    </a>
     <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
-      <a href="index.html">Startseite</a>
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -28,38 +94,95 @@
     </nav>
   </div>
 </header>
+
 <main class="main" id="hauptinhalt">
   <div class="container">
+
+    <h2>HIV-Schwerpunkt</h2>
+
     <section class="intro-section">
       <figure>
-        <img loading="lazy" src="images/hiv.jpeg" alt="HIV-Beratung & Test in der WEIDENBORNpraxis">
+        <img loading="lazy" src="images/hiv.jpeg" alt="HIV-Schwerpunkt in der WEIDENBORNpraxis">
       </figure>
+
       <div class="intro-text">
-        <h2>HIV</h2>
+        <p>Wir bieten eine umfassende Versorgung für Menschen mit HIV. Dazu gehören Beratung, moderne Diagnostik und Therapie nach aktuellen medizinischen Leitlinien. Unser Ziel ist eine diskrete, respektvolle und kompetente Begleitung – sowohl medizinisch als auch menschlich.</p>
+
+        <h3>Beratung:</h3>
+        <ul>
+          <li>Aufklärung über HIV, Übertragungswege und Präventionsmöglichkeiten</li>
+          <li>Individuelle Risikoanalyse und persönliche Empfehlungen zur Reduzierung von Infektionsrisiken</li>
+          <li>Informationen zu Lebensstilmaßnahmen, Impfungen und Vorsorgeuntersuchungen</li>
+        </ul>
+
+        <h3>Diagnostik:</h3>
+        <ul>
+          <li>HIV-Testungen zur sicheren und frühzeitigen Diagnose</li>
+          <li>Regelmäßige Laborkontrollen, u. a. CD4-Zellzahl und Viruslast</li>
+          <li>Screening auf Begleiterkrankungen wie Bluthochdruck, Diabetes, Fettstoffwechselstörungen</li>
+          <li>Krebsvorsorge und gezielte Abklärung individueller Risikofaktoren</li>
+        </ul>
+
+        <h3>Therapie:</h3>
+        <ul>
+          <li>Initiierung und Begleitung antiretroviraler Therapien nach aktuellen Leitlinien</li>
+          <li>Regelmäßige Blutuntersuchungen und engmaschige ärztliche Betreuung</li>
+          <li>Anpassung der Therapie bei Nebenwirkungen oder neuen gesundheitlichen Entwicklungen</li>
+          <li>Koordination mit Fachärzt:innen für Infektiologie bei Bedarf</li>
+        </ul>
+
+        <h3>Weitere Leistungen:</h3>
+        <ul>
+          <li>Individuell abgestimmte Impfungen (z. B. Grippe, Pneumokokken, Hepatitis)</li>
+          <li>Kardiovaskuläres Risikomanagement: Kontrolle von Blutdruck, Cholesterin und Blutzucker</li>
+          <li>Krebsvorsorge entsprechend Alter, Geschlecht und Risikoprofil</li>
+        </ul>
+
+        <p>Ziel ist eine ganzheitliche Betreuung, die nicht nur die HIV-Therapie, sondern auch die allgemeine Gesundheit langfristig sichert.</p>
+
       </div>
     </section>
-    <div class="info-box" aria-label="Inhalte">
-      <div class="info-grid"></div>
-    </div>
+
   </div>
 </main>
+
 <div class="hero-divider"></div>
 <div style="margin-bottom: 2rem;"></div>
+
 <footer class="site-footer">
   <div class="container">
     <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
 <script>
-(function(){
-  var btn=document.querySelector('.menu-toggle'); var nav=document.getElementById('hauptnav');
-  if(!btn||!nav)return;
-  function setState(o){document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',String(o));btn.setAttribute('aria-label',o?'Hauptmenü schließen':'Hauptmenü öffnen');}
-  btn.addEventListener('click',function(){setState(!document.body.classList.contains('menu-open'));});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setState(false);btn.focus();}});
-  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){setState(false);}});
-})();
+  (function(){
+    var btn = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('hauptnav');
+    if (!btn || !nav) return;
+
+    function setState(open){
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+    }
+
+    btn.addEventListener('click', function(){
+      setState(!document.body.classList.contains('menu-open'));
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
+        setState(false); btn.focus();
+      }
+    });
+
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A'){ setState(false); }
+    });
+  })();
 </script>
+
 </body>
 </html>
