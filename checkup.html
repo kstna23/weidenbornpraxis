@@ -79,16 +79,24 @@
   </style>
 </head>
 
-<body>
 <header class="site-header">
   <div class="container header-flex">
-    <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
-      <h1 class="logo">
-        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
-      </h1>
-      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    <!-- Klickbarer, aber zentrierter Logo-Link -->
+    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
+      <div class="logo-block">
+        <h1 class="logo">
+          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
+        </h1>
+        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+      </div>
     </a>
-    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false" aria-label="Hauptmenü öffnen">☰</button>
+
+    <!-- Burger Menü -->
+    <button class="menu-toggle"
+            aria-controls="hauptnav"
+            aria-expanded="false"
+            aria-label="Hauptmenü öffnen">☰</button>
+
     <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
@@ -104,7 +112,7 @@
 
     <section class="intro-section">
       <figure>
-        <img loading="lazy" src="images/checkup.jpeg" alt="Vorsorgeuntersuchungen und Check-up 35 in der WEIDENBORNpraxis">
+        <img loading="lazy" src="images/checkupw.jpeg" alt="Vorsorgeuntersuchungen und Check-up 35 in der WEIDENBORNpraxis">
       </figure>
       <div class="intro-text">
         <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und dadurch Risiken rechtzeitig zu verringern.</p>
