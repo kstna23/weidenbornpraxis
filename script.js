@@ -32,17 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const cookieAccept = document.querySelector('.cookie-accept');
   const consentKey = 'weidenborn-cookie-consent';
 
+  const getConsentCookie = () => {
+    return document.cookie.split('; ').find((row) => row.startsWith(`${consentKey}=`))?.split('=')[1] === 'accepted';
+  };
+
+  const setConsentCookie = () => {
+    const sixMonthsInSeconds = 60 * 60 * 24 * 180;
+    const secureAttribute = window.location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie = `${consentKey}=accepted; Max-Age=${sixMonthsInSeconds}; Path=/; SameSite=Lax${secureAttribute}`;
+  };
+
   if (cookieBanner) {
-    const alreadyAccepted = localStorage.getItem(consentKey) === 'accepted';
+    const alreadyAccepted = getConsentCookie() || localStorage.getItem(consentKey) === 'accepted';
     if (alreadyAccepted) {
       cookieBanner.classList.add('is-hidden');
+      if (!getConsentCookie()) {
+        setConsentCookie();
+      }
     } else {
       cookieBanner.classList.add('is-visible');
     }
 
     if (cookieAccept) {
       cookieAccept.addEventListener('click', () => {
-        localStorage.setItem(consentKey, 'accepted');
+        setConsentCookie();
+        localStorage.removeItem(consentKey);
         cookieBanner.classList.remove('is-visible');
         cookieBanner.classList.add('is-hidden');
       });
