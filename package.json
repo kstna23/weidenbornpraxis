@@ -1,0 +1,10 @@
+{
+  "name": "weidenbornpraxis",
+  "version": "1.0.0",
+  "description": "Static site with contact form backend integration",
+  "main": "script.js",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.8"
+  }
+}

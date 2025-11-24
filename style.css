@@ -204,6 +204,26 @@ body.menu-open .main-nav {
   padding: 3rem 1rem 2.5rem;
 }
 
+.opening-hours {
+  margin: 2rem auto 0;
+  max-width: 520px;
+  background-color: var(--paper);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.opening-hours h4 {
+  margin: 0 0 0.75rem;
+  color: var(--brand);
+  font-size: 1.1rem;
+}
+
+.opening-hours p {
+  margin: 0.25rem 0;
+}
+
 .intro h2,
 .services h2,
 .about-us h2 {
@@ -264,7 +284,18 @@ h2, h3 {
 
 .footer-logo {
   height: 40px;
-  margin-bottom: 0.75rem;
+  margin: 0 auto 0.75rem;
+}
+
+.footer-hours {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.footer-hours strong {
+  color: var(--brand);
 }
 
 /* --- Global links & buttons --- */
