@@ -2,102 +2,29 @@
 <html lang="de">
 <head>
   <title>Vorsorgeuntersuchungen (Check-up) – WEIDENBORNpraxis</title>
-  <meta name="description" content="Vorsorgeuntersuchungen (Check-up & IGeL-Leistungen) in der WEIDENBORNpraxis: Gesundheits-Check, Check-up 35 und individuelle Zusatzleistungen.">
-  <meta name="keywords" content="Check-up, Check-up 35, Vorsorgeuntersuchung, IGeL, Gesundheitsuntersuchung, Frankfurt">
+  <meta name="description" content="Vorsorgeuntersuchungen (Check-up & IGeL-Leistungen) in der WEIDENBORNpraxis: Gesundheits-Check und Check-up 35.">
   <meta name="author" content="WEIDENBORNpraxis">
-  <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <style>
-    h2 {
-      text-align: center;
-      font-weight: 600;
-      margin-top: 1.2rem;
-      margin-bottom: 1.6rem;
-    }
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 1.8rem;
-    }
-    .intro-section figure {
-      flex: 0 0 40%;
-      max-width: 360px;
-      margin: 0;
-    }
-    .intro-section img {
-      width: 100%;
-      height: auto;
-      border-radius: 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .intro-section img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    }
-    .intro-text {
-      flex: 1;
-      min-width: 260px;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .info-box {
-      background-color: #E0C4AF;
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      margin-top: 1.25rem;
-    }
-    .info-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-    }
-    .info-section {
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 1rem 1rem 0.75rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .info-section h3 { margin-top: 0; }
-    .info-section ul { margin: 0.25rem 0 0.25rem 1.1rem; }
-    .info-section p  { margin-top: 0.4rem; }
-    @media (min-width: 840px) {
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 720px) {
-      .intro-section { flex-direction: column; }
-      .intro-section figure { max-width: 100%; }
-    }
-  </style>
 </head>
+
+<body>
 
 <header class="site-header">
   <div class="container header-flex">
-    <!-- Klickbarer, aber zentrierter Logo-Link -->
-    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
-      <div class="logo-block">
-        <h1 class="logo">
-          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
-        </h1>
-        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-      </div>
+    <a href="index.html" class="logo-block">
+      <h1 class="logo">
+        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+      </h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </a>
 
-    <!-- Burger Menü -->
-    <button class="menu-toggle"
-            aria-controls="hauptnav"
-            aria-expanded="false"
-            aria-label="Hauptmenü öffnen">☰</button>
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false">☰</button>
 
-    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+    <nav id="hauptnav" class="main-nav">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -106,78 +33,77 @@
   </div>
 </header>
 
-<main class="main" id="hauptinhalt">
-  <div class="container">
-    <h2>Vorsorgeuntersuchungen (Check-up &amp; IGeL-Leistungen)</h2>
 
-    <section class="intro-section">
+<main class="main page-service" id="hauptinhalt">
+  <div class="container">
+
+    <div class="intro-section">
       <figure>
-        <img loading="lazy" src="images/checkupw.jpeg" alt="Vorsorgeuntersuchungen und Check-up 35 in der WEIDENBORNpraxis">
+        <img src="images/checkup.jpeg" alt="Vorsorgeuntersuchungen und Check-up 35 in der WEIDENBORNpraxis" loading="lazy">
       </figure>
+
       <div class="intro-text">
+        <h2>Vorsorgeuntersuchungen (Check-up &amp; IGeL-Leistungen)</h2>
         <p>Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten frühzeitig zu erkennen und dadurch Risiken rechtzeitig zu verringern.</p>
       </div>
-    </section>
+    </div>
 
-    <div class="info-box" aria-label="Leistungen im Bereich Vorsorgeuntersuchungen">
+    <div class="info-box">
       <div class="info-grid">
+
         <section class="info-section">
           <h3>Leistungen der gesetzlichen Krankenkassen</h3>
           <ul>
             <li>Einmaliger Check-up zwischen 18 und 35 Jahren</li>
-            <li>Ab 35 Jahren: alle drei Jahre ein umfassender Gesundheits-Check („Check-up 35“), inklusive Untersuchung von Herz-Kreislauf-Risiken sowie Blut- und Urinwerten</li>
+            <li>Ab 35 Jahren: alle drei Jahre ein umfassender Gesundheits-Check („Check-up 35“)</li>
+            <li>Untersuchung von Herz-Kreislauf-Risiken sowie Blut- und Urinwerten</li>
           </ul>
         </section>
 
         <section class="info-section">
           <h3>Individuelle Gesundheitsleistungen (IGeL)</h3>
-          <p>Darüber hinaus bieten wir Individuelle Gesundheitsleistungen (Abrechnung nach der Gebührenordnung für Ärzte, GOÄ) an, die über die gesetzliche Vorsorge hinausgehen.</p>
+          <p>Zusätzlich bieten wir Individuelle Gesundheitsleistungen (Abrechnung nach GOÄ) an, die über die gesetzliche Vorsorge hinausgehen.</p>
           <p>Dazu zählen zum Beispiel:</p>
           <ul>
             <li>spezielle Laboruntersuchungen</li>
             <li>Ultraschalluntersuchungen</li>
             <li>weitere Tests, die individuell nach Ihrem Gesundheitsprofil sinnvoll sein können</li>
           </ul>
-          <p>Wir beraten Sie ausführlich, welche Vorsorgeleistungen für Sie im Einzelfall empfehlenswert sind.</p>
+          <p>Wir beraten Sie ausführlich, welche Leistungen für Sie persönlich empfehlenswert sind.</p>
         </section>
+
       </div>
     </div>
 
   </div>
 </main>
 
-<div class="hero-divider"></div>
-<div style="margin-bottom: 2rem;"></div>
-
 <footer class="site-footer">
   <div class="container">
-    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
+    <img class="footer-logo" src="images/footer.jpg" alt="Praxislogo klein">
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
 
 <script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+(function(){
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('hauptnav');
+  if (!btn || !nav) return;
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
+  });
+
+  nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      document.body.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded', 'false');
     }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
+  });
+})();
 </script>
+
 </body>
 </html>

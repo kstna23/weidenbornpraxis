@@ -3,88 +3,28 @@
 <head>
   <title>Impfungen – WEIDENBORNpraxis</title>
   <meta name="description" content="Impfberatung und Impfungen in der WEIDENBORNpraxis – für Vorsorge, Reisen und besondere Risiken.">
-  <meta name="keywords" content="Impfung, Impfberatung, STIKO, Reiseimpfung, Auffrischimpfung, Frankfurt">
   <meta name="author" content="WEIDENBORNpraxis">
-  <meta name="robots" content="index, follow">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <style>
-    h2 {
-      text-align: center;
-      font-weight: 600;
-      margin-top: 1.2rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .intro-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .intro-section figure {
-      flex: 0 0 40%;
-      max-width: 360px;
-      margin: 0;
-    }
-
-    .intro-section img {
-      width: 100%;
-      height: auto;
-      border-radius: 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .intro-section img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    }
-
-    .intro-text {
-      flex: 1;
-      min-width: 260px;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 720px) {
-      .intro-section {
-        flex-direction: column;
-      }
-      .intro-section figure {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
+
 <header class="site-header">
   <div class="container header-flex">
-    <!-- Klickbarer, aber zentrierter Logo-Link -->
-    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
-      <div class="logo-block">
-        <h1 class="logo">
-          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
-        </h1>
-        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-      </div>
+    <a href="index.html" class="logo-block">
+      <h1 class="logo">
+        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+      </h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </a>
 
-    <!-- Burger Menü -->
-    <button class="menu-toggle"
-            aria-controls="hauptnav"
-            aria-expanded="false"
-            aria-label="Hauptmenü öffnen">☰</button>
+    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false">☰</button>
 
-    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
+    <nav id="hauptnav" class="main-nav">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -93,30 +33,30 @@
   </div>
 </header>
 
-<main class="main" id="hauptinhalt">
+
+<main class="main page-service" id="hauptinhalt">
   <div class="container">
 
-    <h2>Impfungen</h2>
-
-    <section class="intro-section">
+    <div class="intro-section">
       <figure>
-        <img loading="lazy" src="images/impfungen.jpeg" alt="Impfungen in der WEIDENBORNpraxis">
+        <img src="images/impfungen.jpeg" alt="Impfungen in der WEIDENBORNpraxis" loading="lazy">
       </figure>
+
       <div class="intro-text">
+        <h2>Impfungen</h2>
         <p>Wir beraten und impfen umfassend – zur Vorsorge, für Reisen oder bei besonderen Risiken. Bitte bringen Sie zum Termin Ihren Impfpass mit.</p>
       </div>
-    </section>
+    </div>
 
-    <!-- Kachel-Bereich wie in hausarzt.html -->
-    <div class="info-box" aria-label="Impfleistungen der Praxis">
+    <div class="info-box">
       <div class="info-grid">
 
         <section class="info-section">
           <h3>Zielgruppen &amp; Empfehlungen</h3>
           <ul>
-            <li><strong>Erwachsene:</strong> Auffrischungen (Tetanus, Diphtherie, Pertussis) alle 10 Jahre; Influenza jährlich</li>
-            <li><strong>Senior:innen &amp; Risikogruppen:</strong> Pneumokokken, Influenza, Herpes Zoster, RSV je nach Alter und Vorerkrankungen</li>
-            <li><strong>Besonders gefährdete Gruppen:</strong> chronisch Kranke, Schwangere, medizinisches Personal, Reisende</li>
+            <li><strong>Erwachsene:</strong> Auffrischungen (Tetanus, Diphtherie, Pertussis) in empfohlenen Abständen, Influenza jährlich</li>
+            <li><strong>Senior:innen &amp; Risikogruppen:</strong> z. B. Pneumokokken-, Influenza-, Herpes-zoster-, RSV-Impfungen je nach Alter und Vorerkrankungen</li>
+            <li><strong>Besondere Risikogruppen:</strong> z. B. chronisch Kranke, Schwangere, medizinisches Personal, Reisende</li>
           </ul>
         </section>
 
@@ -125,14 +65,14 @@
           <ul>
             <li>Standardimpfungen nach STIKO-Empfehlungen</li>
             <li>Reise- und Sonderimpfungen</li>
-            <li>Umfassende Aufklärung (Intervalle, Schutzdauer, mögliche Nebenwirkungen)</li>
             <li>Impfpasskontrolle und Planung fehlender Impfungen</li>
+            <li>Umfassende Aufklärung zu Impfintervallen, Schutzdauer und möglichen Nebenwirkungen</li>
           </ul>
         </section>
 
         <section class="info-section">
           <h3>Ziel</h3>
-          <p>Schutz vor Infektionen, Vermeidung schwerer Krankheitsverläufe und Sicherstellung eines vollständigen, aktuellen Impfschutzes.</p>
+          <p>Schutz vor Infektionen, Vermeidung schwerer Krankheitsverläufe und Sicherstellung eines vollständigen, aktuellen Impfschutzes – individuell abgestimmt auf Ihre Lebenssituation.</p>
         </section>
 
       </div>
@@ -141,43 +81,31 @@
   </div>
 </main>
 
-<div class="hero-divider"></div>
-<div style="margin-bottom: 2rem;"></div>
-
 <footer class="site-footer">
   <div class="container">
-    <img loading="lazy" alt="Praxislogo klein" class="footer-logo" src="images/footer.jpg"/>
+    <img class="footer-logo" src="images/footer.jpg" alt="Praxislogo klein">
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
 
 <script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
+(function(){
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('hauptnav');
+  if (!btn || !nav) return;
 
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded', document.body.contains && document.body.classList.contains('menu-open'));
+  });
+
+  nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      document.body.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded', 'false');
     }
-
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false);
-        btn.focus();
-      }
-    });
-
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
+  });
+})();
 </script>
 
 </body>

@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <title>Unsere Ärzte – WEIDENBORNpraxis</title>
-  <meta name="description" content="WEIDENBORNpraxis – Ihre Hausarztpraxis in Frankfurt. Kompetenz, Zeit und Herz für Ihre Gesundheit.">
-  <meta name="keywords" content="Hausarzt, Frankfurt, Allgemeinmedizin, Praxis, Ärzte, Gesundheit">
+  <title>Unsere Ärztinnen – WEIDENBORNpraxis</title>
+  <meta name="description" content="Lernen Sie die Ärztinnen der WEIDENBORNpraxis kennen: Dr. med. Daniela Meissner und Dr. med. Stefanie Weck.">
   <meta name="author" content="WEIDENBORNpraxis">
   <meta name="robots" content="index, follow">
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="container header-flex">
-    <!-- Klickbarer, aber zentrierter Logo-Link -->
-    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
-      <div class="logo-block">
-        <h1 class="logo">
-          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
-        </h1>
-        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
-      </div>
+    <a href="index.html" class="logo-block" style="text-decoration:none; color:inherit;">
+      <h1 class="logo">
+        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
+      </h1>
+      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
     </a>
 
-    <!-- Burger Menü -->
     <button class="menu-toggle"
             aria-controls="hauptnav"
             aria-expanded="false"
@@ -41,17 +38,61 @@
   </div>
 </header>
 
-<main class="main" id="hauptinhalt">
+
+<main class="main page-service" id="hauptinhalt">
   <div class="container">
-    
-    <h2>Unsere Ärzte</h2>
-    <img loading="lazy" src="images/aerzte-portrait.jpg" alt="Unsere Ärzte" style="width:100%; max-width:600px;">
-    <p>Unsere Ärztinnen und Ärzte bringen langjährige Erfahrung, fundiertes Fachwissen und viel Einfühlungsvermögen mit. Wir nehmen uns Zeit für Sie und behandeln ganzheitlich.</p>
+
+    <div class="intro-section">
+      <div class="intro-text">
+        <h2>Unsere Ärztinnen</h2>
+        <p>In der WEIDENBORNpraxis werden Sie von zwei Fachärztinnen mit langjähriger klinischer Erfahrung und zusätzlichen Qualifikationen betreut.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-grid">
+
+        <!-- Dr. Meissner -->
+        <section class="info-section">
+          <img src="images/daniela-meissner.jpg"
+               alt="Portrait Dr. med. Daniela Meissner"
+               style="width:100%; height:auto; border-radius:var(--radius); margin-bottom:1rem;">
+
+          <h3>Dr. med. Daniela Meissner</h3>
+          <p>Fachärztin für Innere Medizin und Allgemeinmedizin</p>
+          <ul>
+            <li><strong>Studium &amp; Approbation:</strong> Ruhr-Universität Bochum, 2003–2009</li>
+            <li><strong>Facharztausbildung Innere Medizin:</strong> St. Johannes Hospital Dortmund und HSK Wiesbaden; anschließend Tätigkeit als Fachärztin für Innere Medizin in der HSK Wiesbaden (2010–2018)</li>
+            <li><strong>Promotion:</strong> 2017</li>
+            <li><strong>Facharztausbildung Allgemeinmedizin:</strong> Infektiologikum Frankfurt &amp; MainFacharzt Frankfurt (HIV, Hepatitis, PrEP), 2019–2024</li>
+            <li><strong>Tätigkeit 2025:</strong> Praxis Dr. Tim Krieger, Frankfurt</li>
+            <li><strong>Zusatzqualifikationen:</strong> Palliativmedizin, Ernährungsmedizin, Reisemedizin, psychosomatische Grundversorgung</li>
+          </ul>
+        </section>
+
+        <!-- Dr. Weck -->
+        <section class="info-section">
+          <img src="images/stefanie-weck.jpg"
+               alt="Portrait Dr. med. Stefanie Weck"
+               style="width:100%; height:auto; border-radius:var(--radius); margin-bottom:1rem;">
+
+          <h3>Dr. med. Stefanie Weck</h3>
+          <p>Fachärztin für Innere Medizin</p>
+          <ul>
+            <li><strong>Studium &amp; Approbation:</strong> Johannes-Gutenberg-Universität Mainz, 2007–2013</li>
+            <li><strong>Facharztausbildung Innere Medizin:</strong> St. Marienkrankenhaus Frankfurt, HSK Wiesbaden und Klinikum Frankfurt Höchst</li>
+            <li><strong>Promotion:</strong> 2018</li>
+            <li><strong>Tätigkeit als Fachärztin:</strong> Kardiologie, Klinikum Frankfurt Höchst</li>
+            <li><strong>Zusatzqualifikationen:</strong> psychosomatische Grundversorgung, Reisemedizin</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
 
   </div>
 </main>
-<div class="hero-divider"></div>
-<div style="margin-bottom: 2rem;"></div>
+
 
 <footer class="site-footer">
   <div class="container">
@@ -59,28 +100,29 @@
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
+
+
 <script>
   (function(){
     var btn = document.querySelector('.menu-toggle');
     var nav = document.getElementById('hauptnav');
     if (!btn || !nav) return;
+
     function setState(open){
       document.body.classList.toggle('menu-open', open);
       btn.setAttribute('aria-expanded', String(open));
       btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
     }
+
     btn.addEventListener('click', function(){
       setState(!document.body.classList.contains('menu-open'));
     });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
+
     nav.addEventListener('click', function(e){
       if (e.target.tagName === 'A'){ setState(false); }
     });
   })();
 </script>
+
 </body>
 </html>
