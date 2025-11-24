@@ -176,28 +176,16 @@
   </div>
 </footer>
 
-<script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
-</script>
+<div class="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <div class="cookie-text">
+    <strong>Cookie-Hinweis:</strong> Wir nutzen Cookies ausschließlich für funktionale Zwecke (Navigation & Spam-Schutz). Mit Klick auf „Akzeptieren“ stimmen Sie zu.
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-accept" type="button">Akzeptieren</button>
+    <a href="impressum.html">Mehr erfahren</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
