@@ -7,7 +7,9 @@ const validateBody = (body = {}) => {
   const name = (body.name || '').trim();
   const email = (body.email || '').trim();
   const message = (body.message || '').trim();
-  const quizAnswer = (body.quiz_answer || '').trim();
+  const quizAnswer = Number((body.quiz_answer || '').trim());
+  const quizLeft = Number((body.quiz_left || '').trim());
+  const quizRight = Number((body.quiz_right || '').trim());
   const website = (body.website || '').trim();
   const startedAt = Number(body.form_started_at || 0);
   const now = Date.now();
@@ -17,7 +19,11 @@ const validateBody = (body = {}) => {
   if (!email) errors.push('E-Mail fehlt.');
   if (!message) errors.push('Nachricht fehlt.');
   if (website) errors.push('Spam erkannt.');
-  if (quizAnswer !== '5') errors.push('Kontrollfrage falsch.');
+  const hasValidQuizNumbers = Number.isFinite(quizLeft) && Number.isFinite(quizRight);
+  const expectedQuiz = hasValidQuizNumbers ? quizLeft + quizRight : null;
+  if (!hasValidQuizNumbers || !Number.isFinite(quizAnswer) || quizAnswer !== expectedQuiz) {
+    errors.push('Kontrollfrage falsch.');
+  }
   if (Number.isFinite(startedAt) && now - startedAt < minimumFormTimeMs) {
     errors.push('Bitte Formular regulär ausfüllen.');
   }

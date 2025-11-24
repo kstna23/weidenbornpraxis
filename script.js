@@ -67,13 +67,32 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     const honeypot = contactForm.querySelector('input[name="website"]');
     const quizInput = contactForm.querySelector('input[name="quiz_answer"]');
+    const quizLeftInput = contactForm.querySelector('input[name="quiz_left"]');
+    const quizRightInput = contactForm.querySelector('input[name="quiz_right"]');
+    const quizQuestion = contactForm.querySelector('#quiz-question');
+    const quizHint = contactForm.querySelector('#quiz-hint');
     const statusText = contactForm.querySelector('.contact-status');
     const startTimeInput = contactForm.querySelector('input[name="form_started_at"]');
     const minimumFormTimeMs = 3000;
 
+    const refreshQuiz = () => {
+      if (!quizInput || !quizLeftInput || !quizRightInput || !quizQuestion) return;
+      const left = Math.floor(Math.random() * 4) + 3; // 3-6
+      const right = Math.floor(Math.random() * 5) + 4; // 4-8
+      quizLeftInput.value = String(left);
+      quizRightInput.value = String(right);
+      quizInput.value = '';
+      quizQuestion.textContent = `Bestätige bitte: ${left} + ${right} =`;
+      if (quizHint) {
+        quizHint.textContent = `Rechne bitte ${left} + ${right} und trage das Ergebnis ein.`;
+      }
+    };
+
     if (startTimeInput) {
       startTimeInput.value = String(Date.now());
     }
+
+    refreshQuiz();
 
     contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -94,11 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (quizInput && quizInput.value.trim() !== '5') {
+      const left = Number(quizLeftInput?.value || 0);
+      const right = Number(quizRightInput?.value || 0);
+      const expectedSum = left + right;
+      const userAnswer = Number(quizInput?.value?.trim() || 0);
+      const isValidQuiz = Number.isFinite(expectedSum) && Number.isFinite(userAnswer) && userAnswer === expectedSum;
+
+      if (!isValidQuiz) {
         if (statusText) {
-          statusText.textContent = 'Bitte beantworten Sie die Kontrollfrage mit der Zahl 5.';
-          quizInput.focus();
+          statusText.textContent = 'Bitte beantworten Sie die Kontrollfrage korrekt.';
+          quizInput?.focus();
         }
+        refreshQuiz();
         return;
       }
 
@@ -112,6 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
         message: contactForm.querySelector('textarea[name="message"]')?.value || '',
         website: honeypot?.value || '',
         quiz_answer: quizInput?.value || '',
+        quiz_left: quizLeftInput?.value || '',
+        quiz_right: quizRightInput?.value || '',
         form_started_at: startTimeInput?.value || '',
       };
 
@@ -126,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (response.ok) {
           contactForm.reset();
+          refreshQuiz();
           if (startTimeInput) {
             startTimeInput.value = String(Date.now());
           }
@@ -134,11 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         } else if (statusText) {
           statusText.textContent = data.error || 'Leider ist ein Fehler aufgetreten.';
+          refreshQuiz();
         }
       } catch (error) {
         if (statusText) {
           statusText.textContent = 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.';
         }
+        refreshQuiz();
       }
     });
   }

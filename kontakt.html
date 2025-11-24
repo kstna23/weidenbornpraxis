@@ -59,10 +59,12 @@
       <input type="hidden" name="form_started_at" value="">
 
       <label class="quiz-label" for="quiz_answer">
-        <span>Anti-Spam: Was ist 2&nbsp;+&nbsp;3?</span>
-        <input type="number" id="quiz_answer" name="quiz_answer" inputmode="numeric" min="5" max="5" pattern="5" required aria-describedby="quiz-hint">
+        <span id="quiz-question">Anti-Spam: Bitte rechne die Aufgabe.</span>
+        <input type="number" id="quiz_answer" name="quiz_answer" inputmode="numeric" required aria-describedby="quiz-hint">
       </label>
-      <small id="quiz-hint">Geben Sie bitte die Zahl 5 ein.</small><br>
+      <input type="hidden" name="quiz_left" value="">
+      <input type="hidden" name="quiz_right" value="">
+      <small id="quiz-hint">Rechnen Sie bitte die angezeigte Aufgabe aus.</small><br>
 
       <button type="submit">Absenden</button>
       <p class="contact-status" role="status" aria-live="polite"></p>
