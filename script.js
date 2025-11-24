@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
       startTimeInput.value = String(Date.now());
     }
 
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
       if (startTimeInput) {
         const elapsedMs = Date.now() - Number(startTimeInput.value || 0);
         if (Number.isFinite(elapsedMs) && elapsedMs < minimumFormTimeMs) {
-          event.preventDefault();
           if (statusText) {
             statusText.textContent = 'Nachricht wurde nicht gesendet. Bitte füllen Sie das Formular kurz in Ruhe aus.';
           }
@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (honeypot && honeypot.value.trim() !== '') {
-        event.preventDefault();
         if (statusText) {
           statusText.textContent = 'Nachricht wurde nicht gesendet. Bitte versuchen Sie es erneut.';
         }
@@ -96,13 +95,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (quizInput && quizInput.value.trim() !== '5') {
-        event.preventDefault();
         if (statusText) {
           statusText.textContent = 'Bitte beantworten Sie die Kontrollfrage mit der Zahl 5.';
           quizInput.focus();
         }
-      } else if (statusText) {
-        statusText.textContent = 'Vielen Dank! Ihr E-Mail-Programm öffnet sich gleich.';
+        return;
+      }
+
+      if (statusText) {
+        statusText.textContent = 'Nachricht wird gesendet...';
+      }
+
+      const payload = {
+        name: contactForm.querySelector('input[name="name"]')?.value || '',
+        email: contactForm.querySelector('input[name="email"]')?.value || '',
+        message: contactForm.querySelector('textarea[name="message"]')?.value || '',
+        website: honeypot?.value || '',
+        quiz_answer: quizInput?.value || '',
+        form_started_at: startTimeInput?.value || '',
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok) {
+          contactForm.reset();
+          if (startTimeInput) {
+            startTimeInput.value = String(Date.now());
+          }
+          if (statusText) {
+            statusText.textContent = 'Vielen Dank! Ihre Nachricht wurde gesendet.';
+          }
+        } else if (statusText) {
+          statusText.textContent = data.error || 'Leider ist ein Fehler aufgetreten.';
+        }
+      } catch (error) {
+        if (statusText) {
+          statusText.textContent = 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.';
+        }
       }
     });
   }
