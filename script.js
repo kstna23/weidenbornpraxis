@@ -54,8 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const honeypot = contactForm.querySelector('input[name="website"]');
     const quizInput = contactForm.querySelector('input[name="quiz_answer"]');
     const statusText = contactForm.querySelector('.contact-status');
+    const startTimeInput = contactForm.querySelector('input[name="form_started_at"]');
+    const minimumFormTimeMs = 3000;
+
+    if (startTimeInput) {
+      startTimeInput.value = String(Date.now());
+    }
 
     contactForm.addEventListener('submit', (event) => {
+      if (startTimeInput) {
+        const elapsedMs = Date.now() - Number(startTimeInput.value || 0);
+        if (Number.isFinite(elapsedMs) && elapsedMs < minimumFormTimeMs) {
+          event.preventDefault();
+          if (statusText) {
+            statusText.textContent = 'Nachricht wurde nicht gesendet. Bitte füllen Sie das Formular kurz in Ruhe aus.';
+          }
+          return;
+        }
+      }
+
       if (honeypot && honeypot.value.trim() !== '') {
         event.preventDefault();
         if (statusText) {
