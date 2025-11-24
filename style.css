@@ -510,3 +510,73 @@ label {
     text-align: center;
   }
 }
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  background-color: var(--paper);
+  color: var(--ink);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border-radius: 14px;
+  display: none;
+  gap: 1rem;
+  align-items: center;
+  max-width: min(960px, 92vw);
+  z-index: 2000;
+}
+
+.cookie-banner.is-visible { display: flex; }
+.cookie-banner.is-hidden { display: none; }
+
+.cookie-text { flex: 1; font-size: 0.95rem; }
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cookie-accept {
+  background-color: var(--brand);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cookie-actions a {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .cookie-banner { flex-direction: column; align-items: flex-start; }
+}
+
+.contact-form .hp-field {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form .contact-status {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.contact-form .quiz-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}

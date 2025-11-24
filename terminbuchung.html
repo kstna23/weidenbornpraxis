@@ -10,7 +10,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
 
 </head>
 <body>
@@ -44,16 +44,9 @@
 <main class="main" id="hauptinhalt">
   <div class="container">
     
-    <h2>Kontakt</h2>
-    <p>Adresse: Im Prüfling 61, 60389 Frankfurt am Main</p>
-    <p>Telefon: <a href="tel:+491234567890">01234 / 567890</a></p>
-    <p>E-Mail: <a href="mailto:praxis@mustermann.de">praxis@mustermann.de</a></p>
-    <form action="mailto:praxis@mustermann.de" method="post" enctype="text/plain" class="contact-form">
-      <label>Name:<br><input type="text" name="name" required></label><br>
-      <label>E-Mail:<br><input type="email" name="email" required></label><br>
-      <label>Nachricht:<br><textarea name="message" rows="5" required></textarea></label><br>
-      <button type="submit">Absenden</button>
-    </form>
+    <h2>Online-Termin</h2>
+    <p>Die Online-Terminbuchung wird aktuell umgestellt und ist vorübergehend nicht verfügbar.</p>
+    <p>Bitte buchen Sie Ihren Termin telefonisch unter <a href="tel:+491234567890">01234 / 567890</a> oder schreiben Sie uns eine E-Mail an <a href="mailto:praxis@mustermann.de">praxis@mustermann.de</a>.</p>
 
   </div>
 </main>
@@ -66,28 +59,17 @@
     <p>WEIDENBORNpraxis – Im Prüfling 61, 60389 Frankfurt am Main</p>
   </div>
 </footer>
-<script>
-  (function(){
-    var btn = document.querySelector('.menu-toggle');
-    var nav = document.getElementById('hauptnav');
-    if (!btn || !nav) return;
-    function setState(open){
-      document.body.classList.toggle('menu-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-      btn.setAttribute('aria-label', open ? 'Hauptmenü schließen' : 'Hauptmenü öffnen');
-    }
-    btn.addEventListener('click', function(){
-      setState(!document.body.classList.contains('menu-open'));
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')){
-        setState(false); btn.focus();
-      }
-    });
-    nav.addEventListener('click', function(e){
-      if (e.target.tagName === 'A'){ setState(false); }
-    });
-  })();
-</script>
+
+<div class="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <div class="cookie-text">
+    <strong>Cookie-Hinweis:</strong> Wir nutzen Cookies ausschließlich für funktionale Zwecke (Navigation & Spam-Schutz). Mit Klick auf „Akzeptieren“ stimmen Sie zu.
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-accept" type="button">Akzeptieren</button>
+    <a href="impressum.html#datenschutz" rel="noopener">Mehr erfahren</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
