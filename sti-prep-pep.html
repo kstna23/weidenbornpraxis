@@ -15,16 +15,23 @@
 
 <header class="site-header">
   <div class="container header-flex">
-    <a href="index.html" class="logo-block">
-      <h1 class="logo">
-        <span class="logo-bold">WEIDENBORN</span><span class="logo-light">praxis</span>
-      </h1>
-      <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+    <!-- Klickbarer, aber zentrierter Logo-Link -->
+    <a href="index.html" class="logo-link" aria-label="Zur Startseite">
+      <div class="logo-block">
+        <h1 class="logo">
+          <span class="logo-weidenborn">WEIDENBORN</span><span class="logo-praxis">praxis</span>
+        </h1>
+        <p class="subtitle">Dr. Meissner &amp; Dr. Weck</p>
+      </div>
     </a>
 
-    <button class="menu-toggle" aria-controls="hauptnav" aria-expanded="false">☰</button>
+    <!-- Burger Menü -->
+    <button class="menu-toggle"
+            aria-controls="hauptnav"
+            aria-expanded="false"
+            aria-label="Hauptmenü öffnen">☰</button>
 
-    <nav id="hauptnav" class="main-nav">
+    <nav id="hauptnav" class="main-nav" aria-label="Hauptnavigation">
       <a href="kontakt.html">Kontakt</a>
       <a href="terminbuchung.html">Online-Termin</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -95,25 +102,16 @@
   </div>
 </footer>
 
-<script>
-(function(){
-  const btn = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('hauptnav');
-  if (!btn || !nav) return;
+<div class="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <div class="cookie-text">
+    <strong>Cookie-Hinweis:</strong> Wir nutzen Cookies ausschließlich für funktionale Zwecke (Navigation & Spam-Schutz). Mit Klick auf „Akzeptieren“ stimmen Sie zu.
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-accept" type="button">Akzeptieren</button>
+    <a href="impressum.html">Mehr erfahren</a>
+  </div>
+</div>
 
-  btn.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
-    btn.setAttribute('aria-expanded', document.body.classList.contains('menu-open'));
-  });
-
-  nav.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      document.body.classList.remove('menu-open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-})();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
