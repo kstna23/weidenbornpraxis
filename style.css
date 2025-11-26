@@ -408,8 +408,7 @@ label {
 
 /* Info-Kästchen (z. B. Leistungen / Inhalte) */
 .info-box {
-  background-color: #f1c9bd;
-  background-color: color-mix(in srgb, var(--header-bg) 28%, var(--bg) 72%);
+  background-color: var(--header-bg);
   border-radius: var(--radius);
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
@@ -473,6 +472,12 @@ label {
   padding: 0 1rem; /* gleiche Innenabstände wie Startseite */
 }
 
+/* Hintergrund auf Leistungsseiten an den Header anpassen */
+body.page-service,
+.main.page-service {
+  background-color: var(--header-bg);
+}
+
 .page-service .intro-section {
   margin-top: 1rem;       /* Luft unter der Überschrift */
   align-items: center;    /* Bild und Text vertikal zentrieren */
@@ -530,6 +535,13 @@ label {
 .page-service .intro-section .intro-text {
   flex: 1;
   min-width: 260px;
+}
+
+/* Blocksatz für Fließtexte auf Leistungsseiten */
+.page-service p,
+.page-service li {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .page-service .intro-section .intro-text h2 {
