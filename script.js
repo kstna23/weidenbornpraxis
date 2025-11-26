@@ -173,4 +173,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  const footerContainer = document.querySelector('.site-footer .container');
+  if (footerContainer && !footerContainer.querySelector('.footer-links')) {
+    const footerLinks = document.createElement('div');
+    footerLinks.className = 'footer-links';
+
+    const impressumLink = document.createElement('a');
+    impressumLink.href = 'impressum.html';
+    impressumLink.textContent = 'Impressum';
+    impressumLink.setAttribute('aria-label', 'Impressum öffnen');
+
+    const datenschutzLink = document.createElement('a');
+    datenschutzLink.href = 'impressum.html#datenschutz';
+    datenschutzLink.textContent = 'Datenschutz';
+    datenschutzLink.setAttribute('aria-label', 'Datenschutzhinweise anzeigen');
+
+    footerLinks.append(impressumLink, datenschutzLink);
+    footerContainer.appendChild(footerLinks);
+  }
 });

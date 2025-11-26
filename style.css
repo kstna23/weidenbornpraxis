@@ -310,6 +310,20 @@ h2, h3 {
   color: var(--brand);
 }
 
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.footer-links a {
+  color: var(--brand);
+  font-weight: 600;
+}
+
 /* --- Global links & buttons --- */
 button {
   background-color: var(--brand);
