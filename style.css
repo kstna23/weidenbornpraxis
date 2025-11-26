@@ -32,6 +32,16 @@ body {
   line-height: 1.6;
 }
 
+/* Blocksatz für Fließtexte auf allen Seiten */
+main p,
+main li,
+section p,
+section li,
+.container > p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 img {
   max-width: 100%;
   height: auto;
