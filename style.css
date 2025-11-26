@@ -61,9 +61,9 @@ img {
 .header-flex {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  padding: var(--header-pad-y) 0;
-  position: relative; /* Referenz für den Burger-Button */
+  padding: var(--header-pad-y) 1.5rem;
 }
 
 .logo-block {
@@ -132,17 +132,16 @@ img {
 
 /* Burger-Button: immer sichtbar, absolut am rechten Seitenrand des Headers */
 .menu-toggle {
-  position: absolute;
-  right: 2.5rem;          /* jetzt wirklich an der rechten Kante */
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: auto;
   background: none;
   border: none;
   font-size: 1.8rem;
   line-height: 1;
   color: var(--brand);
   cursor: pointer;
-  padding: 0;        /* kein extra Innenabstand */
+  padding: 0.35rem 0.4rem;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* Side-Drawer Navigation: immer Burger-Menü, slidet von rechts herein */
@@ -400,11 +399,6 @@ label {
   * { transition: none !important; animation: none !important; }
 }
 
-
-  transform: scale(1.02);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
 .intro-text {
   flex: 1;
   min-width: 260px;
@@ -414,7 +408,8 @@ label {
 
 /* Info-Kästchen (z. B. Leistungen / Inhalte) */
 .info-box {
-  background-color: #91504E;
+  background-color: #f1c9bd;
+  background-color: color-mix(in srgb, var(--header-bg) 28%, var(--bg) 72%);
   border-radius: var(--radius);
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
@@ -462,6 +457,17 @@ label {
   }
 }
 
+@media (max-width: 640px) {
+  .header-flex { padding-inline: 1rem; }
+  .logo { font-size: clamp(1.55rem, 7vw, 2.1rem); }
+  .subtitle { font-size: 0.9rem; }
+  .menu-toggle { font-size: 1.6rem; padding: 0.25rem 0.35rem; }
+
+  .info-box { padding: clamp(1rem, 5vw, 1.35rem); }
+  .info-section { padding: clamp(0.85rem, 4vw, 1.05rem); }
+  .page-service .container { width: 96%; }
+}
+
 /* --- Leistungsseiten: Intro-Layout bündig skalieren --- */
 .page-service .container {
   padding: 0 1rem; /* gleiche Innenabstände wie Startseite */
@@ -496,6 +502,12 @@ label {
   align-items: flex-start;
   gap: 2rem;
   margin-bottom: 2.5rem;
+}
+
+.page-service h2 {
+  text-align: center;
+  font-weight: 600;
+  margin: 1.2rem 0 1.6rem;
 }
 
 /* Bild links, bündig mit Container */
