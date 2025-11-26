@@ -67,7 +67,6 @@ img {
 }
 
 .logo-block {
-  flex: 1;
   text-align: center; /* Logo + Unterzeile wieder mittig */
 }
 
@@ -102,7 +101,9 @@ img {
 
 /* Logo-Link soll sich wie Block verhalten, zentriert bleiben */
 .logo-link {
-  display: inline-block;
+  flex: 1;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   color: inherit;
   margin: 0 auto;
@@ -475,7 +476,7 @@ label {
 /* Hintergrund auf Leistungsseiten an den Header anpassen */
 body.page-service,
 .main.page-service {
-  background-color: var(--header-bg);
+  background-color: var(--bg);
 }
 
 .page-service .intro-section {
