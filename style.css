@@ -665,6 +665,11 @@ body.page-service,
   margin-bottom: 0.5rem;
 }
 
+.job-single h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
 .job-section ul {
   margin: 0.25rem 0 0.25rem 1.1rem;
 }
