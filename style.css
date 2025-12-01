@@ -65,6 +65,7 @@ img {
   background: color-mix(in srgb, var(--paper) 88%, white);
   color: var(--brand);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .info-banner__content {
@@ -73,6 +74,8 @@ img {
   align-items: center;
   padding: 0.85rem 0;
   font-weight: 600;
+  overflow: hidden;
+  position: relative;
 }
 
 .info-banner a {
@@ -83,6 +86,27 @@ img {
 .info-banner a:hover,
 .info-banner a:focus-visible {
   text-decoration: underline;
+}
+
+.info-banner__track {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: banner-scroll 18s linear infinite;
+}
+
+.info-banner__item {
+  display: inline-block;
+}
+
+@keyframes banner-scroll {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .info-banner__track { animation: none; }
 }
 
 /* Container im Header orientiert sich wieder an der Inhaltsbreite */
@@ -649,6 +673,18 @@ body.page-service,
   font-weight: 600;
   color: var(--brand);
   margin-bottom: 0;
+}
+
+.job-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.job-lead {
+  grid-column: 1 / -1;
+}
+
+.job-lead h3 {
+  margin-top: 0;
 }
 
 /* Mobile Darstellung: untereinander */
