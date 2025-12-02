@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    document.addEventListener('click', (event) => {
+      if (!document.body.classList.contains('menu-open')) return;
+
+      const target = event.target;
+      const clickInsideMenu = nav.contains(target) || btn.contains(target);
+      if (!clickInsideMenu) {
+        setMenuState(false);
+      }
+    });
+
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && document.body.classList.contains('menu-open')) {
         setMenuState(false);
