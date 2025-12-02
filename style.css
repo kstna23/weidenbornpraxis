@@ -32,13 +32,13 @@ body {
   line-height: 1.6;
 }
 
-/* Blocksatz für Fließtexte auf allen Seiten */
+/* Linksbündiger Flattersatz für Fließtexte auf allen Seiten */
 main p,
 main li,
 section p,
 section li {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  text-justify: auto;
 }
 
 img {
@@ -266,12 +266,12 @@ body.menu-open .main-nav {
 
 .opening-hours {
   margin: 2rem auto 0;
-  max-width: 520px;
+  max-width: 620px;
   background-color: var(--paper);
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.75rem;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  text-align: center;
+  text-align: left;
 }
 
 .opening-hours h4 {
@@ -280,8 +280,30 @@ body.menu-open .main-nav {
   font-size: 1.1rem;
 }
 
-.opening-hours p {
-  margin: 0.25rem 0;
+.opening-hours__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem 0;
+}
+
+.opening-hours__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+  row-gap: 0.1rem;
+  align-items: baseline;
+}
+
+.opening-hours__item .hours-day {
+  font-weight: 700;
+}
+
+.opening-hours__item .hours-note {
+  grid-column: 1 / -1;
+  color: var(--brand);
+  font-weight: 600;
 }
 
 .intro h2,
