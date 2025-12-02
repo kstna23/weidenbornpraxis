@@ -326,7 +326,7 @@ body.menu-open .main-nav {
 .about-us h2 {
   color: var(--brand);
   font-size: clamp(1.5rem, 3.5vw, 2rem);
-  text-align: center;
+  text-align: left;
 }
 
 h2, h3 {
@@ -347,7 +347,7 @@ h2, h3 {
   background-color: var(--paper);
   border-radius: var(--radius);
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -367,13 +367,13 @@ h2, h3 {
   font-weight: 400;
   color: var(--brand);
   font-size: 1.2rem;
-  text-align: center;
+  text-align: left;
 }
 
 /* --- Footer --- */
 .site-footer {
   background-color: var(--footer-bg);
-  text-align: center;
+  text-align: left;
   padding: 2rem 1rem;
   color: var(--muted);
   font-size: 0.95rem;
@@ -382,13 +382,13 @@ h2, h3 {
 .site-footer .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
 }
 
 .footer-logo {
   height: 40px;
-  margin: 0 auto 0.75rem;
+  margin: 0 0 0.75rem 0;
 }
 
 .footer-hours {
@@ -405,7 +405,7 @@ h2, h3 {
 .footer-links {
   margin-top: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1.25rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
@@ -629,7 +629,7 @@ body.page-service,
 }
 
 .page-service h2 {
-  text-align: center;
+  text-align: left;
   font-weight: 600;
   margin: 1.2rem 0 1.6rem;
 }
@@ -656,11 +656,11 @@ body.page-service,
   min-width: 260px;
 }
 
-/* Blocksatz für Fließtexte auf Leistungsseiten */
+/* Linksbündiger Satz für Fließtexte auf Leistungsseiten */
 .page-service p,
 .page-service li {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  text-justify: auto;
 }
 
 .page-service .intro-section .intro-text h2 {
@@ -741,7 +741,7 @@ body.page-service,
   }
 
   .page-service .intro-section .intro-text h2 {
-    text-align: center;
+    text-align: left;
   }
 }
 
