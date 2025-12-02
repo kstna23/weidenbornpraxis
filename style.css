@@ -347,7 +347,7 @@ h2, h3 {
   background-color: var(--paper);
   border-radius: var(--radius);
   overflow: hidden;
-  text-align: left;
+  text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -367,13 +367,13 @@ h2, h3 {
   font-weight: 400;
   color: var(--brand);
   font-size: 1.2rem;
-  text-align: left;
+  text-align: center;
 }
 
 /* --- Footer --- */
 .site-footer {
   background-color: var(--footer-bg);
-  text-align: left;
+  text-align: center;
   padding: 2rem 1rem;
   color: var(--muted);
   font-size: 0.95rem;
@@ -382,7 +382,7 @@ h2, h3 {
 .site-footer .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
 }
 
@@ -405,7 +405,7 @@ h2, h3 {
 .footer-links {
   margin-top: 1rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
