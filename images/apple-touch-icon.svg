@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Weidenborn Praxis">
+  <rect width="180" height="180" rx="28" fill="#156a6a"/>
+  <rect x="18" y="18" width="144" height="144" rx="24" fill="#f0f8f8"/>
+  <path fill="#156a6a" d="M43 135l22-90h8l17 65.5L107 45h8l22 90h-16.5l-12-55-16 55h-7l-16.5-55-12 55z"/>
+</svg>
