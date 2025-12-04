@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/
+Allow: /
+
+# Optional: update to the canonical domain if different
+Sitemap: https://www.weidenbornpraxis.de/sitemap.xml
