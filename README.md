@@ -16,7 +16,7 @@ Die Werte müssen mit deinem Postfach bei IONOS übereinstimmen. `IONOS_FROM` so
 
 ## Hosting & Sicherheit
 * **Serverloses Backend erforderlich:** GitHub Pages liefert nur statische Dateien. Der Fetch-Aufruf des Kontaktformulars (`/api/contact.php` bzw. als Fallback `/api/contact`) braucht deshalb ein Hosting-Anbieter, der Node.js-Funktionen mit geheimen Umgebungsvariablen bereitstellt (z. B. Vercel, Netlify Functions oder ein eigener Server).
-* **PHP-Fallback auf Apache-Hosting:** Falls die Seite auf klassischem Apache-Hosting läuft (z. B. IONOS Webspace), stellt `api/contact.php` einen kompatiblen Handler bereit, der das gleiche JSON-Format erwartet und über `mail()` versendet. Die `.env` Datei muss dann im Projekt-Root liegen, damit die PHP-Datei die SMTP-Parameter einlesen kann.
+* **PHP-Fallback auf Apache-Hosting:** Falls die Seite auf klassischem Apache-Hosting läuft (z. B. IONOS Webspace), stellt `api/contact.php` einen kompatiblen Handler bereit, der das gleiche JSON-Format erwartet und via SMTP (IONOS-Zugangsdaten) versendet. Die `.env` Datei muss dann im Projekt-Root liegen, damit die PHP-Datei die SMTP-Parameter einlesen kann.
 * **HTTPS erzwingen:** Browser deaktivieren Auto-Fill und markieren Formulare als „nicht sicher“, wenn die Seite oder das Formularziel nicht über HTTPS ausgeliefert wird. Stelle sicher, dass deine Domain ein gültiges TLS-Zertifikat nutzt und dass das Backend unter `https://` erreichbar ist. Bei GitHub Pages mit Custom Domain muss HTTPS im Domain-Setup aktiviert werden.
 * **Secrets geschützt halten:** Lege keine `.env` Inhalte ins Git-Repo. Nutze die Secret-Verwaltung deiner Plattform, um `IONOS_USER`, `IONOS_PASS`, `IONOS_FROM` und `IONOS_TO` zu hinterlegen.
 
