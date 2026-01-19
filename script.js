@@ -154,15 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+        const endpoints = ['/api/contact.php', '/api/contact'];
+        let response;
 
-        const data = await response.json().catch(() => ({}));
+        for (const endpoint of endpoints) {
+          response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
 
-        if (response.ok) {
+          if (response.status !== 404) {
+            break;
+          }
+        }
+
+        const data = await response?.json().catch(() => ({}));
+
+        if (response?.ok) {
           contactForm.reset();
           refreshQuiz();
           if (startTimeInput) {
