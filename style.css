@@ -63,6 +63,42 @@ img {
   z-index: 1000;
 }
 
+.closure-notice {
+  padding: 1.5rem 0 0;
+}
+
+.closure-notice__card {
+  background: color-mix(in srgb, white 55%, var(--paper));
+  border-left: 6px solid var(--brand);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 2vw, 2rem);
+}
+
+.closure-notice__card h2 {
+  margin: 0 0 1rem;
+  color: var(--brand-dark);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.closure-notice__card p {
+  margin: 0 0 1rem;
+}
+
+.closure-notice__address {
+  margin: 0 0 1rem;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.closure-notice__address a {
+  color: var(--brand-dark);
+}
+
+.closure-notice__signature {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
 .info-banner {
   background: color-mix(in srgb, var(--paper) 88%, white);
   color: var(--brand);
