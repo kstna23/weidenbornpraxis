@@ -99,6 +99,48 @@ img {
   font-weight: 600;
 }
 
+
+.online-appointment-card {
+  background: color-mix(in srgb, white 60%, var(--paper));
+  border-left: 6px solid var(--brand);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 2vw, 2rem);
+  margin: 0.5rem 0 0;
+}
+
+.online-appointment-card h2 {
+  margin: 0 0 0.75rem;
+  color: var(--brand-dark);
+}
+
+.online-appointment-card p {
+  margin: 0;
+}
+
+.online-appointment-link {
+  display: inline-block;
+  margin: 1rem 0 0.75rem;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.online-appointment-link:hover,
+.online-appointment-link:focus-visible {
+  background-color: var(--brand-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.online-appointment-hint {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .info-banner {
   background: color-mix(in srgb, var(--paper) 88%, white);
   color: var(--brand);
