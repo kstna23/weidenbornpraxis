@@ -94,6 +94,31 @@ img {
   color: var(--brand-dark);
 }
 
+.closure-notice__contacts {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.closure-notice__contacts li {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.9rem;
+  background: color-mix(in srgb, var(--paper) 75%, white);
+  border: 1px solid color-mix(in srgb, var(--paper) 65%, var(--header-bg));
+}
+
+.closure-notice__contacts a {
+  color: var(--brand-dark);
+  font-weight: 600;
+}
+
+.closure-notice__contacts span {
+  color: var(--ink);
+}
+
 .closure-notice__signature {
   margin-bottom: 0;
   font-weight: 600;
