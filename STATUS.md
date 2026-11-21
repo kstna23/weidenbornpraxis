@@ -1,21 +1,22 @@
 # STATUS: weidenbornpraxis
 
-Stand: 2026-11-21 · Branch: feat/seo-quick-wins · Zustand: in Arbeit
+Stand: 2026-11-21 · Branch: main · Zustand: pausiert
 
 ## Next
-- [ ] SEO-PR (`feat/seo-quick-wins`) reviewen, mergen, auf IONOS deployen und direkt danach prüfen: `curl -sI http://weidenbornpraxis.de/` und `curl -sI https://www.weidenbornpraxis.de/` müssen 301 auf `https://weidenbornpraxis.de/` liefern, `curl -sI https://weidenbornpraxis.de/` muss 200 liefern (keine Umleitungsschleife hinter dem IONOS-CDN). Bei Schleife: vorherige `.htaccess` aus `main` wieder hochladen.
-- [ ] Postfach-Passwort `info@weidenbornpraxis.de` bei IONOS ändern und in `/weidenbornpraxis.env` (Webspace-Root, nicht `htdocs`) eintragen, danach Testnachricht über `kontakt.html` senden.
-- [ ] Fehlende Fotos liefern lassen: `images/daniela-meissner.jpg`, `images/stefanie-weck.jpg` (aerzte.html), `images/praxis-innen.jpg` (praxis.html), `images/team-gruppe.jpg` (team.html). Live 404.
+- [ ] Postfach-Passwort `info@weidenbornpraxis.de` bei IONOS ändern und das neue in `/weidenbornpraxis.env` eintragen (Webspace-Explorer, Hauptverzeichnis `/`, nicht `htdocs`), danach Testnachricht über `https://weidenbornpraxis.de/kontakt.html`.
+- [ ] Fehlende Fotos beschaffen und nach `/htdocs/images` hochladen: `daniela-meissner.jpg`, `stefanie-weck.jpg` (aerzte.html), `praxis-innen.jpg` (praxis.html), `team-gruppe.jpg` (team.html). Live 404. Vor dem Upload auf max. 1600 px verkleinern.
+- [ ] `sameAs` im JSON-LD von `index.html` auf den Teilen-Link des Google-Unternehmensprofils setzen (statt der Maps-Suche).
 - [ ] Weihnachtsbox in `index.html` nach dem 04.01.2027 entfernen.
 
 ## Blockiert / Offene Fragen
 - **Q:** Landet die Testmail vom 21.11.2026 (Betreff "Neue Kontaktaufnahme Homepage") im Posteingang oder im Spam? Entscheidet, ob ein Versanddienst mit eigener Signatur nötig ist.
-- **Q:** Echte URL des Google-Unternehmensprofils für `sameAs` im JSON-LD (`index.html`)?
 
 ## Entscheidungen
-- Deploy manuell über den IONOS Webspace-Explorer: Webroot `/htdocs`, Konfiguration mit SMTP-Zugangsdaten in `/weidenbornpraxis.env` außerhalb des Webroots. Nur Website-Dateien hochladen, keine Repo-Dateien (`README.md`, `package.json`, `.env.example`).
-- `main` ist der Live-Stand. Änderungen am Server nur aus `main`, nicht direkt im Webspace-Explorer bearbeiten.
+- Deploy manuell über den IONOS Webspace-Explorer. Webroot `/htdocs` (absolut `/home/www/htdocs`), SMTP-Zugangsdaten in `/weidenbornpraxis.env` außerhalb des Webroots. Nur geänderte Website-Dateien aus `main` hochladen, keine Repo-Dateien (`*.md`, `package.json`, `.env.example`). `.htaccess` bei Änderungen zuletzt hochladen und sofort `curl -sI https://weidenbornpraxis.de/` (200) sowie `http://` und `www.` (301) prüfen.
+- `main` ist der Live-Stand. Nicht direkt im Webspace-Explorer editieren.
+- IONOS-CDN ist aktiv; bisher wurde jede Änderung sofort ausgeliefert, kein Cache-Leeren nötig.
 - Rechenaufgabe des Kontaktformulars kommt vom Server (PHP-Session), nicht aus dem Browser.
 
 ## Zuletzt erledigt
-- 2026-11-21: #41 Weihnachtsbox, MFA-Banner entfernt; #42 `.env` war öffentlich abrufbar, jetzt per `.htaccess` gesperrt und außerhalb des Webroots; #43 standardkonforme Formular-Mails und serverseitige Rechenaufgabe. Alles deployt, Live-Test des Formulars erfolgreich.
+- 2026-11-21: #44 SEO deployt (eine h1 pro Seite, 301 auf https ohne www ohne Schleife hinter dem CDN, gzip, Cache-Header, Bilder 9,1 auf 3,8 MB, Startseite 2,6 MB, eigene 404-Seite). Telefonnummer im JSON-LD korrigiert.
+- 2026-11-21: #41 Weihnachtsbox, MFA-Banner entfernt; #42 öffentlich abrufbare `.env` gesperrt und außerhalb des Webroots; #43 standardkonforme Formular-Mails, serverseitige Rechenaufgabe. Deployt, Live-Test des Formulars erfolgreich.
