@@ -160,8 +160,21 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     jsonResponse(405, ['ok' => false, 'error' => 'POST erforderlich']);
 }
 
-$root = dirname(__DIR__);
-loadEnv($root . '/.env');
+// Credentials belong outside the webroot (one level above it), so the web
+// server can never serve them. The .env in the webroot is a legacy fallback
+// that .htaccess blocks; remove it once the file above the webroot exists.
+$configCandidates = [
+    dirname(__DIR__, 2) . '/weidenbornpraxis.env',
+    dirname(__DIR__) . '/.env',
+];
+foreach ($configCandidates as $configPath) {
+    // @: open_basedir may forbid the path above the webroot; that is an
+    // expected "not there", not an error, and must not leak into the JSON.
+    if (@is_readable($configPath)) {
+        loadEnv($configPath);
+        break;
+    }
+}
 
 $raw = file_get_contents('php://input');
 $body = json_decode($raw ?: '{}', true);

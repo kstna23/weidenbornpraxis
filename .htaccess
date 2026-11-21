@@ -1,0 +1,15 @@
+# Security rules for the Apache webspace (IONOS).
+# The repository is uploaded as a whole, so files that only belong to the
+# repo or to the server configuration must never be served.
+
+Options -Indexes
+
+# Dotfiles and dot-directories: .env, .env.example, .git/, .gitignore, .htaccess.
+# .well-known/ stays reachable for certificate validation.
+RedirectMatch 404 "/\.(?!well-known/)"
+
+# Repository and build files that are not part of the website.
+RedirectMatch 404 "^/(README\.md|package(-lock)?\.json|node_modules/.*)$"
+
+# Node variant of the contact handler: source code only, never executed here.
+RedirectMatch 404 "^/api/contact\.js$"
