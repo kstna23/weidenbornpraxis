@@ -85,17 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTimeInput = contactForm.querySelector('input[name="form_started_at"]');
     const minimumFormTimeMs = 3000;
 
-    const refreshQuiz = () => {
-      if (!quizInput || !quizLeftInput || !quizRightInput || !quizQuestion) return;
-      const left = Math.floor(Math.random() * 4) + 3; // 3-6
-      const right = Math.floor(Math.random() * 5) + 4; // 4-8
+    const showQuiz = (left, right) => {
       quizLeftInput.value = String(left);
       quizRightInput.value = String(right);
-      quizInput.value = '';
       quizQuestion.textContent = `Bestätige bitte: ${left} + ${right} =`;
       if (quizHint) {
         quizHint.textContent = `Rechne bitte ${left} + ${right} und trage das Ergebnis ein.`;
       }
+    };
+
+    // The PHP handler issues the question and keeps the answer in its
+    // session, so bots cannot choose their own numbers. Each question is
+    // valid for one submit, hence a refresh after every attempt.
+    const refreshQuiz = async () => {
+      if (!quizInput || !quizLeftInput || !quizRightInput || !quizQuestion) return;
+      quizInput.value = '';
+      try {
+        const response = await fetch('/api/contact.php?quiz=1', { credentials: 'same-origin', cache: 'no-store' });
+        const data = await response.json();
+        if (response.ok && Number.isInteger(data.left) && Number.isInteger(data.right)) {
+          showQuiz(data.left, data.right);
+          return;
+        }
+      } catch (error) {
+        // Fall through to the local question below.
+      }
+      // Hosting without the PHP handler (Node variant /api/contact): local question.
+      showQuiz(Math.floor(Math.random() * 4) + 3, Math.floor(Math.random() * 5) + 4);
     };
 
     if (startTimeInput) {
