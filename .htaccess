@@ -9,7 +9,52 @@ Options -Indexes
 RedirectMatch 404 "/\.(?!well-known/)"
 
 # Repository and build files that are not part of the website.
-RedirectMatch 404 "^/(README\.md|package(-lock)?\.json|node_modules/.*)$"
+RedirectMatch 404 "^/([^/]+\.md|package(-lock)?\.json|node_modules/.*)$"
 
 # Node variant of the contact handler: source code only, never executed here.
 RedirectMatch 404 "^/api/contact\.js$"
+
+# ---------------------------------------------------------------------------
+# SEO and performance
+# ---------------------------------------------------------------------------
+
+ErrorDocument 404 /404.html
+
+# All text files are UTF-8; without this Apache sends "text/html" with no
+# charset and browsers have to guess.
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .css .js .xml .txt .svg
+
+# One canonical URL per page: https://weidenbornpraxis.de/...
+# The HTTPS check accepts every signal the platform may set (mod_ssl, an
+# env var from the IONOS front end, or X-Forwarded-Proto behind the CDN),
+# so a request that already is HTTPS can never be redirected in a loop.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{ENV:HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://weidenbornpraxis.de%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteCond %{HTTP_HOST} ^www\.weidenbornpraxis\.de$ [NC]
+  RewriteRule ^ https://weidenbornpraxis.de%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# Caching: HTML, CSS and JS are revalidated on every visit (cheap 304 via
+# ETag), so content updates such as closure notices show up immediately.
+# Images change rarely and are cached for a week.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|PNG|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
