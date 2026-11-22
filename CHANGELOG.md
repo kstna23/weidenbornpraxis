@@ -7,6 +7,7 @@ Format: Keep a Changelog 1.1.0. Versioning: SemVer.
 
 ## 2026-11-22 (deployed)
 ### Changed
+- Opening hours on the start page shown as a card like the closure notice, with consultation hours and links to online booking and phone (#47)
 - Unique meta description on every page; `terminbuchung.html` titled "Online-Termin" instead of "Kontakt"; start page description shortened to 160 characters
 - Page titles use ` | WEIDENBORNpraxis` as separator on all pages
 - JSON-LD: `sameAs` points to the Google business profile, coordinates match the Google pin
