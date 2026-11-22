@@ -67,34 +67,35 @@ img {
   padding: 1.5rem 0 0;
 }
 
-.closure-notice__card {
+.info-card {
   background: color-mix(in srgb, white 55%, var(--paper));
   border-left: 6px solid var(--brand);
   box-shadow: var(--shadow);
   padding: clamp(1.25rem, 2vw, 2rem);
 }
 
-.closure-notice__card h2 {
+.info-card h2,
+.info-card h3 {
   margin: 0 0 1rem;
   color: var(--brand-dark);
   font-size: clamp(1.2rem, 2vw, 1.6rem);
 }
 
-.closure-notice__card p {
+.info-card p {
   margin: 0 0 1rem;
 }
 
-.closure-notice__address {
+.info-card__address {
   margin: 0 0 1rem;
   font-style: normal;
   line-height: 1.8;
 }
 
-.closure-notice__address a {
+.info-card__address a {
   color: var(--brand-dark);
 }
 
-.closure-notice__contacts {
+.info-card__contacts {
   display: grid;
   gap: 0.8rem;
   list-style: none;
@@ -102,7 +103,7 @@ img {
   padding: 0;
 }
 
-.closure-notice__contacts li {
+.info-card__contacts li {
   display: grid;
   gap: 0.15rem;
   padding: 0.8rem 0.9rem;
@@ -110,21 +111,21 @@ img {
   border: 1px solid color-mix(in srgb, var(--paper) 65%, var(--header-bg));
 }
 
-.closure-notice__contacts a {
+.info-card__contacts a {
   color: var(--brand-dark);
   font-weight: 600;
 }
 
-.closure-notice__contacts span {
+.info-card__contacts span {
   color: var(--ink);
 }
 
-.closure-notice__signature {
+.info-card__signature {
   margin-bottom: 0;
   font-weight: 600;
 }
 
-.closure-notice__eyebrow {
+.info-card__eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -136,7 +137,7 @@ img {
   color: var(--header-bg);
 }
 
-.closure-notice__icon {
+.info-card__icon {
   width: 1.1rem;
   height: 1.1rem;
   fill: none;
@@ -146,13 +147,13 @@ img {
   stroke-linejoin: round;
 }
 
-.closure-notice__dates {
+.info-card__dates {
   display: grid;
   gap: 0.75rem;
   margin: 0 0 1.25rem;
 }
 
-.closure-notice__date {
+.info-card__date {
   display: grid;
   gap: 0.2rem;
   padding: 0.9rem 1rem;
@@ -160,13 +161,13 @@ img {
   color: #fff;
 }
 
-.closure-notice__date--open {
+.info-card__date--open {
   background: color-mix(in srgb, var(--paper) 60%, white);
   color: var(--brand-dark);
   border: 2px solid var(--brand);
 }
 
-.closure-notice__date-label {
+.info-card__date-label {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -174,30 +175,78 @@ img {
   opacity: 0.9;
 }
 
-.closure-notice__date-value {
+.info-card__date-value {
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   font-weight: 700;
 }
 
-.closure-notice__contacts address {
+.info-card__contacts address {
   font-style: normal;
   line-height: 1.5;
 }
 
-.closure-notice__hint {
+.info-card__hint {
   padding: 0.75rem 1rem;
   border-left: 3px solid var(--header-bg);
   background: color-mix(in srgb, var(--paper) 40%, white);
   font-weight: 600;
 }
 
+.info-card__contacts .info-card__time {
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.info-card__hint a {
+  color: var(--brand-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.info-card__hint:last-child {
+  margin-bottom: 0;
+}
+
+/* Opening hours card inside the intro section */
+.opening-hours {
+  margin-top: 2rem;
+  text-align: left;
+}
+
 @media (min-width: 640px) {
-  .closure-notice__dates {
+  .info-card__dates {
     grid-template-columns: 3fr 2fr;
   }
 
-  .closure-notice__contacts--grid {
+  .opening-hours .info-card__dates {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .info-card__contacts--grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 760px) {
+  .info-card__contacts--grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Phones: name on top, days and time share one line (wraps if needed) */
+@media (max-width: 759px) {
+  .info-card__contacts--grid3 li {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+
+  .info-card__contacts--grid3 strong {
+    flex-basis: 100%;
+  }
+
+  .info-card__contacts--grid3 .info-card__time {
+    white-space: nowrap;
   }
 }
 
@@ -403,63 +452,6 @@ body.menu-open .main-nav {
 /* --- Sections --- */
 .intro, .services, .about-us {
   padding: 3rem 1rem 2.5rem;
-}
-
-.opening-hours {
-  margin: 2rem auto 0;
-  max-width: 860px;
-  background-color: var(--header-bg);
-  padding: 1.35rem 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  text-align: left;
-}
-
-.opening-hours h4 {
-  margin: 0 0 1rem;
-  color: var(--paper);
-  font-size: 1.1rem;
-}
-
-.opening-hours__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.opening-hours__item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.95rem 1.1rem;
-  background: color-mix(in srgb, var(--paper) 95%, white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid color-mix(in srgb, var(--paper) 80%, var(--header-bg));
-}
-
-.hours-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.4rem 0.75rem;
-}
-
-.opening-hours__item .hours-day {
-  font-weight: 700;
-}
-
-.opening-hours__item .hours-time {
-  font-weight: 600;
-}
-
-.opening-hours__item .hours-note {
-  color: var(--brand);
-  font-weight: 600;
-  line-height: 1.5;
 }
 
 .intro h2,

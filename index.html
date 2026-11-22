@@ -95,9 +95,9 @@
 
   <section class="closure-notice" aria-labelledby="weihnachtsferien-heading">
     <div class="container">
-      <div class="closure-notice__card">
-        <p class="closure-notice__eyebrow">
-          <svg class="closure-notice__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <div class="info-card">
+        <p class="info-card__eyebrow">
+          <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5M2.6 10.4l3.7-.6-1.1-3.6M21.4 13.6l-3.7.6 1.1 3.6M5.2 17.8l1.1-3.6-3.7-.6M18.8 6.2l-1.1 3.6 3.7.6" />
           </svg>
           Praxisinformation
@@ -105,21 +105,21 @@
         <h2 id="weihnachtsferien-heading">Weihnachtsferien in der WEIDENBORNpraxis</h2>
         <p>Liebe Patientinnen und Patienten,</p>
 
-        <div class="closure-notice__dates">
-          <div class="closure-notice__date">
-            <span class="closure-notice__date-label">Praxis geschlossen</span>
-            <span class="closure-notice__date-value">23.12.2026 bis einschließlich 03.01.2027</span>
+        <div class="info-card__dates">
+          <div class="info-card__date">
+            <span class="info-card__date-label">Praxis geschlossen</span>
+            <span class="info-card__date-value">23.12.2026 bis einschließlich 03.01.2027</span>
           </div>
-          <div class="closure-notice__date closure-notice__date--open">
-            <span class="closure-notice__date-label">Wieder wie gewohnt für Sie da</span>
-            <span class="closure-notice__date-value">ab Montag, 04.01.2027</span>
+          <div class="info-card__date info-card__date--open">
+            <span class="info-card__date-label">Wieder wie gewohnt für Sie da</span>
+            <span class="info-card__date-value">ab Montag, 04.01.2027</span>
           </div>
         </div>
 
         <p>
           In dringenden medizinischen Fällen wenden Sie sich bitte an unsere Vertretungspraxen:
         </p>
-        <ul class="closure-notice__contacts closure-notice__contacts--grid">
+        <ul class="info-card__contacts info-card__contacts--grid">
           <li>
             <strong>
               <a href="https://www.mainfacharzt.de/" target="_blank" rel="noopener">Praxis MainFacharzt</a>
@@ -135,10 +135,10 @@
             <a href="tel:+496969597230">Tel. 069 / 69 59 72 30</a>
           </li>
         </ul>
-        <p class="closure-notice__hint">
+        <p class="info-card__hint">
           Bitte vereinbaren Sie bei den Vertretungspraxen vorab telefonisch einen Termin.
         </p>
-        <p class="closure-notice__signature">
+        <p class="info-card__signature">
           Wir wünschen Ihnen frohe Weihnachten und einen guten Start ins neue Jahr!
         </p>
       </div>
@@ -158,25 +158,48 @@
 
       <div class="hero-divider"></div>
 
-      <div class="opening-hours" aria-label="Öffnungszeiten der Praxis">
-        <h3>Öffnungszeiten</h3>
-        <ul class="opening-hours__list">
-          <li class="opening-hours__item">
-            <div class="hours-row">
-              <span class="hours-day">Mo&nbsp;-&nbsp;Fr</span>
-              <span class="hours-time">08:30&nbsp;-&nbsp;12:30&nbsp;Uhr</span>
-            </div>
-            <div class="hours-note">Akutsprechstunde: 11:00&nbsp;-&nbsp;12:00&nbsp;Uhr</div>
-            <div class="hours-note">Telefonsprechstunde: 12:30&nbsp;-&nbsp;13:00&nbsp;Uhr</div>
+      <div class="info-card opening-hours" role="region" aria-labelledby="oeffnungszeiten-heading">
+        <p class="info-card__eyebrow">
+          <svg class="info-card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          Sprechzeiten
+        </p>
+        <h3 id="oeffnungszeiten-heading">Öffnungszeiten</h3>
+
+        <div class="info-card__dates">
+          <div class="info-card__date">
+            <span class="info-card__date-label">Montag bis Freitag</span>
+            <span class="info-card__date-value">08:30&nbsp;-&nbsp;12:30&nbsp;Uhr</span>
+          </div>
+          <div class="info-card__date info-card__date--open">
+            <span class="info-card__date-label">Montag und Donnerstag</span>
+            <span class="info-card__date-value">14:00&nbsp;-&nbsp;17:30&nbsp;Uhr</span>
+          </div>
+        </div>
+
+        <ul class="info-card__contacts info-card__contacts--grid3">
+          <li>
+            <strong>Akutsprechstunde</strong>
+            <span>Montag bis Freitag</span>
+            <span class="info-card__time">11:00&nbsp;-&nbsp;12:00&nbsp;Uhr</span>
           </li>
-          <li class="opening-hours__item">
-            <div class="hours-row">
-              <span class="hours-day">Mo&nbsp;und&nbsp;Do</span>
-              <span class="hours-time">14:00&nbsp;-&nbsp;17:30&nbsp;Uhr</span>
-            </div>
-            <div class="hours-note">Akutsprechstunde an diesen Tagen: 15:00&nbsp;-&nbsp;16:00&nbsp;Uhr</div>
+          <li>
+            <strong>Akutsprechstunde</strong>
+            <span>Montag und Donnerstag</span>
+            <span class="info-card__time">15:00&nbsp;-&nbsp;16:00&nbsp;Uhr</span>
+          </li>
+          <li>
+            <strong>Telefonsprechstunde</strong>
+            <span>Montag bis Freitag</span>
+            <span class="info-card__time">12:30&nbsp;-&nbsp;13:00&nbsp;Uhr</span>
           </li>
         </ul>
+        <p class="info-card__hint">
+          Termine buchen Sie <a href="terminbuchung.html">online</a> oder telefonisch unter
+          <a href="tel:+4969451359">069&nbsp;/&nbsp;45&nbsp;13&nbsp;59</a>.
+        </p>
       </div>
     </div>
   </section>
