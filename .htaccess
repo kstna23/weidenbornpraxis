@@ -58,3 +58,15 @@ AddCharset UTF-8 .css .js .xml .txt .svg
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
 </IfModule>
+
+# Security headers. HSTS without includeSubDomains/preload: only this host
+# is pinned to HTTPS, other subdomains (mail etc.) are not affected.
+# No Content-Security-Policy yet: pages use inline styles and embed Google
+# Maps; a CSP needs its own review and testing.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
+</IfModule>
