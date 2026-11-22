@@ -5,6 +5,16 @@ Format: Keep a Changelog 1.1.0. Versioning: SemVer.
 
 ## [Unreleased]
 
+## 2026-11-22 (deployed)
+### Changed
+- Unique meta description on every page; `terminbuchung.html` titled "Online-Termin" instead of "Kontakt"; start page description shortened to 160 characters
+- Page titles use ` | WEIDENBORNpraxis` as separator on all pages
+- JSON-LD: `sameAs` points to the Google business profile, coordinates match the Google pin
+### Fixed
+- Subpage photos that did not exist (aerzte, praxis, team) show the "Coming Soon" placeholder instead of a broken image
+### Security
+- Security headers: HSTS (1 year, this host only), `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`
+
 ## 2026-11-21 (deployed)
 ### Added
 - Christmas closure notice with substitute practices on the start page (#41)
